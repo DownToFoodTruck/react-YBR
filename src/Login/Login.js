@@ -4,7 +4,7 @@ import "./Login.css";
 function Login() {
   return (
     <div className="Login">
-      <header className="Login-header">
+      <header className="Login-headert">
         <img src={logo} className="Login-logo" alt="logo" />
         <p>
           Edit <code>src/Login.js</code> and save to reload.
