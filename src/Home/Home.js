@@ -1,7 +1,7 @@
-import logo from "./logo.svg";
-import "./Login.css";
+// import logo from "./logo.svg";
+import "./Home.css";
 
-function Login() {
+function Home() {
   return (
     <>
       <header>
@@ -65,8 +65,8 @@ function Login() {
                 <a href="#" id="forgot">
                   Forgot Password?
                 </a>
-                <button className="login" id="login">
-                  Login
+                <button className="Home" id="Home">
+                  Home
                 </button>
                 <button className="create-account">Create Account</button>
               </div>
@@ -97,8 +97,8 @@ function Login() {
                 <a href="#" id="forgot">
                   Forgot Password?
                 </a>
-                <button className="login2" id="login2">
-                  Login
+                <button className="Home2" id="Home2">
+                  Home
                 </button>
                 <button className="create-account">Create Account</button>
               </div>
@@ -169,4 +169,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default Home;
