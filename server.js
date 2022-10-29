@@ -1,3 +1,5 @@
+"use strict";
+
 //Rough Order:
 //Declare mongo as our db
 // Get tags
@@ -5,20 +7,16 @@
 
 //Mongo information is not obfuscated for the purpose of this demonstration
 const { MongoClient } = require("mongodb");
-
 const url =
   "mongodb+srv://testUser:2N5Z4YTsPlrj3dd7@realmcluster.i9fux.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 const client = new MongoClient(url);
-
 const express = require("express");
 // Create an Express application
 const app = express();
 
 // Declare a port number here
 const port = 3000;
-
 app.use(express.static("./"));
-
 app.get("/", function (req, res) {
   res.render("index.html");
 });
@@ -46,12 +44,10 @@ app.listen(port);
 //Query mongo for tag (case insensitive) selected
 app.get("/api", function (req, res) {
   const tag = req.query.tag;
-
   async function getSupplies() {
     try {
       await client.connect();
       const collection = client.db("YBR").collection("PROD4");
-
       const cursorArray = await collection
         .find({
           Tags: {
@@ -63,7 +59,6 @@ app.get("/api", function (req, res) {
           Name: 1,
         })
         .toArray();
-
       res.send(cursorArray);
     } catch (err) {
       res.sendStatus(400);
