@@ -24,8 +24,8 @@ body {
   min-height: 100%;
 }
 
-#content-wrapper {
-}
+/* #content-wrapper {
+} */
 
 header {
   font-family: Baloo;
@@ -337,7 +337,7 @@ footer {
   color: #f3c613;
   text-shadow: 2px 2px #004aad;
   background-repeat: round;
-  background-image: url(background-image:url(/home/will/Development/Website/YBR/React/react-YBR/src/Home/Img/header-img/yellow-brick.jpg);
+  background-image: url(/home/will/Development/Website/YBR/React/react-YBR/src/Home/Img/header-img/yellow-brick.jpg);
 }
 
 img {
