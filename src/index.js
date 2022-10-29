@@ -2,8 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
-import Home from "./Home/Home";
-import Login from "./Login/Login";
+import Home from "./Pages/Home/Home";
+import Login from "./Pages/Login/Login";
 // import About from "./Home/About/About";
 
 import reportWebVitals from "./reportWebVitals";

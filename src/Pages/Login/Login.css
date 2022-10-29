@@ -12,7 +12,7 @@ body {
   margin: 10px;
   padding: 10px;
   background-color: #004aad;
-  background: url("/home/will/Development/Website/YBR/React/react-YBR/src/Home/Images/food-icons_2.png");
+  background: url("/home/will/Development/Website/YBR/React/react-YBR/src/Images/food-icons_2.png");
 }
 
 #page-container {
@@ -38,7 +38,7 @@ header {
   font-size: 100px;
   font-weight: bold;
   background-repeat: round;
-  background-image: url(/home/will/Development/Website/YBR/React/react-YBR/src/Home/Images/header-img/yellow-brick.jpg);
+  background-image: url("/home/will/Development/Website/YBR/React/react-YBR/src/Images/header-img/yellow-brick.jpg");
 }
 
 .over-img {
@@ -221,7 +221,7 @@ a {
 }
 
 #modal {
-  background: url("/home/will/Development/Website/YBR/React/react-YBR/src/Home/Images/food-icons_2.png");
+  background: url("/home/will/Development/Website/YBR/React/react-YBR/src/Images/food-icons_2.png");
   padding: 20px;
   height: 80%;
   max-width: 600px;
@@ -337,7 +337,7 @@ footer {
   color: #f3c613;
   text-shadow: 2px 2px #004aad;
   background-repeat: round;
-  background-image: url(background-image:url(/home/will/Development/Website/YBR/React/react-YBR/src/Home/Images/header-img/yellow-brick.jpg);
+  background-image: url(/home/will/Development/Website/YBR/React/react-YBR/src/Images/header-img/yellow-brick.jpg);
 }
 
 img {

@@ -1,5 +1,5 @@
 // import logo from "./logo.svg";
-import "/home/will/Development/Website/YBR/React/react-YBR/src/Login/Login.css";
+import "/home/will/Development/Website/YBR/React/react-YBR/src/Pages/Login/Login.css";
 
 function Login() {
   return (
@@ -8,7 +8,10 @@ function Login() {
         <div className="header-contact-button">
           <a href="mailto:hey@downtofoodtruck.com" id="contact">
             <button className="contact-button">
-              <img src="Images/email-icon.png" alt="Contact" />
+              <img
+                src="/home/will/Development/Website/YBR/React/react-YBR/src/Home//home/will/Development/Website/YBR/React/react-YBR/src/Images/email-icon.png"
+                alt="Contact"
+              />
             </button>
           </a>
         </div>
@@ -19,7 +22,10 @@ function Login() {
             target="_blank"
           >
             <button className="contact-button">
-              <img src="Images/instagram-icon.png" alt="Instagram" />
+              <img
+                src="/home/will/Development/Website/YBR/React/react-YBR/src/Images/instagram-icon.png"
+                alt="Instagram"
+              />
             </button>
           </a>
         </div>
@@ -28,7 +34,10 @@ function Login() {
             Continue As Guest
           </button>
         </div>
-        <img src="Images/DTFT-Logo-Blue-2500x1500.png" className="over-img" />
+        <img
+          src="/home/will/Development/Website/YBR/React/react-YBR/src/Images/Logo-Blue-2500x1500.png"
+          className="over-img"
+        />
       </header>
       <div className="mobile wiggle">
         <button className="guest" onclick="window.location.href='index.html'">
@@ -133,7 +142,7 @@ function Login() {
                 <button id="close-modal">Close</button>
               </div>
               <img
-                src="Images/YBR-Group.png"
+                src="/home/will/Development/Website/YBR/React/react-YBR/src/Images/YBR-Group.png"
                 alt="YBR Group"
                 className="ybr-image"
               />

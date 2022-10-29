@@ -1,5 +1,5 @@
 // import logo from "./logo.svg";
-import "/home/will/Development/Website/YBR/React/react-YBR/src/Home/Home.css";
+import "/home/will/Development/Website/YBR/React/react-YBR/src/Pages/Home/Home.css";
 
 function Home() {
   return (
