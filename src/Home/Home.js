@@ -30,7 +30,7 @@ function Home() {
             <button className="contact-button">
               <img
                 src={
-                  "/home/will/Development/Website/YBR/React/react-YBR/src/Home/Img/email-icon.png"
+                  "/home/will/Development/Website/YBR/React/react-YBR/src/Home/Images/email-icon.png"
                 }
                 alt="Contact"
               />
@@ -46,7 +46,7 @@ function Home() {
             <button className="contact-button">
               <img
                 src={
-                  "/home/will/Development/Website/YBR/React/react-YBR/src/Home/Img/instagram-icon.png"
+                  "/home/will/Development/Website/YBR/React/react-YBR/src/Home/Images/instagram-icon.png"
                 }
                 alt="Instagram"
               />
@@ -63,7 +63,7 @@ function Home() {
         </div>
         <img
           src={
-            "/home/will/Development/Website/YBR/React/react-YBR/src/Home/Img/Logo-Blue-2500x1500.png"
+            "/home/will/Development/Website/YBR/React/react-YBR/src/Home/Images/Logo-Blue-2500x1500.png"
           }
           className="over-img"
         />
@@ -156,7 +156,7 @@ function Home() {
                 </div>
                 <img
                   src={
-                    "/home/will/Development/Website/YBR/React/react-YBR/src/Home/Img/YBR-Group.png"
+                    "/home/will/Development/Website/YBR/React/react-YBR/src/Home/Images/YBR-Group.png"
                   }
                   alt="YBR Group"
                   className="ybr-image"
