@@ -18,7 +18,7 @@ const app = express();
 const port = 3000;
 app.use(express.static("./"));
 app.get("/", function (req, res) {
-  res.render("index.html");
+  //   res.render("index.html");
 });
 
 //Query mongo for ALL TAGS. This will be used to populate our selection dropdown...as we expand tags we can dynamically populate the dropdown
@@ -29,6 +29,7 @@ app.get("/apiTAG", function (req, res) {
       await client.connect();
       const collection = client.db("YBR").collection("PROD4");
       const cursorArray = await collection.distinct("Tags");
+      console.log(cursorArray);
       res.send(cursorArray);
     } catch (err) {
       res.sendStatus(400);
