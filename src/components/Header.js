@@ -1,5 +1,5 @@
 function Header() {
-    return (
+  return (
     <header>
         <div className="header-contact-button">
           <a href="mailto:hey@downtofoodtruck.com" id="contact">
@@ -38,4 +38,4 @@ function Header() {
 )
 }
 
-export default Header
+export default Header;
