@@ -6,11 +6,11 @@
 .home-body {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  min-height: 60vh;
   margin: 10px;
   padding: 10px;
-  background-color: #004aad;
-  background: url("https://raw.githubusercontent.com/DownToFoodTruck/react-YBR/master/src/Images/food-icons_2.png?token=GHSAT0AAAAAAB2GZOENDVSMFM7RG5V44YKMY27GESQ");
+  /* background-color: #004aad; */
+  /* background: url("https://raw.githubusercontent.com/DownToFoodTruck/react-YBR/master/src/Images/food-icons_2.png?token=GHSAT0AAAAAAB2GZOENDVSMFM7RG5V44YKMY27GESQ"); */
 }
 
 #page-container {
@@ -33,7 +33,7 @@ header {
   font-size: 100px;
   font-weight: bold;
   background-repeat: round;
-  /* background-image: url(/home/will/Development/Website/YBR/React/react-YBR/src/Images/header-img/yellow-brick.jpg); */
+  background-image: url("https://raw.githubusercontent.com/DownToFoodTruck/react-YBR/master/src/Images/header-img/yellow-brick.jpg?token=GHSAT0AAAAAAB2GZOEN7VMVMEHYTRZRDE2CY3B6XDQ");
 }
 
 .over-img {
@@ -216,7 +216,7 @@ a {
 }
 
 #modal {
-  /* background: url("/home/will/Development/Website/YBR/React/react-YBR/src/Images/food-icons_2.png"); */
+  background: url("https://raw.githubusercontent.com/DownToFoodTruck/react-YBR/master/src/Images/food-icons_2.png?token=GHSAT0AAAAAAB2GZOENDVSMFM7RG5V44YKMY27GESQ");
   padding: 20px;
   height: 80%;
   max-width: 600px;
@@ -331,8 +331,8 @@ footer {
   justify-content: center;
   color: #f3c613;
   text-shadow: 2px 2px #004aad;
+  background-image: url("https://raw.githubusercontent.com/DownToFoodTruck/react-YBR/master/src/Images/header-img/yellow-brick.jpg?token=GHSAT0AAAAAAB2GZOEN7VMVMEHYTRZRDE2CY3B6XDQ");
   background-repeat: round;
-  /* background-image: url(/home/will/Development/Website/YBR/React/react-YBR/src/Images/header-img/yellow-brick.jpg); */
 }
 
 img {
@@ -386,18 +386,56 @@ h3 {
   text-align: center;
 }
 
-.ybr-paragraph {
+.about-section {
+  display: flex;
+  justify-content: center;
+}
+
+.about-btn {
+  font-family: Baloo;
+  font-size: 1rem;
+  height: 40px;
+  width: 90px;
+  background: #004aad;
+  color: #f3c613;
+  border: none;
+  padding: 4px 10px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.about-modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-content {
+  width: 500px;
+  background-repeat: round;
+  background-image: url("https://raw.githubusercontent.com/DownToFoodTruck/react-YBR/master/src/Images/food-icons_2.png?token=GHSAT0AAAAAAB2GZOENDVSMFM7RG5V44YKMY27GESQ");
+}
+
+.about-body {
   text-align: center;
   padding: 10px 50px 10px 50px;
 }
 
-.view-map {
+.about-git-btn {
   background-color: #004aad;
   font-size: 20px;
   margin: 10px;
 }
 
-.team-members {
+.about-team-members {
   display: flex;
   flex-wrap: wrap;
   padding: 20px;
@@ -408,19 +446,19 @@ h3 {
   align-items: center;
 }
 
-.modal-link {
+.about-link {
   color: #f3c613;
   justify-content: center;
 }
 
 .home-page,
-.about-us {
+.about-content {
   background-color: #004aad;
   color: #f3c613;
 }
 
 .home-page:hover,
-.about-us:hover {
+.about-git-btn:hover {
   animation-name: lighten-blue;
   animation-duration: 500ms;
   animation-fill-mode: forwards;

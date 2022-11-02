@@ -1,18 +1,25 @@
-// import logo from "./logo.svg";
-// import "/home/will/Development/Website/YBR/React/react-YBR/src/Pages/Home/Home.css";
+import React, {useState} from 'react';
+
 import Header from '../components/Header.js';
 import Footer from '../components/Footer.js';
+import AboutModal from '../components/AboutModal.js'
 
-function Home() {
+export default function Home() {
+  const [show, setShow] = useState(false)
+
   return (
-    <> <div className='home-body'>
-    
-    <Header />
-    
+    <>
+      <Header />
 
+      <div className='home-body'>
+        <div className='about-section'>
+          <button className='about-btn' onClick={ () => setShow(true) }>About</button>
+          <AboutModal onClose={() => setShow(false)} show={show} />
+        </div>
+      </div>
 
-    <Footer />
-    </div></>
+      <Footer />
+    </>
 
       //<helmet>
        // <link
@@ -139,5 +146,3 @@ function Home() {
     // /* <style>iframe {width:100%;height:100%;}</style> */
   );
 }
-
-export default Home;
