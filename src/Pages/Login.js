@@ -1,5 +1,5 @@
 // import logo from "./logo.svg";
-import "/home/will/Development/Website/YBR/React/react-YBR/src/Pages/Login/Login.css";
+// import "/home/will/Development/Website/YBR/React/react-YBR/src/Pages/Login/Login.css";
 
 function Login() {
   return (
@@ -9,7 +9,7 @@ function Login() {
           <a href="mailto:hey@downtofoodtruck.com" id="contact">
             <button className="contact-button">
               <img
-                src="/home/will/Development/Website/YBR/React/react-YBR/src/Home//home/will/Development/Website/YBR/React/react-YBR/src/Images/email-icon.png"
+                src="https://github.com/DownToFoodTruck/react-YBR/blob/7c94bd4a752c603ba394b17f32a0a46be30a86c2/src/Images/email-icon.png"
                 alt="Contact"
               />
             </button>
@@ -23,7 +23,7 @@ function Login() {
           >
             <button className="contact-button">
               <img
-                src="/home/will/Development/Website/YBR/React/react-YBR/src/Images/instagram-icon.png"
+                src="https://github.com/DownToFoodTruck/react-YBR/blob/7c94bd4a752c603ba394b17f32a0a46be30a86c2/src/Images/instagram-icon.png"
                 alt="Instagram"
               />
             </button>
@@ -35,7 +35,7 @@ function Login() {
           </button>
         </div>
         <img
-          src="/home/will/Development/Website/YBR/React/react-YBR/src/Images/Logo-Blue-2500x1500.png"
+          src="https://github.com/DownToFoodTruck/react-YBR/blob/7c94bd4a752c603ba394b17f32a0a46be30a86c2/src/Images/Logo-Blue-2500x1500.png"
           className="over-img"
         />
       </header>
@@ -142,7 +142,7 @@ function Login() {
                 <button id="close-modal">Close</button>
               </div>
               <img
-                src="/home/will/Development/Website/YBR/React/react-YBR/src/Images/YBR-Group.png"
+                src="https://github.com/DownToFoodTruck/react-YBR/blob/7c94bd4a752c603ba394b17f32a0a46be30a86c2/src/Images/YBR-Group.png"
                 alt="YBR Group"
                 className="ybr-image"
               />
