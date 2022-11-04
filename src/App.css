@@ -550,3 +550,34 @@ button {
 #login2 {
   cursor: pointer;
 }
+
+.select-btn,
+.about-btn {
+  cursor: pointer;
+  font-family: Baloo;
+  font-weight: 700;
+  letter-spacing: 2px;
+  background: #f3c613;
+  color: #004aad;
+  border: none;
+  padding: 4px 10px;
+  border-radius: 4px;
+  margin: 0 5px;
+  appearance: auto;
+  writing-mode: horizontal-tb !important;
+}
+
+.guest {
+  background-color: #004aad;
+  color: #f3c613;
+
+  font-family: Baloo;
+  font-weight: 700;
+  letter-spacing: 2px;
+  background: #004aad;
+  color: #f3c613;
+  border: none;
+  padding: 4px 10px;
+  border-radius: 4px;
+  margin: 0 5px;
+}

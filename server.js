@@ -68,3 +68,4 @@ app.get("/api", function (req, res) {
   }
   getSupplies(tag);
 });
+console.log("TEST");
