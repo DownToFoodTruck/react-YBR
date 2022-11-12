@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';  
-import {Container ,Dropdown,  DropdownButton} from 'react-bootstrap'; 
 
 import Selector from '../components/Selector.js';
 import Header from '../components/Header.js';
 import Footer from '../components/Footer.js';
-import AboutModal from '../components/AboutModal.js'
+import AboutModal from '../components/AboutModal.js';
+import Login from './Login.js';
 
 export default function Home() {
   const [show, setShow] = useState(false)

@@ -1,181 +1,130 @@
-// import logo from "./logo.svg";
-// import "/home/will/Development/Website/YBR/React/react-YBR/src/Pages/Login/Login.css";
+import Home from './Home';
+import {useEffect} from 'react';
+import { Link } from 'react-router-dom';
 
-function Login() {
+
+function Login(){
+  {/* JS start here */}
+
+  // hide login password 
+  function toggleHidePass(){
+    let x = document.getElementById("password-input")
+    if (x.type === "password") {
+  x.type = "text";
+  } else {
+  x.type = "password";
+  }
+  }
+
+  // hide signup password
+  function toggleHidePassSignUp() { 
+    let x = document.getElementById("sign-up-password-input")
+    if (x.type === "password") {
+  x.type = "text";
+  } else {
+  x.type = "password";
+  }
+  }
+
+useEffect(() => {
+  document.getElementById("log-in-button").addEventListener("click", function() {
+    document.getElementById("log-in-overlay").style.display= "block"
+  })
+
+  document.getElementById("close-modal-li").addEventListener("click", function() {
+    document.getElementById("log-in-overlay").style.display= "none"
+  })
+
+
+  document.getElementById("sign-up-button").addEventListener("click", function() {
+    document.getElementById("sign-up-overlay").style.display= "block"
+  })
+
+  document.getElementById("close-modal-su").addEventListener("click", function() {
+    document.getElementById("sign-up-overlay").style.display= "none"
+  })
+}, [])
+
+
   return (
-    <>
-      <header>
-        <div className="header-contact-button">
-          <a href="mailto:hey@downtofoodtruck.com" id="contact">
-            <button className="contact-button">
-              <img
-                src="https://github.com/DownToFoodTruck/react-YBR/blob/7c94bd4a752c603ba394b17f32a0a46be30a86c2/src/Images/email-icon.png"
-                alt="Contact"
-              />
-            </button>
-          </a>
-        </div>
-        <div className="header-follow-button">
-          <a
-            href="https://www.instagram.com/downtofoodtruck/"
-            id="follow"
-            target="_blank"
-          >
-            <button className="contact-button">
-              <img
-                src="https://github.com/DownToFoodTruck/react-YBR/blob/7c94bd4a752c603ba394b17f32a0a46be30a86c2/src/Images/instagram-icon.png"
-                alt="Instagram"
-              />
-            </button>
-          </a>
-        </div>
-        <div className="top-right desktop">
-          <button className="guest" onclick="window.location.href='index.html'">
-            Continue As Guest
-          </button>
-        </div>
-        <img
-          src="https://github.com/DownToFoodTruck/react-YBR/blob/7c94bd4a752c603ba394b17f32a0a46be30a86c2/src/Images/Logo-Blue-2500x1500.png"
-          className="over-img"
-        />
-      </header>
-      <div className="mobile wiggle">
-        <button className="guest" onclick="window.location.href='index.html'">
-          Continue As Guest
-        </button>
-      </div>
-      <div id="page-container">
-        <div id="content-wrapper">
-          <section id="dock">
-            <div className="left-card">
-              <div className="title">Customers</div>
-              <div className="customer">
-                <p style={{ color: "#004aad" }} className="left-title">
-                  Need A Food Truck?
-                  <br />
-                  Find Some Food!
-                </p>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  placeholder="Email Address"
-                  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
-                />
-                <input
-                  type="password"
-                  id="password"
-                  name="password"
-                  placeholder="Password"
-                />
-                <p style={{ color: "red", display: "none" }} id="passFail">
-                  Enter Valid Email Address
-                </p>
-                <a href="#" id="forgot">
-                  Forgot Password?
-                </a>
-                <button className="Home" id="Home">
-                  Home
-                </button>
-                <button className="create-account">Create Account</button>
-              </div>
-            </div>
-            <div className="right-card">
-              <div className="title">Vendors</div>
-              <div className="vendor">
-                <p style={{ color: "#004aad" }} className="right-title">
-                  Have A Food Truck?
-                  <br />
-                  Sell Some Food!
-                </p>
-                <input
-                  type="email"
-                  id="email2"
-                  name="email"
-                  placeholder="Email Address"
-                />
-                <input
-                  type="password"
-                  id="password"
-                  name="password"
-                  placeholder="Password"
-                />
-                <p style={{ color: "red", display: "none" }} id="passFail2">
-                  Enter Valid Email Address
-                </p>
-                <a href="#" id="forgot">
-                  Forgot Password?
-                </a>
-                <button className="Home2" id="Home2">
-                  Home
-                </button>
-                <button className="create-account">Create Account</button>
-              </div>
-            </div>
-          </section>
-        </div>
-      </div>
-      <footer>
-        <h2
-          id="scrolling-text"
-          className="mobile"
-          data-text="Yellow Brick Road"
-        >
-          Yellow Brick Road
-        </h2>
-        <h2
-          id="scrolling-text"
-          className="desktop"
-          data-text="A Yellow Brick Road Collaboration"
-        >
-          A Yellow Brick Road Collaboration
-        </h2>
-        <div className="footer-top-right">
-          <div className="about-us-button">
-            <button className="about-us" id="open-modal">
-              ABOUT YBR
-            </button>
+    <div>
+
+      <div className="login-body"> 
+        
+        {/* <!--   Log in modal begins here --> */}
+        <div id="log-in-overlay">
+          <div id="log-in-modal">
+              
+            <h3>Log in information</h3>
+        
+            <div className="col-center">
+              <form action="/login" method="post">
+                <input id="email-input" 
+                        name="email" 
+                        placeholder="Email"/>
+                <br />
+                <input id="password-input" 
+                        name="password"
+                        placeholder="Password"/>
+                <input id="checkbox" 
+                        type ="checkbox" 
+                        onClick = {toggleHidePass} 
+                        className = "checked" />
+                <br />
+                <button id="log-in">Log In</button>
+              </form><button id="close-modal-li">Back</button>
+            </div>  
           </div>
-          <div id="overlay">
-            <div id="modal">
-              <div id="modal-button-right">
-                <button id="close-modal">Close</button>
-              </div>
-              <img
-                src="https://github.com/DownToFoodTruck/react-YBR/blob/7c94bd4a752c603ba394b17f32a0a46be30a86c2/src/Images/YBR-Group.png"
-                alt="YBR Group"
-                className="ybr-image"
-              />
-              <br />
-              {/* <div>
-              <h2>About Yellow Brick Road</h2>
-              <p class="ybr-paragraph">The four members of YBR met when they all enrolled in a Full Stack Web Development course through the <a href="https://www.innovationoutpost.com/" style="color: white" target="_blank">Amarillo College Innovation Outpost </a>.</p>
-              <h3>View more work from our team members!</h3>
-              <div class="team-members">
-              <div><button class="view-map">
-                <a href="https://github.com/timothymoney"" target="_blank" class="modal-link">Timothy</a>
-                </button>
-              </div>
-              <div><button class="view-map">
-                <a href="https://github.com/McCall-Money"" target="_blank" class="modal-link">McCall</a>
-                </button>
-              </div>
-              <div><button class="view-map">
-                <a href="https://github.com/KillytheBid"" target="_blank" class="modal-link">Will</a>
-                </button>
-              </div>
-              <div><button class="view-map">
-                <a href="https://github.com/jmbutts"" target="_blank" class="modal-link">John</a>
-                </button>
-              </div>
-              </div>
-            </div> */}
+        </div>
+          {/* <!--  Log in modal ends here --> */}
+          
+          {/* <!--   Sign Up modal begins here --> */}
+        <div id="sign-up-overlay">
+          <div id="sign-up-modal">
+            
+            <h3>Sign Up</h3>
+        
+            <div className="col-center">
+              <form action="/users" method="post">
+                <input id="sign-up-email-input" 
+                      name="email"
+                      placeholder="Email"/>
+            <br />
+                <input id="sign-up-password-input" 
+                      name="password" 
+                      placeholder="Password"/>
+                <input id="checkbox" 
+                      type ="checkbox"
+                      onClick = {toggleHidePass}
+                      className = "checked" />
+                <br />
+                <button id="submit">Submit</button>
+              </form>
+                <button id="close-modal-su">Back</button>
             </div>
           </div>
         </div>
-      </footer>
-    </>
-  );
+        {/* <!--  Sign Up modal ends here --> */}
+
+        
+      {/* <!-- Log In / Sign Up / Guest Buttons begin here --> */}
+        <div className="container-box">
+            
+              <div className="col-center">
+                <div className="logo"></div><br />
+                <button id="log-in-button">Log In</button><br />
+              <button id="sign-up-button">Sign Up</button><br />
+              <Link to="/Home"><button id="guest">Guest</button></Link>
+            </div>
+            
+        </div>
+      {/* <!-- Log In / Sign Up / Guest Buttons end here --> */}
+      </div>
+
+
+    </div>
+  )
+
 }
 
-export default Login;
+export default Login
