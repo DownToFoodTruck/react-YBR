@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Header from "../components/Header.js";
 import Footer from "../components/Footer.js";
 import AboutModal from "../components/AboutModal.js";
+import CustomDropdown from "../components/Dropdown.js";
 
 export default function Home() {
   const [show, setShow] = useState(false);
@@ -22,6 +23,7 @@ export default function Home() {
           <button className="select-btn" onClick={() => setShow(true)}>
             Select
           </button>
+          <CustomDropdown />
         </div>
       </div>
 
