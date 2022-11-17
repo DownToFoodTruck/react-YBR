@@ -1,10 +1,8 @@
-import Home from './Home';
 import {useEffect} from 'react';
 import { Link } from 'react-router-dom';
 
 
 export default function Login() {
-  {/* JS start here */}
 
   // hide login password 
   function toggleHidePass(){
@@ -51,7 +49,7 @@ useEffect(() => {
 
       <div className="login-body"> 
         
-        {/* <!--   Log in modal begins here --> */}
+        {/* <!--   Log in modal --> */}
         <div id="log-in-overlay">
           <div id="log-in-modal">
               
@@ -76,9 +74,9 @@ useEffect(() => {
             </div>  
           </div>
         </div>
-          {/* <!--  Log in modal ends here --> */}
+          {/* <!--  end Log in modal --> */}
           
-          {/* <!--   Sign Up modal begins here --> */}
+          {/* <!--   Sign Up modal --> */}
         <div id="sign-up-overlay">
           <div id="sign-up-modal">
             
@@ -95,7 +93,7 @@ useEffect(() => {
                       placeholder="Password"/>
                 <input id="checkbox" 
                       type ="checkbox"
-                      onClick = {toggleHidePass}
+                      onClick = {toggleHidePassSignUp}
                       className = "checked" />
                 <br />
                 <button id="submit">Submit</button>
@@ -104,25 +102,25 @@ useEffect(() => {
             </div>
           </div>
         </div>
-        {/* <!--  Sign Up modal ends here --> */}
+        {/* <!--  end Sign Up modal --> */}
 
         
-      {/* <!-- Log In / Sign Up / Guest Buttons begin here --> */}
+      {/* <!-- Log In / Sign Up / Guest Buttons --> */}
         <div className="container-box">
             
               <div className="col-center">
                 <div className="logo"></div><br />
                 <button id="log-in-button">Log In</button><br />
               <button id="sign-up-button">Sign Up</button><br />
-              <Link to="/Home"><button id="guest">Guest</button></Link>
+              <Link to="/"><button id="guest">Guest</button></Link>
             </div>
 
         </div>
-      {/* <!-- Log In / Sign Up / Guest Buttons end here --> */}
+      {/* <!-- end Log In / Sign Up / Guest Buttons --> */}
       </div>
 
 
     </div>
-  )
+  );
 
-};
+}

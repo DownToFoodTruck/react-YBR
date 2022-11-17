@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Login from './';
 
 export default function Header() {
   return (
@@ -30,7 +29,7 @@ export default function Header() {
       </div>
 
       <div className="top-right">
-        <button className="login-btn" onclick="window.location.href='home.html'">LOGIN</button>
+      <Link to="/Login"><button className="login-btn">LOGIN</button></Link>
       </div>
 
       {/* <div className="top-right desktop">

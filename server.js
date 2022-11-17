@@ -19,24 +19,79 @@ app.use(cors())
 
 app.use(express.urlencoded({extended:true})) //allows you to access req.body
 
-    //Query mongo for ALL TAGS. This will be used to populate our selection dropdown...as we expand tags we can dynamically populate the dropdown
-    app.get('/apiTAG', function (req, res) {
 
-      // const tag=req.query.tag
-      async function getTags() {
-  
-      try {
-          await client.connect()
-          const collection = client.db('YBR').collection('PROD4')
-          const cursorArray = await collection.distinct('Tags')
-          res.send(cursorArray)
-      } catch (err) {
-          res.sendStatus(400)
-          console.log(err)
-      }
+{/* <!--   Start tag query. Dynamically populates the selection dropdown --> */}
+app.get('/apiTAG', (req, res) => {
+
+  async function getTags() {
+        await client.connect()
+        const collection = client.db('YBR').collection('PROD4')
+        let cursorArray = await collection.distinct('Tags')
+
+        await client.close()
+
+          if (cursorArray !== null) {
+            console.log(cursorArray)
+            res.send(cursorArray)
+          } else {
+            console.log('error')
+            res.sendStatus(400)
+          }
   }
+
   getTags()
+
 });
+{/* <!--   End tag query --> */}
+
+{/* <!--  Start of sign up --> */}
+app.post('/users', (req,res) => {
+
+  //establish credentials as user obj
+  let user = {
+    email: req.body.email,
+    password: req.body.password,
+  }
+
+  //function to verify log-in data
+  async function insertUser() {
+	  await client.connect()
+	  const collection = client.db('test_db').collection('users')
+	  await collection.insertOne(user)
+	  await client.close()
+    }
+    console.log(user)
+    insertUser()
+    res.redirect("/Home")
+  })
+
+{/* <!--  Start of login --> */}
+app.post('/login', (req,res) => {
+
+   //establish credentials as user obj
+  let user = {
+	email: req.body.email,
+	password: req.body.password,
+  }
+
+  async function verifyUser() {
+    await client.connect()
+    const collection = client.db('test_db').collection('users')
+    let findUser = await collection.findOne(user)
+    await client.close()
+    console.log(user)
+	  if (findUser !== null) {
+	    res.redirect("/Home")
+	  } else {
+	    res.redirect("/")
+	  }
+  }
+    console.log(user)
+  verifyUser()
+})
+{/* <!--  End of login --> */}
+
+
 
 app.listen(port)
 

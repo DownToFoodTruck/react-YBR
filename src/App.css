@@ -568,3 +568,162 @@ button {
 #login2 {
   cursor: pointer;
 }
+
+
+{/* <!--  Login Page --> */}
+
+.login-body {
+  background: url(./Images/food-icons_2.png);
+  background-color: lightgray;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.logo {
+  background: url(./Images/Truck-Avatar.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100px;
+  height: 100px;
+  margin: auto;
+  border-radius: 50%;
+  border: 2px solid #032fdf;
+}
+
+.container-box {
+  background: url(./Images/header-img/yellow-brick.jpg);
+  display: flex;
+  justify-content: center;
+  max-width: 550px;
+  padding: 4rem 3rem;
+  border: 2px solid #c1be00;
+  border-radius: 8px;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.col-center {
+  padding: 1rem;
+  text-align: center;
+}
+
+#log-in-button, #sign-up-button {
+  background-color: #004aad;
+  font-size: 1rem;
+  text-align: center;
+  justify-content: center;
+  color: white;
+  margin: .5rem;
+  width: 250px;
+  height: 2.5rem;
+  cursor: pointer;
+  border-radius: 8px;
+}
+#guest {
+  background-color: white;
+  font-size: 1rem;
+  text-align: center;
+  justify-content: center;
+  color: black;
+  width: 250px;
+  height: 2.5rem;
+  cursor: pointer;
+  border-radius: 8px;
+  margin: .5rem;
+}
+button:hover {
+  background-color: #004aad;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+#checkbox {
+  margin: .5rem;
+}
+
+#email-input, #sign-up-email-input {
+  margin: 2rem 0 0;
+}
+
+#log-in-modal, #sign-up-modal {
+  background: url(./Images/header-img/yellow-brick.jpg);
+  color: black;
+  max-width: 400px;
+  padding: 3.6rem 0;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border: 2px solid #696969;
+  position: relative;
+  opacity: .95;
+  text-align: center;
+  align-items: center;
+  line-height: 1.6;
+  color: black;
+  font-size: 21px;
+  border-radius: 8px;
+}
+#log-in-modal h3, #sign-up-modal h3 {
+ font-size: 2rem;
+}
+
+#log-in-overlay, #sign-up-overlay {
+  justify-content: center;
+  align-items: center;
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+#close-modal-su, #close-modal-li {
+  width: 60px;
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  padding: .5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  font-family: "roboto", sans-serif;
+  font-size: 1rem;
+  width: 100px;
+  height: 2.5rem;
+  cursor: pointer;
+  border: 1px solid black;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+#log-in, #submit {
+  width: 60px;
+  background-color: #004aad;
+  color: white;
+  cursor: pointer;
+  margin: .75rem 1rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  text-align: center;
+  justify-content: center;
+  width: 100px;
+  height: 2.5rem;
+  cursor: pointer;
+  border: 1px solid black;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+
+#home-page {
+  width: 100%;
+}
+
+#nav-logo {
+  width: 20px;
+}
+
+.checked {
+  position: absolute;
+}

@@ -4,38 +4,35 @@ import {Container ,Dropdown,  DropdownButton} from 'react-bootstrap';
 
 export default function Selector() {
 
-  // const [value, setValue] = useState(""); 
+  const [value, setValue] = useState(""); 
+  const [error, setError] = useState("")
 
-  //   //POPULATE TAG DROPDOWN
-  //   //Make set, append i for i in truck categories, jam into tag drop
-  //   async function selectionList() {
+    //POPULATE TAG DROPDOWN
+    //Make set, append i for i in truck categories, jam into tag drop
+    async function fetchSelectionList() {
 
-  //     try{
-  //       const url = "xxxxxxxxxx" + values
-  //       const rawRes = await fetch(url)
-  //       const rawResJSON = await rawRes.json()
-         
-  //      setValue(rawResJSON.title)
-  //      } 
-       
-  //      catch {
-  //        console.log('err')
-  //        setShowModal(false)
-  //        setError("There are no recipies that fit your search")
-  //      }
+          try{
+          const url = "/apiTAG"
+          const rawRes = await fetch(url)
+          const rawResJSON = await rawRes.json()
 
-  //   for (let i = 0; i < findUniqueTruckTags.length; i++) {
-  //     $('#truck-selector').append{' + findUniqueTruckTags[i] + '</Dropdown.Item>');
-  //     sortList()
-  //   }
-  // }
+          setValue(rawResJSON)
+          console.log(rawResJSON)
+          }
+          catch(err) {
+            console.log(err)
+            setError("Nothing Retrieved")
+          }
+          
+      }
+  fetchSelectionList()
 
   return(
         <div className="selector"> 
 
                 <Container className='selector-container'>  
                 <DropdownButton id="truck-selector" title="Cuisine">  
-                    {/* <Dropdown.Item name="selector-value" value={value}> </Dropdown.Item>    */}
+                    <Dropdown.Item name="selector-value" value={value}>{value}{error}</Dropdown.Item>   
                 </DropdownButton>  
                 </Container>  
 
