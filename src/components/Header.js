@@ -1,7 +1,6 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
-
-import Login from './Login.js';
-
+import Login from './';
 
 export default function Header() {
   return (

@@ -3,7 +3,7 @@ import {useEffect} from 'react';
 import { Link } from 'react-router-dom';
 
 
-function Login(){
+export default function Login() {
   {/* JS start here */}
 
   // hide login password 
@@ -116,7 +116,7 @@ useEffect(() => {
               <button id="sign-up-button">Sign Up</button><br />
               <Link to="/Home"><button id="guest">Guest</button></Link>
             </div>
-            
+
         </div>
       {/* <!-- Log In / Sign Up / Guest Buttons end here --> */}
       </div>
@@ -125,6 +125,4 @@ useEffect(() => {
     </div>
   )
 
-}
-
-export default Login
+};
