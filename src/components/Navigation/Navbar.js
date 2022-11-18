@@ -28,7 +28,7 @@ const Navbar = ({ toggle }) => {
 				</MobileIcon>
 				<NavMenu>
 					<NavItem>
-						<NavLinks to=''>
+						<NavLinks to='/'>
 							Link
 						</NavLinks>
 

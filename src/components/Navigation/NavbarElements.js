@@ -4,7 +4,7 @@ import YBR from '/Users/krshinn/Documents/GitHub/react-YBR/src/Images/header-img
 
 export const Nav = styled.nav`
 	background-image: url(${YBR});	
-	height: 100px;
+	height: 12.5vh;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -51,7 +51,10 @@ export const MobileIcon = styled.div`
 		transform: translate(-100%, 50%);
 		font-size: 1.8rem;
 		cursor: pointer;
-		color: #fff;
+		color: #004aad;
+		&:hover {
+			color: #fff;
+		}
 	}
 `
 
@@ -77,6 +80,9 @@ export const NavLinks = styled(LinkRouter)`
 	padding: 0 1rem;
 	height: 100%;
 	cursor: pointer;
+	&:hover {
+		color: #fff;
+	}
 	&.active {
 		border-bottom: 3px solid #01bf71;
 	}

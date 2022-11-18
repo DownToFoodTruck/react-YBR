@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()  //create new express app
-const port = 3001;  //using designated port number on front end to access back end
+const port = 5001;  //using designated port number on front end to access back end
 // run server on specific port(5001), and the front end/index on port(3000)
 
 const {MongoClient} = require('mongodb')  //create a new mongoDB client
@@ -8,7 +8,7 @@ const url = "mongodb+srv://testUser:2N5Z4YTsPlrj3dd7@realmcluster.i9fux.mongodb.
 const client = new MongoClient(url)
 
 
-app.use(express.json())  //allows you to pass json data from front end to back end
+app.use(express.static('build'))  //allows you to pass json data from front end to back end
 app.use(express.urlencoded({extended:true})) //allows you to access req.body
 
 
@@ -91,6 +91,10 @@ app.post('/login', (req,res) => {
 })
 {/* <!--  End of login --> */}
 
+
+app.get('*', (req,res)=> {
+  res.sendFile(__dirname + "/build/index.html")
+})
 
 
 app.listen(port)

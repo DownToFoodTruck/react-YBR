@@ -19,7 +19,7 @@ const Sidebar = ({ isOpen, toggle }) => {
 			<SidebarMenu>
 			   
 				<SidebarLink to="/"></SidebarLink>
-				<SidebarLink to="/">Link</SidebarLink>
+				<SidebarLink to="/"></SidebarLink>
 				<SidebarLink to="/">Instagram</SidebarLink>
 				<SidebarLink to="/">Email</SidebarLink>
 			</SidebarMenu>

@@ -6,7 +6,7 @@
 .home-body {
   display: flex;
   flex-direction: column;
-  height: 74vh;
+  height: 75vh;
   width: 100vw;
   padding: 10px;
   background-color: #004aad;
@@ -335,7 +335,7 @@ a {
 footer {
   display: flex;
   position: relative;
-  height: 120px;
+  height: 12.5vh;
   width: 100vw;
   align-items: center;
   justify-content: center;
