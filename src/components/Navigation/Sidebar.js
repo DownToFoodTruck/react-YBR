@@ -18,10 +18,10 @@ const Sidebar = ({ isOpen, toggle }) => {
 		<SidebarWrapper>
 			<SidebarMenu>
 			   
+				<SidebarLink to="/"></SidebarLink>
 				<SidebarLink to="/">Link</SidebarLink>
-				<SidebarLink to="/">Link</SidebarLink>
-				<SidebarLink to="/">Link</SidebarLink>
-				<SidebarLink to="/">Link</SidebarLink>
+				<SidebarLink to="/">Instagram</SidebarLink>
+				<SidebarLink to="/">Email</SidebarLink>
 			</SidebarMenu>
 			<SideBtnWrap>
 				<SidebarRoute to="/Login">Sign Up</SidebarRoute>

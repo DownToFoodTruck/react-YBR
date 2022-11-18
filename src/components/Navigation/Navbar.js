@@ -10,6 +10,9 @@ import { Nav,
 	NavBtn,
 	NavBtnLink
 } from './NavbarElements'
+import DTFT from '/Users/krshinn/Documents/GitHub/react-YBR/src/Images/Logo-Blue-2500x1500.png';
+import Email from '/Users/krshinn/Documents/GitHub/react-YBR/src/Images/email-icon.png'
+import Insta from '/Users/krshinn/Documents/GitHub/react-YBR/src/Images/instagram-icon.png'
 
 
 const Navbar = ({ toggle }) => {
@@ -18,21 +21,14 @@ const Navbar = ({ toggle }) => {
 		<Nav>
 			<NavbarContainer>
 				<NavLogo to="/">
-					<img src='/Images/DTFT-Logo-Stacked-Blue.png' alt='Logo'/>
+					<img src={DTFT} alt='Logo'/>
 				</NavLogo>
 				<MobileIcon onClick={toggle}>
 					<FaBars />
 				</MobileIcon>
 				<NavMenu>
 					<NavItem>
-						<NavLinks to='/Welcome'>
-							Home
-						</NavLinks>
-
-					</NavItem>
-
-					<NavItem>
-						<NavLinks to='/'>
+						<NavLinks to=''>
 							Link
 						</NavLinks>
 
@@ -41,13 +37,20 @@ const Navbar = ({ toggle }) => {
 					<NavItem>
 						<NavLinks to='/'>
 							Link
+						</NavLinks>
+
+					</NavItem>
+
+					<NavItem>
+						<NavLinks to={{pathname: "https://www.instagram.com/downtofoodtruck"}} target="_blank">
+							<img className='nav-img' src={Insta} alt='Instagram'/>
 						</NavLinks>
 
 					</NavItem>
 					
 					<NavItem>
-						<NavLinks to='/'>
-							Link
+						<NavLinks to={{pathname: 'mailto:hey@downtofoodtruck.com'}} target="_blank">
+							<img className='nav-img' src={Email} alt='Email'/>
 						</NavLinks>
 					
 					</NavItem>

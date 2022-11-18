@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 import { Link as LinkRouter } from 'react-router-dom';
-// import YBR from './Images/header-img/yellow-brick.jpg';
+import YBR from '/Users/krshinn/Documents/GitHub/react-YBR/src/Images/header-img/yellow-brick.jpg';
 
 export const Nav = styled.nav`
-	background-image: url();
-	height: 80px;
+	background-image: url(${YBR});	
+	height: 100px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -28,6 +28,9 @@ export const NavbarContainer = styled.div`
 
 export const NavLogo = styled(LinkRouter)`
 	color: #004aad;
+	width: 100px;
+	height: 75px;
+	width: 80px;
 	justify-self: flex-start;
 	cursor: pointer;
 	font-size: 1.5rem;

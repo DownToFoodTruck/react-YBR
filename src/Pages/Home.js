@@ -15,7 +15,7 @@ export default function Home() {
       
       <NavToggle />
 
-      <Header />
+      {/* <Header /> */}
 
       <div className='home-body'>
 
