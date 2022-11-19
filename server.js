@@ -1,104 +1,108 @@
-const express = require('express')
-const app = express()  //create new express app
-const port = 5001;  //using designated port number on front end to access back end
+const express = require("express");
+const app = express(); //create new express app
+const port = 5001; //using designated port number on front end to access back end
 // run server on specific port(5001), and the front end/index on port(3000)
 
-const {MongoClient} = require('mongodb')  //create a new mongoDB client
-const url = "mongodb+srv://testUser:2N5Z4YTsPlrj3dd7@realmcluster.i9fux.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
-const client = new MongoClient(url)
+const { MongoClient } = require("mongodb"); //create a new mongoDB client
+const url =
+  "mongodb+srv://testUser:2N5Z4YTsPlrj3dd7@realmcluster.i9fux.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+const client = new MongoClient(url);
 
+app.use(express.static("build")); //allows you to pass json data from front end to back end
+app.use(express.urlencoded({ extended: true })); //allows you to access req.body
 
-app.use(express.static('build'))  //allows you to pass json data from front end to back end
-app.use(express.urlencoded({extended:true})) //allows you to access req.body
-
-
-const cors = require ('cors')
+const cors = require("cors");
 // cors is a pkg that lets you make request across different urls/different machines -- makes port 3000 talk with server.js port 3001
 
-app.use(cors())
+app.use(cors());
 
-app.use(express.urlencoded({extended:true})) //allows you to access req.body
+app.use(express.urlencoded({ extended: true })); //allows you to access req.body
 
-
-{/* <!--   Start tag query. Dynamically populates the selection dropdown --> */}
-app.get('/apiTAG', (req, res) => {
-
+{
+  /* <!--   Start tag query. Dynamically populates the selection dropdown --> */
+}
+app.get("/apiTAG", (req, res) => {
   async function getTags() {
-        await client.connect()
-        const collection = client.db('YBR').collection('PROD4')
-        let cursorArray = await collection.distinct('Tags')
+    await client.connect();
+    const collection = client.db("YBR").collection("PROD4");
+    let cursorArray = await collection.distinct("Tags");
+    cursorArray = cursorArray.map((i) => i.split(","));
+    cursorArray = Array.from(new Set(cursorArray.flat(1)));
+    // cursorArray = Array.from(new Set(cursorArray));
+    await client.close();
 
-        await client.close()
-
-          if (cursorArray !== null) {
-            console.log(cursorArray)
-            res.send(cursorArray)
-          } else {
-            console.log('error')
-            res.sendStatus(400)
-          }
+    if (cursorArray !== null) {
+      console.log(cursorArray);
+      res.send(cursorArray);
+      let DUPcursorArray = cursorArray.map((i) => i.split(",").map(i));
+    } else {
+      console.log("error");
+      res.sendStatus(400);
+    }
   }
 
-  getTags()
-
+  getTags();
 });
-{/* <!--   End tag query --> */}
+{
+  /* <!--   End tag query --> */
+}
 
-{/* <!--  Start of sign up --> */}
-app.post('/users', (req,res) => {
-
+{
+  /* <!--  Start of sign up --> */
+}
+app.post("/users", (req, res) => {
   //establish credentials as user obj
   let user = {
     email: req.body.email,
     password: req.body.password,
-  }
+  };
 
   //function to verify log-in data
   async function insertUser() {
-	  await client.connect()
-	  const collection = client.db('test_db').collection('users')
-	  await collection.insertOne(user)
-	  await client.close()
-    }
-    console.log(user)
-    insertUser()
-    res.redirect("/Home")
-  })
-
-{/* <!--  Start of login --> */}
-app.post('/login', (req,res) => {
-
-   //establish credentials as user obj
-  let user = {
-	email: req.body.email,
-	password: req.body.password,
+    await client.connect();
+    const collection = client.db("test_db").collection("users");
+    await collection.insertOne(user);
+    await client.close();
   }
+  console.log(user);
+  insertUser();
+  res.redirect("/Home");
+});
+
+{
+  /* <!--  Start of login --> */
+}
+app.post("/login", (req, res) => {
+  //establish credentials as user obj
+  let user = {
+    email: req.body.email,
+    password: req.body.password,
+  };
 
   async function verifyUser() {
-    await client.connect()
-    const collection = client.db('test_db').collection('users')
-    let findUser = await collection.findOne(user)
-    await client.close()
-    console.log(user)
-	  if (findUser !== null) {
-	    res.redirect("/Home")
-	  } else {
-	    res.redirect("/")
-	  }
+    await client.connect();
+    const collection = client.db("test_db").collection("users");
+    let findUser = await collection.findOne(user);
+    await client.close();
+    console.log(user);
+    if (findUser !== null) {
+      res.redirect("/Home");
+    } else {
+      res.redirect("/");
+    }
   }
-    console.log(user)
-  verifyUser()
-})
-{/* <!--  End of login --> */}
+  console.log(user);
+  verifyUser();
+});
+{
+  /* <!--  End of login --> */
+}
 
+app.get("*", (req, res) => {
+  res.sendFile(__dirname + "/build/index.html");
+});
 
-app.get('*', (req,res)=> {
-  res.sendFile(__dirname + "/build/index.html")
-})
-
-
-app.listen(port)
-
+app.listen(port);
 
 // function sortList() {
 //   var list, i, switching, b, shouldSwitch;
@@ -132,9 +136,6 @@ app.listen(port)
 //   }
 // }
 
-
-
-
 // function alphabetizeList(listItem) {
 //   var sel = document.getElementById(listItem);
 //   var selected = sel.val(); // cache selected value, before reordering
@@ -146,9 +147,6 @@ app.listen(port)
 //   sel.val(selected); // set cached selected value
 // }
 
-
-
-
 // //Query mongo for tag (case insensitive) selected
 // app.get('/api', function (req, res) {
 //   const tag = req.query.tag
@@ -159,7 +157,6 @@ app.listen(port)
 //         await client.connect()
 //         const collection = client.db('YBR').collection('PROD4')
 
-
 //         const cursorArray = await collection.find({
 //            Tags: {
 //               $regex: tag,
@@ -168,8 +165,6 @@ app.listen(port)
 //         }).sort({
 //            "Name": 1
 //         }).toArray()
-
-
 
 //         res.send(cursorArray)
 //      } catch (err) {
@@ -180,26 +175,11 @@ app.listen(port)
 //   getSupplies(tag)
 // });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 // let contentArray = []
 // //this is for storing results of the API call
 
-
 // let truckTags = []
 // //this is the array containing tags that will be passed into the mongodb query
-
 
 // // // //INITIAL IMPORTS
 // // import truckList from './Trucks.json'assert {type: 'json'};
@@ -226,15 +206,6 @@ app.listen(port)
 // const truckBox = document.getElementById("truck-box")
 // let myTruckData = []
 
-
-
-
-
-
-
-
-
-
 // //for each truck in our myTruckData add it into the truck HUD (this is effectively a screen refresh function)
 // export function initializetrucks() {
 //    document.getElementById("truck-box").innerHTML = "";
@@ -258,8 +229,6 @@ app.listen(port)
 //       return myTruckData.indexOf(c) === index;
 //    })
 
-
-
 //    async function fetchTrucks(param) {
 //       const url = "/api?tag=" + param
 //       const rawRes = await fetch(url)
@@ -277,13 +246,6 @@ app.listen(port)
 //    initializetrucks()
 
 // });
-
-
-
-
-
-
-
 
 // //REMOVE LAST INSTANCE
 // const deleteButton = document.getElementById("remove")
@@ -306,7 +268,6 @@ app.listen(port)
 //    $('#tab-drop').append('<option>' + findUniqueTruckTags[i] + '</option>');
 //    sortList()
 // }
-
 
 // /*    New Hungry Button  */
 
@@ -391,11 +352,6 @@ app.listen(port)
 
 // animate();
 
-
-
-
-
-
 // /*  Creates Food Truck Collapsible  */
 // export function appendFriend(obj, index) {
 //    truckBox.innerHTML += `
@@ -439,7 +395,6 @@ app.listen(port)
 //     <button onclick="moveToPrevSlide()" id="carousel-button-prev" aria-label = "Previous Slide">⬅️</button>
 //     <button onclick="moveToNextSlide()" id="carousel-button-next" aria-label = "Next Slide">➡️</button>
 
-
 // <div class="carousel">
 
 //   <div class = "carousel-item carousel-item-visible">
@@ -463,7 +418,6 @@ app.listen(port)
 // <p><button class="view-map">
 // <a href="https://www.google.com/maps/place/${contentArray[index].Address.replace(/\s\s+/g, ' ').replaceAll(' ','+')}"" target="_blank" class="modal-link">VIEW MAP</a>
 // </button></p>
-
 
 // ${contentArray[index].Site=="NULL"? "":`<p><button class="view-map"><a href="${contentArray[index].Site}"" target="_blank" class="modal-link">VISIT WEBSITE</a>
 // </button></p>`}
@@ -584,4 +538,3 @@ app.listen(port)
 // document.getElementById("close-modal-2").addEventListener("click", function () {
 //    document.getElementById("overlay-2").style.display = "none"
 // })
-
