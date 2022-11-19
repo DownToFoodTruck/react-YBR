@@ -333,8 +333,7 @@ a {
 }
 
 footer {
-  display: flex;
-  position: relative;
+  display: inline-block;
   height: 12.5vh;
   width: 100vw;
   align-items: center;
@@ -344,29 +343,6 @@ footer {
   background-image: url("./Images/header-img/yellow-brick.jpg");
   /* background-repeat: round; */
 }
-
-.footer-top-right {
-  position: absolute;
-  top: 5%;
-  right: 0px;
-}
-
-/*.bottom-left {
-	position: absolute;
-	top: 0;
-	left: -18px;
-}
-
-.bottom-center {
-	position: absolute;
-	top: 5%;
-}
-
-.bottom-right {
-	position: absolute;
-	top: 5%;
-	right: 0px;
-}*/
 
 .ybr-image {
   display: flex;
@@ -399,16 +375,27 @@ h3 {
 }
 
 .about-btn {
-  cursor: pointer;
-  font-family: Baloo;
-  font-weight: 700;
-  letter-spacing: 2px;
-  background: #f3c613;
-  color: #004aad;
+  background: #004aad;
+  white-space: nowrap;
+  padding: 5px 10px;
+  color: yellow;
+  font-size: 16px;
+  outline: none;
   border: none;
-  padding: 4px 10px;
-  border-radius: 4px;
-  margin: 0 5px;
+  cursor: pointer;
+  text-decoration: none;
+  margin: 2px 0px;
+  margin-left: 90%;
+}
+.about-btn:hover {
+  background-color: #004aad;
+  color: yellow;
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+.footer-container{
+  display: flex;
+  align-items: center;
 }
 
 .select-btn {
@@ -439,21 +426,16 @@ h3 {
 
 .about-content {
   width: 500px;
+  padding: 0px 5px 5px;
   background-repeat: round;
   background-image: url("./Images/food-icons_2.png");
-  border: solid 1px #000000;
-  border-radius: 1px;
+  border: solid 5px #f3c613;
+  border-radius: 5px;
 }
 
 .about-body {
   text-align: center;
   padding: 10px 50px 10px 50px;
-}
-
-.about-git-btn {
-  background-color: #004aad;
-  font-size: 20px;
-  margin: 10px;
 }
 
 .about-team-members {
@@ -467,22 +449,33 @@ h3 {
   align-items: center;
 }
 
-.about-link {
-  color: #f3c613;
-  justify-content: center;
-}
-
 .home-page,
 .about-content {
   background-color: #004aad;
   color: #f3c613;
 }
 
-.home-page:hover,
+.about-git-btn {
+  background-color: #004aad;
+  font-size: 20px;
+  margin: 10px;
+}
+.about-link {
+  color: #f3c613;
+  justify-content: center;
+}
+
 .about-git-btn:hover {
   animation-name: lighten-blue;
   animation-duration: 500ms;
   animation-fill-mode: forwards;
+}
+
+.about-modal-close-btn {
+  display: inline-flex;
+  margin-left: 95%;
+  background-color: transparent;
+  color:#f3c613;
 }
 
 @keyframes lighten-blue {
@@ -544,13 +537,22 @@ button {
   display: none;
 }
 
-@media (max-width: 600px) {
+.desktop {
+  margin: auto;
+}
+
+@media (max-width: 768px) {
+
+  .about-btn {
+    display: none;
+  }
   .desktop {
     display: none;
   }
 
   .mobile {
     display: block;
+    margin: auto;
   }
 
   .guest {
@@ -641,10 +643,7 @@ button {
   border-radius: 8px;
   margin: .5rem;
 }
-button:hover {
-  background-color: #004aad;
-  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-}
+
 
 #checkbox {
   margin: .5rem;
