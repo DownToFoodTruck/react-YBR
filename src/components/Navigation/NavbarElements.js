@@ -1,6 +1,6 @@
-import styled from 'styled-components';
-import { Link as LinkRouter } from 'react-router-dom';
-import YBR from '/Users/krshinn/Documents/GitHub/react-YBR/src/Images/header-img/yellow-brick.jpg';
+import styled from "styled-components";
+import { Link as LinkRouter } from "react-router-dom";
+import YBR from "../../Images/header-img/yellow-brick.jpg";
 
 export const Nav = styled.nav`
 	background-image: url(${YBR});	
@@ -17,28 +17,28 @@ export const Nav = styled.nav`
 	}
 `
 export const NavbarContainer = styled.div`
-	display: flex;
-	justify-content: space-between;
-	height: 80px;
-	z-index: 1;
-	width: 100%;
-	padding: 0 24px;
-	max-width: 1200px;
-`
+  display: flex;
+  justify-content: space-between;
+  height: 80px;
+  z-index: 1;
+  width: 100%;
+  padding: 0 24px;
+  max-width: 1200px;
+`;
 
 export const NavLogo = styled(LinkRouter)`
-	color: #004aad;
-	width: 100px;
-	height: 75px;
-	width: 80px;
-	justify-self: flex-start;
-	cursor: pointer;
-	font-size: 1.5rem;
-	display: flex;
-	align-items: center;
-	margin-left: 24px;
-	font-weight: bold;
-	text-decoration: none;
+  color: #004aad;
+  width: 100px;
+  height: 75px;
+  width: 80px;
+  justify-self: flex-start;
+  cursor: pointer;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  margin-left: 24px;
+  font-weight: bold;
+  text-decoration: none;
 `;
 
 export const MobileIcon = styled.div`
@@ -59,19 +59,19 @@ export const MobileIcon = styled.div`
 `
 
 export const NavMenu = styled.ul`
-	display: flex;
-	align-items: center;
-	list-style: none;
-	text-align: center;
-	margin-right: -22px;
-	@media screen and (max-width: 768px) {
-		display: none;
-	}
-`
+  display: flex;
+  align-items: center;
+  list-style: none;
+  text-align: center;
+  margin-right: -22px;
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+`;
 
 export const NavItem = styled.li`
-	height: 80px;
-`
+  height: 80px;
+`;
 export const NavLinks = styled(LinkRouter)`
 	color: #004aad;
 	display: flex;
@@ -88,27 +88,28 @@ export const NavLinks = styled(LinkRouter)`
 	}
 `
 export const NavBtn = styled.nav`
-	display: flex;
-	align-items: center;
-	@media screen and (max-width: 768px) {
-		display: none;
-	}
-`
+  display: flex;
+  align-items: center;
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+`;
 export const NavBtnLink = styled(LinkRouter)`
-border-radius: 50px;
-background: #004aad;
-white-space: nowrap;
-padding: 10px 22px;
-color: yellow;
-font-size: 16px;
-outline: none;
-border: none;
-cursor: pointer;
-text-decoration: none;
-&:hover {
-	background-color: #004aad;
-	color: yellow;
-	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-}
-`
-export default Nav
+  border-radius: 50px;
+  background: #004aad;
+  white-space: nowrap;
+  padding: 10px 22px;
+  color: yellow;
+  font-size: 16px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  &:hover {
+    background-color: #004aad;
+    color: yellow;
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+      0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  }
+`;
+export default Nav;
