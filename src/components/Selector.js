@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Dropdown, DropdownButton } from "react-bootstrap";
+import DropdownItem from "react-bootstrap/esm/DropdownItem";
 
 export default function Selector() {
   const [value, setValue] = useState([]);
@@ -15,7 +16,7 @@ export default function Selector() {
       const rawResJSON = await rawRes.json();
 
       setValue(rawResJSON);
-      console.log(rawResJSON);
+      // console.log(rawResJSON);
     } catch (err) {
       console.log(err);
       setError("Nothing Retrieved");
@@ -28,9 +29,13 @@ export default function Selector() {
       <Container className="selector-container">
         <DropdownButton id="truck-selector" title="Cuisine">
           {value.map((e) => (
-            <Dropdown.Item name="selector-value" value={e}>
+            <DropdownItem
+              name="selector-value"
+              value={e}
+              onClick={console.log(e)}
+            >
               {e}
-            </Dropdown.Item>
+            </DropdownItem>
           ))}
         </DropdownButton>
       </Container>

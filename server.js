@@ -43,28 +43,27 @@ app.post("/users", (req, res) => {
 {
   /* <!--  Start of login --> */
 }
-app.post('/login', (req,res) => {
-
+app.post("/login", (req, res) => {
   let user = {
-	email: req.body.email,
-	password: req.body.password,
-  } //establish credentials as user obj
+    email: req.body.email,
+    password: req.body.password,
+  }; //establish credentials as user obj
 
   async function verifyUser() {
-    await client.connect()
-    const collection = client.db('test_db').collection('users')
-    let findUser = await collection.findOne(user)
-    await client.close()
-    console.log(user)
-	  if (findUser !== null) {
-	    res.redirect("/")
-	  } else {
-	    res.redirect("/Login")
-	  }
+    await client.connect();
+    const collection = client.db("test_db").collection("users");
+    let findUser = await collection.findOne(user);
+    await client.close();
+    console.log(user);
+    if (findUser !== null) {
+      res.redirect("/");
+    } else {
+      res.redirect("/Login");
+    }
   }
-    console.log(user)
-  verifyUser()
-})
+  console.log(user);
+  verifyUser();
+});
 {
   /* <!--  End of login --> */
 }
@@ -87,7 +86,7 @@ app.get("/apiTAG", (req, res) => {
     if (cursorArray !== null) {
       console.log(cursorArray);
       res.send(cursorArray);
-      let DUPcursorArray = cursorArray.map((i) => i.split(",").map(i));
+      // let DUPcursorArray = cursorArray.map((i) => i.split(",").map(i));
     } else {
       console.log("error");
       res.sendStatus(400);
@@ -99,7 +98,6 @@ app.get("/apiTAG", (req, res) => {
 {
   /* <!--   End tag query --> */
 }
-
 
 app.get("*", (req, res) => {
   res.sendFile(__dirname + "/build/index.html");
