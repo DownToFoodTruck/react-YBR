@@ -53,24 +53,34 @@ useEffect(() => {
         <div id="log-in-overlay">
           <div id="log-in-modal">
               
-            <h3>Log in information</h3>
+            <h3 className='blue'>
+              Need a Food Truck?<br />
+              Find Some Food!
+            </h3>
         
             <div className="col-center">
-              <form action="/login" method="post">
+              
+              <form action="/login" method="post"> {/* Necessary for functionality */}
                 <input id="email-input" 
                         name="email" 
                         placeholder="Email"/>
-                <br />
+
+                <br /> <p></p>
+
                 <input id="password-input" 
                         name="password"
                         placeholder="Password"/>
                 <input id="checkbox" 
                         type ="checkbox" 
                         onClick = {toggleHidePass} 
-                        className = "checked" />
-                <br />
+                        className = "checked" /> <br />
+                
+                <p><Link to="/ForgotPassword.js">Forgot Password?</Link></p>
+
                 <button id="log-in">Log In</button>
-              </form><button id="close-modal-li">Back</button>
+              </form> {/* Necessary for functionality */}
+
+              <button id="close-modal-li">Back</button>
             </div>  
           </div>
         </div>
@@ -87,7 +97,7 @@ useEffect(() => {
                 <input id="sign-up-email-input" 
                       name="email"
                       placeholder="Email"/>
-            <br />
+            <br /> <p></p>
                 <input id="sign-up-password-input" 
                       name="password" 
                       placeholder="Password"/>
@@ -96,6 +106,9 @@ useEffect(() => {
                       onClick = {toggleHidePassSignUp}
                       className = "checked" />
                 <br />
+                  <p>
+                    
+                  </p>
                 <button id="submit">Submit</button>
               </form>
                 <button id="close-modal-su">Back</button>

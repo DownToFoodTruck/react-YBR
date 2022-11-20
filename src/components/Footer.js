@@ -13,7 +13,7 @@ function Footer() {
             <button className='about-btn' onClick={ () => setShow(true) }>About</button>
             <AboutModal onClose={() => setShow(false)} show={show} />
         </div>
-        <br />
+
 
         <div className='footer-container'>
         <h2

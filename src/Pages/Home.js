@@ -1,4 +1,3 @@
-import React, {useState} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';  
 
 import NavToggle from '../components/Navigation/NavToggle.js';
