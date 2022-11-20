@@ -32,7 +32,9 @@ export default function Selector() {
             <DropdownItem
               name="selector-value"
               value={e}
-              onClick={console.log(e)}
+              onClick={() => {
+                console.log(e);
+              }}
             >
               {e}
             </DropdownItem>
