@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express(); //create new express app
-const port = 3001; //using designated port number on front end to access back end
+const port = 5001; //using designated port number on front end to access back end
 // run server on specific port(5001), and the front end/index on port(3000)
 
 const { MongoClient } = require("mongodb"); //create a new mongoDB client

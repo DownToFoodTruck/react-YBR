@@ -5,7 +5,7 @@ export default function ForgotPassword() {
     return (
 
         <div>
-            FORGOT MY PASSWORD FORM
+            <center><p>FORGOT MY PASSWORD FORM</p></center>
         </div>
     );
 }

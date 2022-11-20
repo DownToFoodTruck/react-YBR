@@ -1,5 +1,4 @@
 import 'bootstrap/dist/css/bootstrap.min.css';  
-
 import NavToggle from '../components/Navigation/NavToggle.js';
 import Selector from '../components/Selector.js';
 import Footer from '../components/Footer.js';
