@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Dropdown, DropdownButton } from "react-bootstrap";
 import DropdownItem from "react-bootstrap/esm/DropdownItem";
+import tagSelected from "./TruckDisplay.js";
 
 export default function Selector() {
   const [value, setValue] = useState([]);
@@ -33,7 +34,7 @@ export default function Selector() {
               name="selector-value"
               value={e}
               onClick={() => {
-                console.log(e);
+                tagSelected(e);
               }}
             >
               {e}
