@@ -99,6 +99,41 @@ app.get("/apiTAG", (req, res) => {
   /* <!--   End tag query --> */
 }
 
+{
+  /* <!--   //Query mongo for tag (case insensitive) selected --> */
+}
+
+app.get("/api", function (req, res) {
+  const tag = req.query.tag;
+  async function getSupplies() {
+    try {
+      await client.connect();
+      const collection = client.db("YBR").collection("PROD4");
+      const cursorArray = await collection
+        .find({
+          Tags: {
+            $regex: tag,
+            $options: "i",
+          },
+        })
+        .sort({
+          Name: 1,
+        })
+        .toArray();
+
+      res.send(cursorArray);
+    } catch (err) {
+      res.sendStatus(400);
+      console.log(err);
+    }
+  }
+  getSupplies(tag);
+});
+
+{
+  /* <!--   End individual tag query --> */
+}
+
 app.get("*", (req, res) => {
   res.sendFile(__dirname + "/build/index.html");
 });
