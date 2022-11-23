@@ -24,7 +24,7 @@ const Sidebar = ({ isOpen, toggle }) => {
 				<SidebarLink to="/">Email</SidebarLink>
 			</SidebarMenu>
 			<SideBtnWrap>
-				<SidebarRoute to="/Login">Sign Up</SidebarRoute>
+				<SidebarRoute to="/LoginSplash">Sign Up</SidebarRoute>
 			</SideBtnWrap>
 		</SidebarWrapper>
 	</SidebarContainer>

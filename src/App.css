@@ -586,8 +586,20 @@ button {
 }
 
 
-.logo {
+.truck-logo {
   background: url(./Images/Truck-Avatar.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100px;
+  height: 100px;
+  margin: auto;
+  border-radius: 50%;
+  border: 2px solid #f3c613;
+}
+
+.user-logo {
+  background: url(./Images/User-Avatar-Yellow.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -607,6 +619,30 @@ button {
   border: 6px solid #f3c613;
   border-radius: 8px;
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.splash-body {
+  background: url(./Images/food-icons_2.png);
+  background-color: lightgray;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  padding: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.splash-container-box {
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  max-width: 550px;
+  padding: 4rem 3rem;
+  margin: auto;
+  border: 6px solid #f3c613;
+  border-radius: 8px;
 }
 
 .col-center {

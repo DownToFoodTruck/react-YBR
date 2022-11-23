@@ -1,6 +1,8 @@
 import {BrowserRouter, Routes, Route} from "react-router-dom";
-import Login from './Pages/Login.js';
+import UserLogin from './Pages/UserLogin.js';
+import VendorLogin from './Pages/VendorLogin.js';
 import Home from './Pages/Home.js';
+import LoginSplash from "./Pages/LoginSplash.js";
 import ForgotPassword from './Pages/ForgotPassword.js';
 import './App.css';
 
@@ -9,7 +11,9 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path = "/" element = {<Home />} />
-        <Route path = "/Login" element = {<Login />} />
+        <Route path = "/LoginSplash" element = {<LoginSplash />} /> 
+        <Route path = "/UserLogin" element = {<UserLogin />} />
+        <Route path = "/VendorLogin" element = {<VendorLogin />} />
         <Route path = "/ForgotPassword" element = {<ForgotPassword />} />  
       </Routes>
     </BrowserRouter>

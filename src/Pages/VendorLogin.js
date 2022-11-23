@@ -2,7 +2,7 @@ import {useEffect} from 'react';
 import { Link } from 'react-router-dom';
 
 
-export default function Login() {
+export default function UserLogin() {
 
   // hide login password 
   function toggleHidePass(){
@@ -75,7 +75,7 @@ useEffect(() => {
                         onClick = {toggleHidePass} 
                         className = "checked" /> <br />
                 
-                <p><Link to="/ForgotPassword.js">Forgot Password?</Link></p>
+                <p><Link to="/ForgotPassword">Forgot Password?</Link></p>
 
                 <button id="log-in">Log In</button>
               </form> {/* Necessary for functionality */}
@@ -122,7 +122,7 @@ useEffect(() => {
         <div className="container-box">
             
               <div className="col-center">
-                <div className="logo"></div><br />
+                <div className="truck-logo"></div><br />
                 <button id="log-in-button">Log In</button><br />
               <button id="sign-up-button">Sign Up</button><br />
               <Link to="/"><button id="guest">Guest</button></Link>
