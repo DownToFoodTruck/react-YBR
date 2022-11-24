@@ -84,7 +84,7 @@ app.get("/apiTAG", (req, res) => {
     await client.close();
 
     if (cursorArray !== null) {
-      console.log(cursorArray);
+      // console.log(cursorArray);
       res.send(cursorArray);
       // let DUPcursorArray = cursorArray.map((i) => i.split(",").map(i));
     } else {

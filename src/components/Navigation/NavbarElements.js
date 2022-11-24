@@ -95,10 +95,10 @@ export const NavBtn = styled.nav`
   }
 `;
 export const NavBtnLink = styled(LinkRouter)`
-  border-radius: 50px;
+  border-radius: 4px;
   background: #004aad;
   white-space: nowrap;
-  padding: 10px 22px;
+  padding: 5px 10px;
   color: yellow;
   font-size: 16px;
   outline: none;
@@ -106,10 +106,10 @@ export const NavBtnLink = styled(LinkRouter)`
   cursor: pointer;
   text-decoration: none;
   &:hover {
-    background-color: #004aad;
-    color: yellow;
-    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
-      0 17px 50px 0 rgba(0, 0, 0, 0.19);
+      color: yellow;
+      animation-name: lighten-blue;
+      animation-duration: 500ms;
+      animation-fill-mode: forwards;
   }
 `;
 export default Nav;

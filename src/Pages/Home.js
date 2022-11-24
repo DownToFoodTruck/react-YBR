@@ -1,6 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import NavToggle from "../components/Navigation/NavToggle.js";
-import Selector from "../components/Selector.js";
+import TruckSelector from "../components/TruckSelector.js";
 import Footer from "../components/Footer.js";
 
 export default function Home() {
@@ -11,7 +11,7 @@ export default function Home() {
       {/* <Header /> */}
 
       <div className="home-body">
-        <Selector />
+        <TruckSelector />
 
         <div className="about-section"></div>
       </div>
