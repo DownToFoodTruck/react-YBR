@@ -30,18 +30,18 @@ export default function Selector() {
         const url = "/api?tag=" + param;
         const rawRes = await fetch(url);
         let product = await rawRes.json();
-        // console.log(product);
-        return product;
+        console.log(product);
+        // return product;
       } catch (err) {
         console.log(err);
       }
     }
-  
+
     async function returnQuery() {
       const queryResult = await executeQuery();
       console.log(queryResult);
     }
-    returnQuery();
+    executeQuery();
   }
 
   return (
