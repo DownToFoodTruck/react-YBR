@@ -11,7 +11,6 @@ export default function TruckSelector() {
   const [name, setName] = useState("");
   const [property, setProperty] = useState("");
 
-
   //POPULATE TAG DROPDOWN
   //Make set, append i for i in truck categories, jam into tag drop
   async function fetchSelectionList() {
@@ -37,8 +36,8 @@ export default function TruckSelector() {
               <DropdownItem
                 name="selector-value"
                 value={e}
-                onClick={() => {
-                  tagSelected(e);
+                onClick={async () => {
+                  console.log(await tagSelected(e));
                 }}
               >
                 {e} {error}
@@ -47,7 +46,7 @@ export default function TruckSelector() {
           </DropdownButton>
         </Container>
       </div>
-      <TruckDisplay name={name} property={property}/>
+      <TruckDisplay name={name} property={property} />
     </div>
   );
 }
