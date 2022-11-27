@@ -1,5 +1,6 @@
-export default function TruckDisplay(){
 
+
+export default function TruckDisplay() {
 
 
 return(

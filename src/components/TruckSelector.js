@@ -1,12 +1,16 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Container, Dropdown, DropdownButton } from "react-bootstrap";
+import { Container, DropdownButton } from "react-bootstrap";
 import DropdownItem from "react-bootstrap/esm/DropdownItem";
 import TruckDisplay from "./TruckDisplay.js";
+import tagSelected from "./tagSelected.js";
 
-export default function Selector() {
+export default function TruckSelector() {
   const [value, setValue] = useState([]);
   const [error, setError] = useState("");
+  const [name, setName] = useState("");
+  const [property, setProperty] = useState("");
+
 
   //POPULATE TAG DROPDOWN
   //Make set, append i for i in truck categories, jam into tag drop
@@ -23,26 +27,6 @@ export default function Selector() {
     }
   }
   fetchSelectionList();
-
-  function tagSelected(param) {
-    async function executeQuery() {
-      try {
-        const url = "/api?tag=" + param;
-        const rawRes = await fetch(url);
-        let product = await rawRes.json();
-        console.log(product);
-        // return product;
-      } catch (err) {
-        console.log(err);
-      }
-    }
-
-    async function returnQuery() {
-      const queryResult = await executeQuery();
-      console.log(queryResult);
-    }
-    executeQuery();
-  }
 
   return (
     <div className="truck-selector-body">
@@ -63,7 +47,7 @@ export default function Selector() {
           </DropdownButton>
         </Container>
       </div>
-      <TruckDisplay />
+      <TruckDisplay name={name} property={property}/>
     </div>
   );
 }
