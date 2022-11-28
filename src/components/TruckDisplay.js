@@ -1,6 +1,7 @@
+import React from "react"
+import TruckSelector from "./TruckSelector"
 
-
-export default function TruckDisplay() {
+export const TruckDisplay = ({name, img}) => {
 
 
 return(

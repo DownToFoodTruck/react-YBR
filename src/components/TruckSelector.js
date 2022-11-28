@@ -2,14 +2,14 @@ import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, DropdownButton } from "react-bootstrap";
 import DropdownItem from "react-bootstrap/esm/DropdownItem";
-import TruckDisplay from "./TruckDisplay.js";
-import tagSelected from "./tagSelected.js";
+import {TruckDisplay} from "./TruckDisplay.js";
 
 export default function TruckSelector() {
   const [value, setValue] = useState([]);
   const [error, setError] = useState("");
   const [name, setName] = useState("");
-  const [property, setProperty] = useState("");
+  const [img, setImg] = useState("");
+
 
   //POPULATE TAG DROPDOWN
   //Make set, append i for i in truck categories, jam into tag drop
@@ -27,6 +27,38 @@ export default function TruckSelector() {
   }
   fetchSelectionList();
 
+  function tagSelected(param) {
+  
+    async function executeQuery() {
+      try {
+        const url = "/api?tag=" + param;
+        const rawRes = await fetch(url);
+        const rawResJSON = await rawRes.json();
+
+        const nameReturn = rawResJSON.map(e => (
+          {
+            name: e.Name
+          }
+        ));
+        console.log(nameReturn);
+        setName(nameReturn) //grabbing name info
+
+        const imgReturn = rawResJSON.map(e => (
+          {
+            img: e.Profile
+          }
+        ));
+        console.log(imgReturn);
+        setImg(imgReturn) //grabbing img info
+
+
+      } catch (err) {
+        console.log(err);
+      }
+    }
+executeQuery()
+  }
+
   return (
     <div className="truck-selector-body">
       <div className="selector">
@@ -36,8 +68,8 @@ export default function TruckSelector() {
               <DropdownItem
                 name="selector-value"
                 value={e}
-                onClick={async () => {
-                  console.log(await tagSelected(e));
+                onClick={() => {
+                  tagSelected(e);
                 }}
               >
                 {e} {error}
@@ -46,7 +78,7 @@ export default function TruckSelector() {
           </DropdownButton>
         </Container>
       </div>
-      <TruckDisplay name={name} property={property} />
+      <TruckDisplay name={name} img={img}/>
     </div>
   );
 }
