@@ -24,6 +24,9 @@ export default function TruckSelector() {
       console.log(err);
       setError("Nothing Retrieved");
     }
+      if (setValue != null) {
+        return;
+      }
   }
   fetchSelectionList();
 
@@ -40,7 +43,7 @@ export default function TruckSelector() {
             name: e.Name
           }
         ));
-        console.log(nameReturn);
+        // console.log(nameReturn);
         setName(nameReturn) //grabbing name info
 
         const imgReturn = rawResJSON.map(e => (
@@ -48,7 +51,7 @@ export default function TruckSelector() {
             img: e.Profile
           }
         ));
-        console.log(imgReturn);
+        // console.log(imgReturn);
         setImg(imgReturn) //grabbing img info
 
 
