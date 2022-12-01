@@ -1,17 +1,11 @@
-import React from "react"
+import React from "react";
+import TruckSelector from "./TruckSelector";
 
-export const TruckDisplay = ({name, img}) => {
-console.log(name)
-console.log(img)
-
-return(
-  <div className="truck-display">
-    
-    <article className="truck-article">
-			<img className="truck-img" src="" alt="Food Truck Image" />
-      <h2>NAME</h2>
-    </article>
-
-  </div>
-)
-}
+export const TruckDisplay = ({ name, img }) => {
+  console.log({ name }, { img });
+  return (
+    <div className="truck-display">
+      <section>TRUCKS DISPLAYED HERE</section>
+    </div>
+  );
+};
