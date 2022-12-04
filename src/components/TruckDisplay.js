@@ -9,12 +9,12 @@ export const TruckDisplay = ({ name, img }) => {
     Object.entries({ name })[0][1].length == 0
       ? ""
       : Object.entries({ name }).map(([key, value]) =>
-          value.map((e) => `${Object.entries(e)[0]}`.replace("name,", ""))
+          value.map((e) => <div>{Object.entries(e)[0][1]}</div>)
         );
   return (
     <div className="truck-display">
-      {namer}
       <section>TRUCKS DISPLAYED HERE</section>
+      {namer}
     </div>
   );
 };
