@@ -8,8 +8,8 @@ export default function TruckSelector() {
   const truckTags = [];
   const [value, setValue] = useState(truckTags);
   const [error, setError] = useState("");
-  const [name, setName] = useState("");
-  const [img, setImg] = useState("");
+  const [name, setName] = useState([]);
+  const [img, setImg] = useState([]);
 
   //POPULATE TAG DROPDOWN
   //Make set, append i for i in truck categories, jam into tag drop
