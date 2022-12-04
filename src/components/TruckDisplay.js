@@ -8,8 +8,8 @@ return(
   <div className="truck-display">
     
     <article className="truck-article">
-			<img className="truck-img" src="" alt="Food Truck Image" />
-      <h2>NAME</h2>
+			<img className="truck-img" src={img} alt="Food Truck Image" />
+      <h2>{name}</h2>
     </article>
 
   </div>
