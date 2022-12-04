@@ -3,12 +3,13 @@ import TruckSelector from "./TruckSelector";
 
 export const TruckDisplay = ({ name, img }) => {
   console.log({ name }, { img });
+
   const namer =
-    { name } == null
+    // check if any input has been entered, if not return blank string else return name mapped to divs
+    Object.entries({ name })[0][1].length == 0
       ? ""
-      : Object.entries({ name }).map(
-          ([key, value]) =>
-            `<div>${value.map((e) => Object.entries(e)[0])}</div>`
+      : Object.entries({ name }).map(([key, value]) =>
+          value.map((e) => `${Object.entries(e)[0]}`.replace("name,", ""))
         );
   return (
     <div className="truck-display">
