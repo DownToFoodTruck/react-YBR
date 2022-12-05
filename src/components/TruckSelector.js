@@ -65,8 +65,14 @@ export default function TruckSelector() {
           </DropdownButton>
         </Container>
       </div>
+
       {name.map((e) => (
-        <TruckDisplay name={e} />
+        <TruckDisplay
+          name={e}
+          onClick={() => {
+            alert("TEST");
+          }}
+        />
       ))}
     </div>
   );

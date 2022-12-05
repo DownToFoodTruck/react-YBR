@@ -2,14 +2,13 @@ import React from "react";
 import TruckSelector from "./TruckSelector";
 
 export const TruckDisplay = (name) => {
-  console.log(name.name.Name);
+  const truckData = name.name;
 
   return (
     <div className="truck-display">
-      <section>TRUCKS DISPLAYED HERE</section>
+      <section>{truckData.Name}</section>
       <div>
-        {name.name.Name}
-        <img src={name.name.P1}></img>
+        <img className="truck-profile" src={truckData.P1}></img>
       </div>
     </div>
   );
