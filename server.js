@@ -77,9 +77,9 @@ app.get("/apiTAG", (req, res) => {
     const collection = client.db("YBR").collection("PROD4");
 
     let cursorArray = await collection.distinct("Tags");
-
     cursorArray = cursorArray.map((i) => i.split(","));
     cursorArray = Array.from(new Set(cursorArray.flat(1)));
+    console.log(cursorArray);
     // cursorArray = Array.from(new Set(cursorArray));
     await client.close();
 
@@ -120,7 +120,7 @@ app.get("/api", function (req, res) {
           Name: 1,
         })
         .toArray();
-
+      console.log(cursorArray);
       res.send(cursorArray);
     } catch (err) {
       res.sendStatus(400);

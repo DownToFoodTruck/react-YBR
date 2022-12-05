@@ -1,20 +1,16 @@
 import React from "react";
 import TruckSelector from "./TruckSelector";
 
-export const TruckDisplay = ({ name, img }) => {
-  console.log({ name }, { img });
+export const TruckDisplay = (name) => {
+  console.log(name.name.Name);
 
-  const namer =
-    // check if any input has been entered, if not return blank string else return name mapped to divs
-    Object.entries({ name })[0][1].length == 0
-      ? ""
-      : Object.entries({ name }).map(([key, value]) =>
-          value.map((e) => <div>{Object.entries(e)[0][1]}</div>)
-        );
   return (
     <div className="truck-display">
       <section>TRUCKS DISPLAYED HERE</section>
-      {namer}
+      <div>
+        {name.name.Name}
+        <img src={name.name.P1}></img>
+      </div>
     </div>
   );
 };

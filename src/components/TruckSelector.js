@@ -9,7 +9,6 @@ export default function TruckSelector() {
   const [value, setValue] = useState(truckTags);
   const [error, setError] = useState("");
   const [name, setName] = useState([]);
-  const [img, setImg] = useState([]);
 
   //POPULATE TAG DROPDOWN
   //Make set, append i for i in truck categories, jam into tag drop
@@ -35,18 +34,11 @@ export default function TruckSelector() {
         const url = "/api?tag=" + param;
         const rawRes = await fetch(url);
         const rawResJSON = await rawRes.json();
+        const nameReturn = await rawResJSON;
+        const truckList = await nameReturn;
+        console.log(truckList);
 
-        const nameReturn = rawResJSON.map((e) => ({
-          name: e.Name,
-        }));
-        // console.log(nameReturn);
-        setName(nameReturn); //grabbing name info
-
-        const imgReturn = rawResJSON.map((e) => ({
-          img: e.Profile,
-        }));
-        // console.log(imgReturn);
-        setImg(imgReturn); //grabbing img info
+        truckList.length == 0 ? console.log("ERR") : setName(nameReturn); //grabbing name info4
       } catch (err) {
         console.log(err);
       }
@@ -73,8 +65,9 @@ export default function TruckSelector() {
           </DropdownButton>
         </Container>
       </div>
-
-      <TruckDisplay name={name} img={img} />
+      {name.map((e) => (
+        <TruckDisplay name={e} />
+      ))}
     </div>
   );
 }
