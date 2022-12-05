@@ -68,10 +68,10 @@ export default function TruckSelector() {
 
       {name.map((e) => (
         <TruckDisplay
-          name={e}
           onClick={() => {
             alert("TEST");
           }}
+          name={e}
         />
       ))}
     </div>
