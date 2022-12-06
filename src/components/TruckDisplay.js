@@ -9,8 +9,8 @@ export const TruckDisplay = (name) => {
       className="truck-display"
       onClick={() => {
         alert(
-          "THIS SHOULD PULL UP OUR SWEET ASS MODAL WITH PRELOADED INFORMATION FOR   " +
-            truckData.Name
+          "PULL UP A SWEET ASS MODAL WITH PASSED DATA    " +
+            JSON.stringify(truckData)
         );
       }}
     >
