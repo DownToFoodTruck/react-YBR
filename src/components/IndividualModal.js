@@ -4,8 +4,10 @@ const IndividualModal = (props) => {
   if (!props.show) {
     return null;
   }
+
   const truckInfo = props.truckData;
   console.log(truckInfo);
+  
   return (
     <>
       <div className="about-modal" onClick={props.onClose}>
@@ -27,9 +29,9 @@ const IndividualModal = (props) => {
           <div>{truckInfo.Hours_of_Operation}</div>
           <div>{truckInfo.Tags}</div>
           <div>{truckInfo.Profile}</div>
-          <div>{truckInfo.P1}</div>
-          <div>{truckInfo.P2}</div>
-          <div>{truckInfo.P3}</div>
+          <img src={truckInfo.P1} />
+          <img src={truckInfo.P2} />
+          <img src={truckInfo.P3} />
         </div>
       </div>
     </>

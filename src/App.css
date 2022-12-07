@@ -819,7 +819,7 @@ button {
   justify-content: center;
 }
 
-.truck-display {
+.truck-display-container {
   display: flex;
   background-color: #fff;
   text-align: center;
@@ -837,6 +837,10 @@ button {
   margin: 0 1rem;
   max-width: 18rem;
   border-radius: 8px;
+}
+
+.truck-title{
+  font-size: 21px;
 }
 
 .truck-info-button {

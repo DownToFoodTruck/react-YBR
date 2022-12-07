@@ -8,12 +8,12 @@ export default function Home() {
     <>
       <NavToggle />
 
-      {/* <Header /> */}
-
       <div className="home-body">
         <TruckSelector />
 
-        <div className="about-section"></div>
+        <div className="about-section">
+
+        </div>
       </div>
 
       <Footer />
