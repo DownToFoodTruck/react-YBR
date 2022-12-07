@@ -23,8 +23,8 @@ const IndividualModal = (props) => {
             <h2>{truckInfo.Name}</h2>
             {/* <div>{truckInfo.PermitName}</div> */}
             <p><h3>{truckInfo.Address}</h3></p>
-            <a style={{ textDecoration: 'none' }} href={truckInfo.Site} target="_blank">{truckInfo.Site}</a>
             <p>{truckInfo.Phone}</p>
+            <a style={{ textDecoration: 'none' }} href={truckInfo.Site} target="_blank">{truckInfo.Site}</a>
             <p>{truckInfo.Email}</p>
             <p>{truckInfo.Description}</p>
             <p>{truckInfo.Hours_of_Operation}</p>

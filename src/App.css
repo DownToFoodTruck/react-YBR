@@ -798,6 +798,7 @@ button {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
   border: 5px solid black;
 }
 
@@ -821,6 +822,8 @@ button {
   height: 62vh;
   width: 100vw;
   padding: 1rem;
+  justify-content: center;
+  align-items: center;
   overflow: scroll;
 }
 
@@ -833,6 +836,8 @@ button {
   margin: 1rem;
   border: 1px solid #f3c613;
   border-radius: 0.5rem;
+  max-width: 250px;
+  max-height: 250px;
 }
 
 .truck-article {
@@ -841,7 +846,6 @@ button {
   justify-content: space-evenly;
   padding: 2rem;
   margin: 0 1rem;
-  max-width: 18rem;
   border-radius: 8px;
 }
 

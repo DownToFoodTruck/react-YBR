@@ -1,8 +1,9 @@
-import React from "react"
+import React, { useState } from "react";
+import IndividualModal from "./IndividualModal";
 
-export const TruckDisplay = ({name, img}) => {
-console.log(name)
-console.log(img)
+export const TruckDisplay = (name) => {
+  const truckData = name.name;
+  const [show, setShow] = useState(false);
 
   return (
 
@@ -15,16 +16,18 @@ console.log(img)
       />
 
       <article className="truck-article">
-        <section className="truck-title">{truckData.Name}</section> <br />
-        <div>
-          <img
-            className="truck-profile"
-            src={truckData.P1}
-            onClick={() => setShow(true)}
-          ></img>
-        </div>
-      </article>
+        
+      <section className="truck-title">{truckData.Name}</section> <br />
 
+      <div>
+        <img
+          className="truck-profile"
+          src={truckData.P1}
+          onClick={() => setShow(true)}
+        ></img>
+      </div>
+
+      </article>
     </div>
 
   );
