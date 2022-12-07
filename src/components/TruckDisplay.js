@@ -4,14 +4,28 @@ export const TruckDisplay = ({name, img}) => {
 console.log(name)
 console.log(img)
 
-return(
-  <div className="truck-display">
-    
-    <article className="truck-article">
-			<img className="truck-img" src={img} alt="Food Truck Image" />
-      <h2>{name}</h2>
-    </article>
+  return (
 
-  </div>
-)
-}
+    <div className="truck-display-container">
+
+      <IndividualModal
+        onClose={() => setShow(false)}
+        show={show}
+        truckData={truckData}
+      />
+
+      <article className="truck-article">
+        <section className="truck-title">{truckData.Name}</section> <br />
+        <div>
+          <img
+            className="truck-profile"
+            src={truckData.P1}
+            onClick={() => setShow(true)}
+          ></img>
+        </div>
+      </article>
+
+    </div>
+
+  );
+};

@@ -62,7 +62,7 @@ export default function TruckSelector() {
   }
 
   return (
-    <div className="truck-selector-body">
+    <div className="truck-body">
       <div className="selector">
         <Container className="selector-container">
           <DropdownButton id="truck-selector" title="Cuisine">
@@ -79,9 +79,18 @@ export default function TruckSelector() {
             ))}
           </DropdownButton>
         </Container>
-      </div>
-
-      <TruckDisplay name={name} img={img} />
     </div>
+
+      <div className="truck-display">
+        {name.map((e) => (
+          <TruckDisplay
+            onClick={() => {
+              alert("TEST");
+            }}
+            name={e}
+          />
+        ))}
+      </div>
+  </div>
   );
 }
