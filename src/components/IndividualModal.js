@@ -23,7 +23,18 @@ const IndividualModal = (props) => {
             <h2>{truckInfo.Name}</h2>
             {/* <div>{truckInfo.PermitName}</div> */}
             <p>
-              <h3>{truckInfo.Address != "NULL" ? truckInfo.Address : ""}</h3>
+              <h3>
+                <a
+                  href={
+                    truckInfo.Address != "NULL"
+                      ? "https://www.google.com/maps/place/" +
+                        truckInfo.Address.replace(" ", "+")
+                      : "#"
+                  }
+                >
+                  HERE
+                </a>
+              </h3>
             </p>
             <p>{truckInfo.Phone != "NULL" ? truckInfo.Phone : ""}</p>
             <a
@@ -69,6 +80,9 @@ const IndividualModal = (props) => {
                     : "../Images/Truck-Avatar.png"
                 }
               />
+            </div>
+            <div onClick={() => alert("MAYBE A SICK ASS PING OF THE VENDOR")}>
+              WHERE AM I???
             </div>
           </div>
         </div>
