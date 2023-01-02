@@ -486,6 +486,10 @@ h3 {
   background-color: transparent;
   color:#f3c613;
 }
+.about-modal-close-btn:hover {
+  cursor: pointer;
+
+}
 
 @keyframes lighten-blue {
   100% {
@@ -838,6 +842,9 @@ button {
   border-radius: 0.5rem;
   max-width: 250px;
   max-height: 250px;
+}
+.truck-display-container:hover {
+  cursor: pointer;
 }
 
 .truck-article {
