@@ -21,7 +21,6 @@ const IndividualModal = (props) => {
 
           <div className="truck-data">
             <h2>{truckInfo.Name}</h2>
-            {/* <div>{truckInfo.PermitName}</div> */}
             <p><h3>{truckInfo.Address}</h3></p>
             <p>{truckInfo.Phone}</p>
             <a style={{ textDecoration: 'none' }} href={truckInfo.Site} target="_blank">{truckInfo.Site}</a>
@@ -29,7 +28,6 @@ const IndividualModal = (props) => {
             <p>{truckInfo.Description}</p>
             <p>{truckInfo.Hours_of_Operation}</p>
             <div>Cuisine tags: {truckInfo.Tags}</div> 
-            {/* <div>{truckInfo.Profile}</div> */}
 
             <div className="truck-modal-pics">
               <img src={truckInfo.P1} />

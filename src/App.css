@@ -821,7 +821,7 @@ button {
   border: 5px solid red;
   height: 62vh;
   width: 100vw;
-  padding: 1rem;
+  padding: .5rem;
   justify-content: center;
   align-items: center;
   overflow: scroll;
