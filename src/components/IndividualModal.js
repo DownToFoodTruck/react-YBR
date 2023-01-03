@@ -11,9 +11,10 @@ const IndividualModal = (props) => {
   return (
     <>
       <div className="truck-modal" onClick={props.onClose}>
-
-        <div className="truck-modal-container" onClick={(event) => event.stopPropagation()}>
-          
+        <div
+          className="truck-modal-container"
+          onClick={(event) => event.stopPropagation()}
+        >
           <button className="about-modal-close-btn" onClick={props.onClose}>
             X
           </button>
@@ -24,10 +25,13 @@ const IndividualModal = (props) => {
 
             <p>
               <h3>
-                <a 
-                  href={truckInfo.Address != "NULL" ? 
-                  "https://www.google.com/maps/place/" + truckInfo.Address.replace(" ", "+") 
-                  : "#"}
+                <a
+                  href={
+                    truckInfo.Address != "NULL"
+                      ? "https://www.google.com/maps/place/" +
+                        truckInfo.Address.replace(" ", "+")
+                      : "#"
+                  }
                 >
                   {truckInfo.Address != "NULL" ? truckInfo.Address : ""}
                 </a>
@@ -52,23 +56,47 @@ const IndividualModal = (props) => {
             </p>
 
             <p>
-              {truckInfo.Hours_of_Operation != "NULL" ? truckInfo.Hours_of_Operation : ""}
+              {truckInfo.Hours_of_Operation != "NULL"
+                ? truckInfo.Hours_of_Operation
+                : ""}
             </p>
-            <div>Cuisine tags: {truckInfo.Tags}</div>
+            <div>
+              Cuisine tags:{" "}
+              {truckInfo.Tags.split(",").map((e) => (
+                <div>
+                  <a href="#">{e}</a>
+                </div>
+              ))}
+            </div>
             {/* <div>{truckInfo.Profile}</div> */}
 
             <div className="truck-modal-pics">
-
-              <img src={truckInfo.P1 != "NULL" ? truckInfo.P1 : "../Images/Truck-Avatar.png"} />
-              <img src={truckInfo.P2 != "NULL" ? truckInfo.P2 : "../Images/Truck-Avatar.png"} />
-              <img src={truckInfo.P3 != "NULL" ? truckInfo.P3 : "../Images/Truck-Avatar.png"} />
-
+              <img
+                src={
+                  truckInfo.P1 != "NULL"
+                    ? truckInfo.P1
+                    : "../Images/Truck-Avatar.png"
+                }
+              />
+              <img
+                src={
+                  truckInfo.P2 != "NULL"
+                    ? truckInfo.P2
+                    : "../Images/Truck-Avatar.png"
+                }
+              />
+              <img
+                src={
+                  truckInfo.P3 != "NULL"
+                    ? truckInfo.P3
+                    : "../Images/Truck-Avatar.png"
+                }
+              />
             </div>
 
             <div onClick={() => alert("MAYBE A SICK ASS PING OF THE VENDOR")}>
               WHERE AM I???
             </div>
-
           </div>
         </div>
       </div>

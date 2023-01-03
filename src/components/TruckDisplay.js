@@ -6,9 +6,7 @@ export const TruckDisplay = (name) => {
   const [show, setShow] = useState(false);
 
   return (
-
     <div className="truck-display-container">
-
       <IndividualModal
         onClose={() => setShow(false)}
         show={show}
@@ -16,19 +14,15 @@ export const TruckDisplay = (name) => {
       />
 
       <article className="truck-article">
-        
-      <section className="truck-title">{truckData.Name}</section> <br />
-
-      <div>
-        <img
-          className="truck-profile"
-          src={truckData.P1}
-          onClick={() => setShow(true)}
-        ></img>
-      </div>
-
+        <section className="truck-title">{truckData.Name}</section> <br />
+        <div>
+          <img
+            className="truck-profile"
+            src={truckData.P1}
+            onClick={() => setShow(true)}
+          ></img>
+        </div>
       </article>
     </div>
-
   );
 };
