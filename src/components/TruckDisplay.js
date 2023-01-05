@@ -19,6 +19,12 @@ export const TruckDisplay = (name) => {
           <img
             className="truck-profile"
             src={truckData.P1}
+            onError={(e) =>
+              (e.target.onerror = null)(
+                (e.target.src =
+                  "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Pain_10_png_rendered.png/640px-Pain_10_png_rendered.png")
+              )
+            }
             onClick={() => setShow(true)}
           ></img>
         </div>
