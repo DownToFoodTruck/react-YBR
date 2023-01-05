@@ -29,8 +29,8 @@ export default function TruckSelector() {
   }
   fetchSelectionList();
 
-   //FETCH TAG DROPDOWN OPTION
-   function tagSelected(param) {
+  //FETCH TAG DROPDOWN OPTION
+  function tagSelected(param) {
     async function executeQuery() {
       try {
         const url = "/api?tag=" + param;
@@ -50,7 +50,6 @@ export default function TruckSelector() {
 
   return (
     <div className="truck-body">
-
       <div className="selector">
         <Container className="selector-container">
           <DropdownButton id="truck-selector" title="Cuisine">
@@ -67,7 +66,7 @@ export default function TruckSelector() {
             ))}
           </DropdownButton>
         </Container>
-    </div>
+      </div>
 
       <div className="truck-display">
         {name.map((e) => (
@@ -79,7 +78,6 @@ export default function TruckSelector() {
           />
         ))}
       </div>
-      
-  </div>
+    </div>
   );
 }
