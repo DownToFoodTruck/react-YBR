@@ -83,6 +83,12 @@ const IndividualModal = (props) => {
                   ? truckData.P1
                   : "../Images/Truck-Avatar.png"
               }
+              onError={(e) =>
+                (e.target.onerror = null)(
+                  (e.target.src =
+                    "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Pain5.svg/640px-Pain5.svg.png")
+                )
+              }
             />
             <img
               src={
@@ -90,12 +96,24 @@ const IndividualModal = (props) => {
                   ? truckData.P2
                   : "../Images/Truck-Avatar.png"
               }
+              onError={(e) =>
+                (e.target.onerror = null)(
+                  (e.target.src =
+                    "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Pain3.svg/640px-Pain3.svg.png")
+                )
+              }
             />
             <img
               src={
                 truckData.P3 != "NULL"
                   ? truckData.P3
                   : "../Images/Truck-Avatar.png"
+              }
+              onError={(e) =>
+                (e.target.onerror = null)(
+                  (e.target.src =
+                    "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Pain_10_png_rendered.png/640px-Pain_10_png_rendered.png")
+                )
               }
             />
           </div>
