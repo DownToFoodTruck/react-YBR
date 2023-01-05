@@ -3,14 +3,14 @@ import { Link as LinkRouter } from "react-router-dom";
 import YBR from "../../Images/header-img/yellow-brick.jpg";
 
 export const Nav = styled.nav`
-	background-image: url(${YBR});	
-	height: 12.5vh;
+	background: #f3c613;	
+	height: 100vh;
+  width: 15vw;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	font-size: 1rem;
 	position: sticky;
-	top: 0;
 	z-index: 10;
 	@media screen and (max-width: 960px) {
 		transition: 0.8s all ease;
@@ -18,27 +18,22 @@ export const Nav = styled.nav`
 `
 export const NavbarContainer = styled.div`
   display: flex;
-  justify-content: space-between;
-  height: 80px;
+  flex-direction: column;
+  height: 100vh;
   z-index: 1;
-  width: 100%;
-  padding: 0 24px;
+  padding: 1rem 0;
   max-width: 1200px;
 `;
 
 export const NavLogo = styled(LinkRouter)`
   color: #004aad;
-  width: 100px;
-  height: 75px;
-  width: 80px;
-  justify-self: flex-start;
   cursor: pointer;
-  font-size: 1.5rem;
   display: flex;
   align-items: center;
-  margin-left: 24px;
-  font-weight: bold;
   text-decoration: none;
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 `;
 
 export const MobileIcon = styled.div`
@@ -60,10 +55,12 @@ export const MobileIcon = styled.div`
 
 export const NavMenu = styled.ul`
   display: flex;
+  flex-direction: column;
   align-items: center;
   list-style: none;
-  text-align: center;
-  margin-right: -22px;
+  margin: 75% auto;
+  padding: 0 5px;
+  width: 100%;
   @media screen and (max-width: 768px) {
     display: none;
   }
@@ -71,13 +68,17 @@ export const NavMenu = styled.ul`
 
 export const NavItem = styled.li`
   height: 80px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 `;
 export const NavLinks = styled(LinkRouter)`
 	color: #004aad;
 	display: flex;
 	align-items: center;
 	text-decoration: none;
-	padding: 0 1rem;
 	height: 100%;
 	cursor: pointer;
 	&:hover {
@@ -89,7 +90,7 @@ export const NavLinks = styled(LinkRouter)`
 `
 export const NavBtn = styled.nav`
   display: flex;
-  align-items: center;
+  justify-content: center;
   @media screen and (max-width: 768px) {
     display: none;
   }

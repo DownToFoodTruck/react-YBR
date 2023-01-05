@@ -28,8 +28,8 @@ const Navbar = ({ toggle }) => {
 				</MobileIcon>
 				<NavMenu>
 					<NavItem>
-						<NavLinks to='/'>
-							Link
+						<NavLinks to='/LoginSplash'>
+							Sign Up
 						</NavLinks>
 
 					</NavItem>
@@ -44,9 +44,7 @@ const Navbar = ({ toggle }) => {
               >
                 <img className="nav-img" src={Insta} alt="Instagram" />
               </a>
-            </NavItem>
 
-            <NavItem>
             <a href="mailto:hey@downtofoodtruck.com"
                 target="_blank"
               >
@@ -55,7 +53,7 @@ const Navbar = ({ toggle }) => {
             </NavItem>
           </NavMenu>
           <NavBtn>
-            <NavBtnLink to="/LoginSplash">Sign In</NavBtnLink>
+            {/* <NavBtnLink to="/LoginSplash">Sign In</NavBtnLink> */}
           </NavBtn>
         </NavbarContainer>
       </Nav>

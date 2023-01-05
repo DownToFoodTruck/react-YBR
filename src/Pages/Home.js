@@ -6,6 +6,7 @@ import Footer from "../components/Footer.js";
 export default function Home() {
   return (
     <>
+    <div className="app">
       <NavToggle />
 
       {/* <Header /> */}
@@ -16,7 +17,8 @@ export default function Home() {
         <div className="about-section"></div>
       </div>
 
-      <Footer />
+      </div>
+
     </>
   );
 }
