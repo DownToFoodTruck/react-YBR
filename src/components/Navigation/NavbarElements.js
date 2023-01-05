@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { Link as LinkRouter } from "react-router-dom";
-import YBR from "../../Images/header-img/yellow-brick.jpg";
 
 export const Nav = styled.nav`
 	background: #f3c613;	

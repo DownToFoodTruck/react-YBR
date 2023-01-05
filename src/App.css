@@ -3,6 +3,7 @@
 }
 
 .blue {
+  white-space: nowrap;
   color: #004aad;
 }
 
@@ -30,7 +31,10 @@ img {
 }
 
 .nav-img {
-  height:45px;
+   height:50px; 
+  width:50px; /*!!!!!!!!!!!!!!!!!!!!!Not circular!!!!!!!!!!!!!!!!!!!!!!!!! */
+  border: 1px solid black;
+  border-radius:50%;
 }
 .nav-img:hover {
   color: yellow;
@@ -817,7 +821,7 @@ button {
   flex-wrap: wrap;
   /* border: 5px solid red; */
   border-radius: 10px;
-  height: 62vh;
+  height: 80vh;
   width: 100vw;
   padding: 0.5rem;
   justify-content: center;
