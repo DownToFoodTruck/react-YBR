@@ -11,6 +11,10 @@ const AboutModal = props => {
     <div className="about-modal" onClick={props.onClose}>
       <div className="about-content" onClick={event => event.stopPropagation()}>
 
+      <button className='about-modal-close-btn' onClick={props.onClose}>
+        X
+      </button>
+
         <h2 className="about-title">
           About Yellow Brick Road
         </h2>
@@ -66,10 +70,6 @@ const AboutModal = props => {
           </button>
         </div>
       </div>
-
-      <button className='about-modal-close-btn' onClick={props.onClose}>
-        Close
-      </button>
 
       </div>
     </div>
