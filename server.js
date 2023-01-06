@@ -1,11 +1,11 @@
+require('dotenv').config()
 const express = require("express");
 const app = express(); //create new express app
-const port = 5001; //using designated port number on front end to access back end
+const port = process.env.PORT; //using designated port number on front end to access back end
 // run server on specific port(5001), and the front end/index on port(3000)
 
 const { MongoClient } = require("mongodb"); //create a new mongoDB client
-const url =
-  "mongodb+srv://testUser:2N5Z4YTsPlrj3dd7@realmcluster.i9fux.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+const url = process.env.MONGO_URI;
 const client = new MongoClient(url);
 
 app.use(express.static("build")); //allows you to pass json data from front end to back end
@@ -138,4 +138,6 @@ app.get("*", (req, res) => {
   res.sendFile(__dirname + "/build/index.html");
 });
 
-app.listen(port);
+app.listen(port, () =>{
+    console.log(`App is listening on http://localhost:${port}`);
+});
