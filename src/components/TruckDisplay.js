@@ -6,7 +6,7 @@ export const TruckDisplay = (name) => {
   const [show, setShow] = useState(false);
 
   return (
-    <div className="truck-display-container">
+    <div className="truck-display-container" onClick={() => setShow(true)}>
       <IndividualModal
         onClose={() => setShow(false)}
         show={show}
@@ -25,7 +25,6 @@ export const TruckDisplay = (name) => {
                   "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Pain_10_png_rendered.png/640px-Pain_10_png_rendered.png")
               )
             }
-            onClick={() => setShow(true)}
           ></img>
         </div>
       </article>
