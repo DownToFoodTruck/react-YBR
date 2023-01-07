@@ -27,14 +27,17 @@
 }
 
 img {
-  height: 100px;
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  max-height: 100px;
 }
 
 .nav-img {
-   height:50px; 
-  width:50px; /*!!!!!!!!!!!!!!!!!!!!!Not circular!!!!!!!!!!!!!!!!!!!!!!!!! */
+  height: 50px;
+  width: 50px; /*!!!!!!!!!!!!!!!!!!!!!Not circular!!!!!!!!!!!!!!!!!!!!!!!!! */
   border: 1px solid black;
-  border-radius:50%;
+  border-radius: 50%;
 }
 .nav-img:hover {
   color: yellow;
@@ -838,8 +841,8 @@ button {
   margin: 1rem;
   border: 1px solid #f3c613;
   border-radius: 0.5rem;
-  max-width: 250px;
-  max-height: 250px;
+  width: 250px;
+  height: 250px;
 }
 .truck-display-container:hover {
   cursor: pointer;
@@ -883,6 +886,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: rgb(145, 142, 142, 0.37);
 }
 
 .truck-modal-container {
