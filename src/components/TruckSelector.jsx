@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, DropdownButton } from "react-bootstrap";
 import DropdownItem from "react-bootstrap/esm/DropdownItem";
-import { TruckDisplay } from "./TruckDisplay.js";
+import { TruckDisplay } from "./TruckDisplay.jsx";
 
 export default function TruckSelector() {
   const truckTags = [];
