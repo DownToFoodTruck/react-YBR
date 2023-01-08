@@ -1,949 +1,841 @@
 .app {
-  display: flex;
-}
-
-.blue {
-  white-space: nowrap;
-  color: #004aad;
-}
-
-.home-body {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  width: 85vw;
-  padding: 10px;
-  background-color: #004aad;
-  /* background: url("./Images/food-icons_2.png"); */
-}
-
-#page-container {
-  display: flex;
-  flex: 1;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  min-height: 100%;
-}
-
-img {
-  width: 100%;
-  max-width: 200px;
-  height: auto;
-  max-height: 100px;
-}
-
-.nav-img {
-  height: 50px;
-  width: 50px; /*!!!!!!!!!!!!!!!!!!!!!Not circular!!!!!!!!!!!!!!!!!!!!!!!!! */
-  border: 1px solid black;
-  border-radius: 50%;
-}
-.nav-img:hover {
-  color: yellow;
-  animation-name: lighten-blue;
-  animation-duration: 500ms;
-  animation-fill-mode: forwards;
-}
-
-/* .over-img {
-  position: absolute;
-  height: 150px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-} */
-
-/* .top-right {
-  position: absolute;
-  top: -60px;
-  right: 0px;
-} */
-
-/* .login-btn {
-  cursor: pointer;
-  font-family: Baloo;
-  font-weight: 700;
-  font-size: 20px;
-  background: #004aad;
-  color: #f3c613;
-  border: none;
-  padding: 4px 10px;
-  border-radius: 4px;
-  margin: 0 5px;
-} */
-
-/* .contact-button {
-  height: 40px;
-  width: 50px;
-  margin: 0px, 5px;
-  background: none;
-} */
-
-/* .header-contact-button {
-  position: absolute;
-  height: 40px;
-  width: 50px;
-  top: -70px;
-  left: -15px;
-  margin: 20px 0px 0px 5px;
-} */
-
-/* .header-follow-button {
-  position: absolute;
-  height: 40px;
-  width: 50px;
-  top: -70px;
-  left: 30px;
-  margin: 20px 0px 0px;
-} */
-
-/* .guest {
-  background-color: #004aad;
-  color: #f3c613;
-  height: 100px;
-  width: 125px;
-  font-size: 20px;
-  border-radius: 4px;
-  margin: 50px 10px 0px;
-  text-align: center;
-  cursor: pointer;
-  animation: wiggle 2s linear infinite;
-} */
-
-@keyframes wiggle {
-  0%,
-  7% {
-    transform: rotateZ(0);
+    display: flex;
   }
-
-  15% {
-    transform: rotateZ(-15deg);
+  .blue {
+    white-space: nowrap;
+    color: #004aad;
   }
-
-  20% {
-    transform: rotateZ(10deg);
+  .home-body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 85vw;
+    padding: 10px;
+    background-color: #004aad;
+    /* background: url("./Images/food-icons_2.png"); */
   }
-
-  25% {
-    transform: rotateZ(-10deg);
+  #page-container {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    min-height: 100%;
   }
-
-  30% {
-    transform: rotateZ(6deg);
+  img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    max-height: 100px;
   }
-
-  35% {
-    transform: rotateZ(-4deg);
+  .nav-img {
+    height: 50px;
+    width: 50px;
+    /*!!!!!!!!!!!!!!!!!!!!!Not circular!!!!!!!!!!!!!!!!!!!!!!!!! */
+    border: 1px solid black;
+    border-radius: 50%;
   }
-
-  40%,
-  100% {
-    transform: rotateZ(0);
+  .nav-img:hover {
+    color: yellow;
+    animation-name: lighten-blue;
+    animation-duration: 500ms;
+    animation-fill-mode: forwards;
   }
-}
-
-.wiggle {
-  text-align: center;
-  width: 100%;
-}
-
-.title {
-  color: #f3c613;
-  font-size: clamp(30px, 2vw, 50px);
-  margin: 0;
-}
-
-/* #dock {
-  flex: 1;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  margin: 0px;
-} */
-
-.home,
-.favorites,
-.contact {
-  padding: 10px;
-  color: black;
-  text-align: center;
-  background-color: #f3c613;
-  border-radius: 4px;
-  margin: 5px;
-  width: 60px;
-}
-
-.logo {
-  justify-content: start;
-}
-
-a {
-  color: black;
-}
-
-#forgot:hover {
-  color: red;
-}
-
-/* .left-title {
-  margin: 0;
-}
-
-.right-title {
-  margin: 0;
-} */
-
-/* .left-card,
-.center-card,
-.right-card {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  text-align: center;
-  justify-content: space-evenly;
-  align-items: center;
-  padding: 20px;
-} */
-
-#close-modal {
-  background-color: #f3c613;
-  color: #004aad;
-  padding: 15px;
-  font-size: 20px;
-  cursor: pointer;
-}
-
-#close-modal:hover {
-  animation-name: turn-to-gold;
-  animation-duration: 500ms;
-  animation-fill-mode: forwards;
-}
-
-@keyframes turn-to-gold {
-  100% {
-    background-color: #c9a30a;
+  /* .over-img {
+    position: absolute;
+    height: 150px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  } */
+  /* .top-right {
+    position: absolute;
+    top: -60px;
+    right: 0px;
+  } */
+  /* .login-btn {
+    cursor: pointer;
+    font-family: Baloo;
+    font-weight: 700;
+    font-size: 20px;
+    background: #004aad;
+    color: #f3c613;
+    border: none;
+    padding: 4px 10px;
+    border-radius: 4px;
+    margin: 0 5px;
+  } */
+  /* .contact-button {
+    height: 40px;
+    width: 50px;
+    margin: 0px, 5px;
+    background: none;
+  } */
+  /* .header-contact-button {
+    position: absolute;
+    height: 40px;
+    width: 50px;
+    top: -70px;
+    left: -15px;
+    margin: 20px 0px 0px 5px;
+  } */
+  /* .header-follow-button {
+    position: absolute;
+    height: 40px;
+    width: 50px;
+    top: -70px;
+    left: 30px;
+    margin: 20px 0px 0px;
+  } */
+  /* .guest {
+    background-color: #004aad;
+    color: #f3c613;
+    height: 100px;
+    width: 125px;
+    font-size: 20px;
+    border-radius: 4px;
+    margin: 50px 10px 0px;
+    text-align: center;
+    cursor: pointer;
+    animation: wiggle 2s linear infinite;
+  } */
+  @keyframes wiggle {
+    0%,
+    7% {
+      transform: rotateZ(0);
+    }
+    15% {
+      transform: rotateZ(-15deg);
+    }
+    20% {
+      transform: rotateZ(10deg);
+    }
+    25% {
+      transform: rotateZ(-10deg);
+    }
+    30% {
+      transform: rotateZ(6deg);
+    }
+    35% {
+      transform: rotateZ(-4deg);
+    }
+    40%,
+    100% {
+      transform: rotateZ(0);
+    }
   }
-}
-
-#modal {
-  background: url("./Images/food-icons_2.png");
-  padding: 20px;
-  height: 80%;
-  max-width: 600px;
-  margin: 0 auto;
-  position: relative;
-  top: 10%;
-  border: solid 5px #f3c613;
-  border-radius: 4px;
-  overflow: auto;
-}
-
-#modal img {
-  height: 300px;
-}
-
-#modal-button-right {
-  text-align: right;
-}
-
-#overlay {
-  display: none;
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  z-index: 10;
-  background-color: rgba(0, 0, 0, 0.3);
-}
-
-#email,
-#email2,
-#password {
-  height: 60px;
-  width: 75%;
-  font-size: clamp(10px, 2vw, 20px);
-  margin: 5px 0px;
-  border-radius: 4px;
-  background-color: lightgray;
-  border: none;
-}
-
-.customer,
-.vendor {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-  font-size: clamp(30px, 2vw, 40px);
-  width: clamp(300px, 40vw, 700px);
-  margin: 10px;
-  border: solid 5px #f3c613;
-  border-radius: 4px;
-  background-color: white;
-  padding: 10px;
-}
-
-/* .login,
-.login2 {
-  width: 75%;
-  font-size: clamp(30px, 2vw, 40px);
-  margin: 5px 0px;
-  border-radius: 4px;
-  color: #004aad;
-  background-color: #f3c613;
-  border: none;
-}
-
-.login:hover,
-.login2:hover {
-  animation-name: turn-to-gold;
-  animation-duration: 500ms;
-  animation-fill-mode: forwards;
-} */
-
-@keyframes turn-to-gold {
-  100% {
-    background-color: #c9a30a;
-  }
-}
-
-.create-account {
-  width: 75%;
-  font-size: clamp(30px, 2vw, 40px);
-  margin: 5px 0px;
-  border-radius: 4px;
-  color: #f3c613;
-  background-color: #004aad;
-  border: none;
-}
-
-.create-account:hover {
-  animation-name: lighten-blue;
-  animation-duration: 500ms;
-  animation-fill-mode: forwards;
-}
-
-@keyframes lighten-blue {
-  100% {
-    background-color: #0060e0;
-  }
-}
-
-footer {
-  display: inline-block;
-  height: 12.5vh;
-  width: 100vw;
-  align-items: center;
-  justify-content: center;
-  color: #f3c613;
-  text-shadow: 2px 2px #004aad;
-  background-image: url("./Images/header-img/yellow-brick.jpg");
-  /* background-repeat: round; */
-}
-
-.ybr-image {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  /*   margin-left: auto;
-  margin-right: auto; */
-  margin: 20px;
-  width: 90%;
-  /*   padding: 50px 50px 50px 50px; */
-  border: solid 5px #ffffff;
-  border-radius: 4px;
-}
-
-h2 {
-  font-size: 30px;
-  text-align: center;
-}
-
-h3 {
-  font-size: 20px;
-  text-align: center;
-}
-
-.about-section {
-  display: flex;
-  position: fixed;
-  top: 70%;
-  right: 2%;
-}
-
-.about-btn {
-  background: #004aad;
-  /* white-space: nowrap; */
-  padding: 5px 10px;
-  color: yellow;
-  font-size: 16px;
-  outline: none;
-  border: none;
-  cursor: pointer;
-  text-decoration: none;
-  margin: 0.5rem 0rem;
-  margin-left: 90%;
-}
-.about-btn:hover {
-  animation-name: lighten-blue;
-  animation-duration: 500ms;
-  animation-fill-mode: forwards;
-}
-.footer-container {
-  display: flex;
-  align-items: center;
-}
-
-.select-btn {
-  cursor: pointer;
-  font-family: Baloo;
-  font-weight: 700;
-  letter-spacing: 2px;
-  background: #f3c613;
-  color: #004aad;
-  border: none;
-  padding: 4px 10px;
-  border-radius: 4px;
-  margin: 0 5px;
-  appearance: auto;
-  writing-mode: horizontal-tb !important;
-}
-
-.about-modal {
-  position: fixed;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.about-content {
-  width: 500px;
-  padding: 0px 5px 5px;
-  background-repeat: round;
-  background-image: url("./Images/food-icons_2.png");
-  border: solid 5px #f3c613;
-  border-radius: 5px;
-}
-
-.about-body {
-  text-align: center;
-  padding: 10px 50px 10px 50px;
-}
-
-.about-team-members {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 20px;
-  background: #f3c613;
-  border: 4px solid white;
-  border-radius: 4px;
-  justify-content: space-evenly;
-  align-items: center;
-}
-
-.home-page,
-.about-content {
-  background-color: #004aad;
-  color: #f3c613;
-}
-
-.about-git-btn {
-  background-color: #004aad;
-  font-size: 20px;
-  margin: 10px;
-}
-.about-link {
-  color: #f3c613;
-  justify-content: center;
-}
-
-.about-git-btn:hover {
-  animation-name: lighten-blue;
-  animation-duration: 500ms;
-  animation-fill-mode: forwards;
-}
-
-.about-modal-close-btn {
-  display: inline-flex;
-  margin-left: 95%;
-  background-color: transparent;
-  color: #f3c613;
-}
-.about-modal-close-btn:hover {
-  cursor: pointer;
-}
-
-@keyframes lighten-blue {
-  100% {
-    background-color: #0060e0;
-  }
-}
-
-button {
-  font-family: Baloo;
-  letter-spacing: 2px;
-  background: #004aad;
-  color: #f3c613;
-  border: none;
-  padding: 4px 10px;
-  border-radius: 4px;
-  margin: 0 5px;
-}
-
-#scrolling-text {
-  position: relative;
-  bottom: -20%;
-  font-size: clamp(20px, 4vw, 300px);
-  text-transform: uppercase;
-}
-
-#scrolling-text:before {
-  content: attr(data-text);
-  position: absolute;
-  width: 0;
-  font-size: clamp(20px, 4vw, 300px);
-  height: 100%;
-  color: #004aad;
-  border-right: 2px solid #004aad;
-  overflow: hidden;
-  animation: fill-in 10s linear infinite;
-}
-
-@keyframes fill-in {
-  0%,
-  100% {
-    width: 0;
-  }
-
-  25% {
-    width: 0;
-  }
-
-  50% {
+  .wiggle {
+    text-align: center;
     width: 100%;
   }
-
-  75% {
-    width: 100%;
+  .title {
+    color: #f3c613;
+    font-size: clamp(30px, 2vw, 50px);
+    margin: 0;
   }
-}
-
-.mobile {
-  display: none;
-}
-
-.desktop {
-  margin: auto;
-}
-
-@media (max-width: 768px) {
+  /* #dock {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin: 0px;
+  } */
+  .home,
+  .favorites,
+  .contact {
+    padding: 10px;
+    color: black;
+    text-align: center;
+    background-color: #f3c613;
+    border-radius: 4px;
+    margin: 5px;
+    width: 60px;
+  }
+  .logo {
+    justify-content: start;
+  }
+  a {
+    color: black;
+  }
+  #forgot:hover {
+    color: red;
+  }
+  /* .left-title {
+    margin: 0;
+  }
+  .right-title {
+    margin: 0;
+  } */
+  /* .left-card,
+  .center-card,
+  .right-card {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    text-align: center;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 20px;
+  } */
+  #close-modal {
+    background-color: #f3c613;
+    color: #004aad;
+    padding: 15px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  #close-modal:hover {
+    animation-name: turn-to-gold;
+    animation-duration: 500ms;
+    animation-fill-mode: forwards;
+  }
+  @keyframes turn-to-gold {
+    100% {
+      background-color: #c9a30a;
+    }
+  }
+  #modal {
+    background: url("./Images/food-icons_2.png");
+    padding: 20px;
+    height: 80%;
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+    top: 10%;
+    border: solid 5px #f3c613;
+    border-radius: 4px;
+    overflow: auto;
+  }
+  #modal img {
+    height: 300px;
+  }
+  #modal-button-right {
+    text-align: right;
+  }
+  #overlay {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+  #email,
+  #email2,
+  #password {
+    height: 60px;
+    width: 75%;
+    font-size: clamp(10px, 2vw, 20px);
+    margin: 5px 0px;
+    border-radius: 4px;
+    background-color: lightgray;
+    border: none;
+  }
+  .customer,
+  .vendor {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: clamp(30px, 2vw, 40px);
+    width: clamp(300px, 40vw, 700px);
+    margin: 10px;
+    border: solid 5px #f3c613;
+    border-radius: 4px;
+    background-color: white;
+    padding: 10px;
+  }
+  /* .login,
+  .login2 {
+    width: 75%;
+    font-size: clamp(30px, 2vw, 40px);
+    margin: 5px 0px;
+    border-radius: 4px;
+    color: #004aad;
+    background-color: #f3c613;
+    border: none;
+  }
+  .login:hover,
+  .login2:hover {
+    animation-name: turn-to-gold;
+    animation-duration: 500ms;
+    animation-fill-mode: forwards;
+  } */
+  @keyframes turn-to-gold {
+    100% {
+      background-color: #c9a30a;
+    }
+  }
+  .create-account {
+    width: 75%;
+    font-size: clamp(30px, 2vw, 40px);
+    margin: 5px 0px;
+    border-radius: 4px;
+    color: #f3c613;
+    background-color: #004aad;
+    border: none;
+  }
+  .create-account:hover {
+    animation-name: lighten-blue;
+    animation-duration: 500ms;
+    animation-fill-mode: forwards;
+  }
+  @keyframes lighten-blue {
+    100% {
+      background-color: #0060e0;
+    }
+  }
+  footer {
+    display: inline-block;
+    height: 12.5vh;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+    color: #f3c613;
+    text-shadow: 2px 2px #004aad;
+    background-image: url("./Images/header-img/yellow-brick.jpg");
+    /* background-repeat: round; */
+  }
+  .ybr-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*   margin-left: auto;
+    margin-right: auto; */
+    margin: 20px;
+    width: 90%;
+    /*   padding: 50px 50px 50px 50px; */
+    border: solid 5px #ffffff;
+    border-radius: 4px;
+  }
+  h2 {
+    font-size: 30px;
+    text-align: center;
+  }
+  h3 {
+    font-size: 20px;
+    text-align: center;
+  }
+  .about-section {
+    display: flex;
+    position: fixed;
+    top: 70%;
+    right: 2%;
+  }
   .about-btn {
+    background: #004aad;
+    /* white-space: nowrap; */
+    padding: 5px 10px;
+    color: yellow;
+    font-size: 16px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    margin: 0.5rem 0rem;
+    margin-left: 90%;
+  }
+  .about-btn:hover {
+    animation-name: lighten-blue;
+    animation-duration: 500ms;
+    animation-fill-mode: forwards;
+  }
+  .footer-container {
+    display: flex;
+    align-items: center;
+  }
+  .select-btn {
+    cursor: pointer;
+    font-family: Baloo;
+    font-weight: 700;
+    letter-spacing: 2px;
+    background: #f3c613;
+    color: #004aad;
+    border: none;
+    padding: 4px 10px;
+    border-radius: 4px;
+    margin: 0 5px;
+    appearance: auto;
+    writing-mode: horizontal-tb !important;
+  }
+  .about-modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .about-content {
+    width: 500px;
+    padding: 0px 5px 5px;
+    background-repeat: round;
+    background-image: url("./Images/food-icons_2.png");
+    border: solid 5px #f3c613;
+    border-radius: 5px;
+  }
+  .about-body {
+    text-align: center;
+    padding: 10px 50px 10px 50px;
+  }
+  .about-team-members {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    background: #f3c613;
+    border: 4px solid white;
+    border-radius: 4px;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  .home-page,
+  .about-content {
+    background-color: #004aad;
+    color: #f3c613;
+  }
+  .about-git-btn {
+    background-color: #004aad;
+    font-size: 20px;
+    margin: 10px;
+  }
+  .about-link {
+    color: #f3c613;
+    justify-content: center;
+  }
+  .about-git-btn:hover {
+    animation-name: lighten-blue;
+    animation-duration: 500ms;
+    animation-fill-mode: forwards;
+  }
+  .about-modal-close-btn {
+    display: inline-flex;
+    margin-left: 95%;
+    background-color: transparent;
+    color: #f3c613;
+  }
+  .about-modal-close-btn:hover {
+    cursor: pointer;
+  }
+  @keyframes lighten-blue {
+    100% {
+      background-color: #0060e0;
+    }
+  }
+  button {
+    font-family: Baloo;
+    letter-spacing: 2px;
+    background: #004aad;
+    color: #f3c613;
+    border: none;
+    padding: 4px 10px;
+    border-radius: 4px;
+    margin: 0 5px;
+  }
+  #scrolling-text {
+    position: relative;
+    bottom: -20%;
+    font-size: clamp(20px, 4vw, 300px);
+    text-transform: uppercase;
+  }
+  #scrolling-text:before {
+    content: attr(data-text);
+    position: absolute;
+    width: 0;
+    font-size: clamp(20px, 4vw, 300px);
+    height: 100%;
+    color: #004aad;
+    border-right: 2px solid #004aad;
+    overflow: hidden;
+    animation: fill-in 10s linear infinite;
+  }
+  @keyframes fill-in {
+    0%,
+    100% {
+      width: 0;
+    }
+    25% {
+      width: 0;
+    }
+    50% {
+      width: 100%;
+    }
+    75% {
+      width: 100%;
+    }
+  }
+  .mobile {
     display: none;
   }
   .desktop {
-    display: none;
-  }
-
-  .mobile {
-    display: block;
     margin: auto;
   }
-
-  .guest {
+  @media (max-width: 768px) {
+    .about-btn {
+      display: none;
+    }
+    .desktop {
+      display: none;
+    }
+    .mobile {
+      display: block;
+      margin: auto;
+    }
+    .guest {
+      background-color: #f3c613;
+      color: #004aad;
+      margin-top: 20px;
+    }
+    .customer,
+    .vendor {
+      margin: 0px;
+    }
+  }
+  .login-body {
+    background: url(./Images/food-icons_2.png);
+    background-color: lightgray;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .truck-logo {
+    background: url(./Images/Truck-Avatar.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    border-radius: 50%;
+    border: 2px solid #f3c613;
+  }
+  .user-logo {
+    background: url(./Images/User-Avatar-Yellow.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    border-radius: 50%;
+    border: 2px solid #f3c613;
+  }
+  .container-box {
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    max-width: 550px;
+    padding: 4rem 3rem;
+    border: 6px solid #f3c613;
+    border-radius: 8px;
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+      0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  }
+  .splash-body {
+    background: url(./Images/food-icons_2.png);
+    background-color: lightgray;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    padding: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .splash-container-box {
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    max-width: 550px;
+    padding: 4rem 3rem;
+    margin: auto;
+    border: 6px solid #f3c613;
+    border-radius: 8px;
+  }
+  .col-center {
+    padding: 1rem;
+    text-align: center;
+  }
+  #log-in-button,
+  #sign-up-button {
+    background-color: #f3c613;
+    font-size: 1rem;
+    text-align: center;
+    justify-content: center;
+    color: #004aad;
+    margin: 0.5rem;
+    width: 250px;
+    height: 2.5rem;
+    cursor: pointer;
+    border-radius: 8px;
+  }
+  #log-in-button:hover,
+  #sign-up-button:hover {
+    animation-name: turn-to-gold;
+    animation-duration: 500ms;
+    animation-fill-mode: forwards;
+  }
+  #guest {
+    background-color: #004aad;
+    font-size: 1rem;
+    text-align: center;
+    justify-content: center;
+    color: #f3c613;
+    width: 250px;
+    height: 2.5rem;
+    cursor: pointer;
+    border-radius: 8px;
+    margin: 0.5rem;
+  }
+  #guest:hover {
+    animation-name: lighten-blue;
+    animation-duration: 500ms;
+    animation-fill-mode: forwards;
+  }
+  #checkbox {
+    margin: 0.5rem;
+  }
+  #email-input,
+  #sign-up-email-input {
+    margin: 2rem 0 0;
+  }
+  #log-in-modal,
+  #sign-up-modal {
+    background: white;
+    color: black;
+    max-width: 400px;
+    height: 460px;
+    padding: 3.6rem 0;
+    margin: 0%;
+    opacity: 1 !important;
+    justify-self: center;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: 6px solid #f3c613;
+    position: relative;
+    opacity: 0.95;
+    text-align: center;
+    align-items: center;
+    line-height: 1.6;
+    color: black;
+    font-size: 21px;
+    border-radius: 8px;
+  }
+  #log-in-modal h3,
+  #sign-up-modal h3 {
+    font-size: 2rem;
+  }
+  #log-in-overlay,
+  #sign-up-overlay {
+    justify-content: center;
+    align-items: center;
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+  }
+  #close-modal-su,
+  #close-modal-li {
+    width: 60px;
+    background-color: #004aad;
+    color: #f3c613;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 8px;
+    font-family: "roboto", sans-serif;
+    font-size: 1rem;
+    width: 100px;
+    height: 2.5rem;
+    cursor: pointer;
+    border: 1px solid black;
+  }
+  #close-modal-su:hover,
+  #close-modal-li:hover {
+    animation-name: lighten-blue;
+    animation-duration: 500ms;
+    animation-fill-mode: forwards;
+  }
+  #log-in,
+  #submit {
+    width: 60px;
     background-color: #f3c613;
     color: #004aad;
-    margin-top: 20px;
+    cursor: pointer;
+    margin: 0.75rem 1rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    text-align: center;
+    justify-content: center;
+    width: 100px;
+    height: 2.5rem;
+    cursor: pointer;
+    border: 1px solid black;
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+      0 17px 50px 0 rgba(0, 0, 0, 0.19);
   }
-
-  .customer,
-  .vendor {
-    margin: 0px;
+  #log-in:hover,
+  #submit:hover {
+    animation-name: turn-to-gold;
+    animation-duration: 500ms;
+    animation-fill-mode: forwards;
   }
-}
-
- {
-  /* <!--  Login Page --> */
-}
-
-.login-body {
-  background: url(./Images/food-icons_2.png);
-  background-color: lightgray;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  padding: 180px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.truck-logo {
-  background: url(./Images/Truck-Avatar.png);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 100px;
-  height: 100px;
-  margin: auto;
-  border-radius: 50%;
-  border: 2px solid #f3c613;
-}
-
-.user-logo {
-  background: url(./Images/User-Avatar-Yellow.png);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 100px;
-  height: 100px;
-  margin: auto;
-  border-radius: 50%;
-  border: 2px solid #f3c613;
-}
-
-.container-box {
-  background: #fff;
-  display: flex;
-  justify-content: center;
-  max-width: 550px;
-  padding: 4rem 3rem;
-  border: 6px solid #f3c613;
-  border-radius: 8px;
-  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
-    0 17px 50px 0 rgba(0, 0, 0, 0.19);
-}
-
-.splash-body {
-  background: url(./Images/food-icons_2.png);
-  background-color: lightgray;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100vh;
-  padding: 180px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.splash-container-box {
-  background: #fff;
-  display: flex;
-  justify-content: center;
-  max-width: 550px;
-  padding: 4rem 3rem;
-  margin: auto;
-  border: 6px solid #f3c613;
-  border-radius: 8px;
-}
-
-.col-center {
-  padding: 1rem;
-  text-align: center;
-}
-
-#log-in-button,
-#sign-up-button {
-  background-color: #f3c613;
-  font-size: 1rem;
-  text-align: center;
-  justify-content: center;
-  color: #004aad;
-  margin: 0.5rem;
-  width: 250px;
-  height: 2.5rem;
-  cursor: pointer;
-  border-radius: 8px;
-}
-#log-in-button:hover,
-#sign-up-button:hover {
-  animation-name: turn-to-gold;
-  animation-duration: 500ms;
-  animation-fill-mode: forwards;
-}
-#guest {
-  background-color: #004aad;
-  font-size: 1rem;
-  text-align: center;
-  justify-content: center;
-  color: #f3c613;
-  width: 250px;
-  height: 2.5rem;
-  cursor: pointer;
-  border-radius: 8px;
-  margin: 0.5rem;
-}
-#guest:hover {
-  animation-name: lighten-blue;
-  animation-duration: 500ms;
-  animation-fill-mode: forwards;
-}
-
-#checkbox {
-  margin: 0.5rem;
-}
-
-#email-input,
-#sign-up-email-input {
-  margin: 2rem 0 0;
-}
-
-#log-in-modal,
-#sign-up-modal {
-  background: white;
-  color: black;
-  max-width: 400px;
-  height: 460px;
-  padding: 3.6rem 0;
-  margin: 0%;
-  opacity: 1 !important;
-  justify-self: center;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  border: 6px solid #f3c613;
-  position: relative;
-  opacity: 0.95;
-  text-align: center;
-  align-items: center;
-  line-height: 1.6;
-  color: black;
-  font-size: 21px;
-  border-radius: 8px;
-}
-#log-in-modal h3,
-#sign-up-modal h3 {
-  font-size: 2rem;
-}
-
-#log-in-overlay,
-#sign-up-overlay {
-  justify-content: center;
-  align-items: center;
-  display: none;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-}
-
-#close-modal-su,
-#close-modal-li {
-  width: 60px;
-  background-color: #004aad;
-  color: #f3c613;
-  cursor: pointer;
-  padding: 0.5rem 1rem;
-  border: none;
-  border-radius: 8px;
-  font-family: "roboto", sans-serif;
-  font-size: 1rem;
-  width: 100px;
-  height: 2.5rem;
-  cursor: pointer;
-  border: 1px solid black;
-}
-#close-modal-su:hover,
-#close-modal-li:hover {
-  animation-name: lighten-blue;
-  animation-duration: 500ms;
-  animation-fill-mode: forwards;
-}
-
-#log-in,
-#submit {
-  width: 60px;
-  background-color: #f3c613;
-  color: #004aad;
-  cursor: pointer;
-  margin: 0.75rem 1rem;
-  border-radius: 8px;
-  font-size: 1rem;
-  text-align: center;
-  justify-content: center;
-  width: 100px;
-  height: 2.5rem;
-  cursor: pointer;
-  border: 1px solid black;
-  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
-    0 17px 50px 0 rgba(0, 0, 0, 0.19);
-}
-#log-in:hover,
-#submit:hover {
-  animation-name: turn-to-gold;
-  animation-duration: 500ms;
-  animation-fill-mode: forwards;
-}
-
-#home-page {
-  width: 100%;
-}
-
-#nav-logo {
-  width: 20px;
-}
-
-.checked {
-  position: absolute;
-}
-
-/* Truck selector styling */
-
-.truck-body {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  /* border: 5px solid black; */
-}
-
-.selector {
-  display: flex;
-  width: 100vw;
-  padding: 1rem 0 1rem;
-  justify-content: center;
-  /* border: 5px solid blue; */
-}
-
-.selector-container {
-  display: flex;
-  justify-content: center;
-}
-
-.truck-display {
-  background-color: #fff;
-  display: flex;
-  flex-wrap: wrap;
-  /* border: 5px solid red; */
-  border-radius: 10px;
-  height: 80vh;
-  width: 100vw;
-  padding: 0.5rem;
-  justify-content: center;
-  align-items: center;
-  overflow: scroll;
-}
-
-.truck-display-container {
-  display: flex;
-  background-color: #fff;
-  text-align: center;
-  align-items: center;
-  padding: 1rem;
-  margin: 1rem;
-  border: 1px solid #f3c613;
-  border-radius: 0.5rem;
-  width: 250px;
-  height: 250px;
-}
-.truck-display-container:hover {
-  cursor: pointer;
-}
-
-.truck-article {
-  /* display: flex; */
-  flex-direction: column;
-  justify-content: space-evenly;
-  padding: 2rem;
-  margin: 0 1rem;
-  border-radius: 8px;
-}
-
-.truck-info-button {
-  background: #004aad;
-  padding: 5px 10px;
-  color: yellow;
-  font-size: 16px;
-  outline: none;
-  border: none;
-  cursor: pointer;
-  text-decoration: none;
-}
-.truck-hub {
-  display: flex;
-  background-color: #fff;
-  text-align: center;
-  padding: 1rem;
-  margin: 1rem;
-  border: 5px solid #f3c613;
-  border-radius: 0.5rem;
-}
-
-.truck-modal {
-  position: fixed;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: rgb(145, 142, 142, 0.37);
-}
-
-.truck-modal-container {
-  display: flex;
-  flex-wrap: wrap;
-  width: 500px;
-  padding: 0px 5px 5px;
-  background-repeat: round;
-  background-image: url("./Images/food-icons_2.png");
-  border: solid 5px #f3c613;
-  border-radius: 5px;
-}
-
-.truck-data {
-  text-align: center;
-  padding: 20px;
-  background: #f3c613;
-  border: 4px solid white;
-  border-radius: 4px;
-  justify-content: space-evenly;
-  align-items: center;
-}
-
-.truck-modal-pics {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  padding: 0.5rem;
-}
-
-.select-btn,
-.about-btn {
-  cursor: pointer;
-  font-family: Baloo;
-  font-weight: 700;
-  letter-spacing: 2px;
-  background: #f3c613;
-  color: #004aad;
-  border: none;
-  padding: 4px 10px;
-  border-radius: 4px;
-  margin: 0 5px;
-  appearance: auto;
-  writing-mode: horizontal-tb !important;
-}
-
-.guest {
-  background-color: #004aad;
-  color: #f3c613;
-
-  font-family: Baloo;
-  font-weight: 700;
-  letter-spacing: 2px;
-  background: #004aad;
-  color: #f3c613;
-  border: none;
-  padding: 4px 10px;
-  border-radius: 4px;
-  margin: 0 5px;
-}
+  #home-page {
+    width: 100%;
+  }
+  #nav-logo {
+    width: 20px;
+  }
+  .checked {
+    position: absolute;
+  }
+  /* Truck selector styling */
+  .truck-body {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    /* border: 5px solid black; */
+  }
+  .selector {
+    display: flex;
+    width: 100vw;
+    padding: 1rem 0 1rem;
+    justify-content: center;
+    /* border: 5px solid blue; */
+  }
+  .selector-container {
+    display: flex;
+    justify-content: center;
+  }
+  .truck-display {
+    background-color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    /* border: 5px solid red; */
+    border-radius: 10px;
+    height: 80vh;
+    width: 100vw;
+    padding: 0.5rem;
+    justify-content: center;
+    align-items: center;
+    overflow: scroll;
+  }
+  .truck-display-container {
+    display: flex;
+    background-color: #fff;
+    text-align: center;
+    align-items: center;
+    padding: 1rem;
+    margin: 1rem;
+    border: 1px solid #f3c613;
+    border-radius: 0.5rem;
+    width: 250px;
+    height: 250px;
+  }
+  .truck-display-container:hover {
+    cursor: pointer;
+  }
+  .truck-article {
+    /* display: flex; */
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 2rem;
+    margin: 0 1rem;
+    border-radius: 8px;
+  }
+  .truck-info-button {
+    background: #004aad;
+    padding: 5px 10px;
+    color: yellow;
+    font-size: 16px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .truck-hub {
+    display: flex;
+    background-color: #fff;
+    text-align: center;
+    padding: 1rem;
+    margin: 1rem;
+    border: 5px solid #f3c613;
+    border-radius: 0.5rem;
+  }
+  .truck-modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(145, 142, 142, 0.37);
+  }
+  .truck-modal-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 500px;
+    padding: 0px 5px 5px;
+    background-repeat: round;
+    background-image: url("./Images/food-icons_2.png");
+    border: solid 5px #f3c613;
+    border-radius: 5px;
+  }
+  .truck-data {
+    text-align: center;
+    padding: 20px;
+    background: #f3c613;
+    border: 4px solid white;
+    border-radius: 4px;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  .truck-modal-pics {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0.5rem;
+  }
+  .select-btn,
+  .about-btn {
+    cursor: pointer;
+    font-family: Baloo;
+    font-weight: 700;
+    letter-spacing: 2px;
+    background: #f3c613;
+    color: #004aad;
+    border: none;
+    padding: 4px 10px;
+    border-radius: 4px;
+    margin: 0 5px;
+    appearance: auto;
+    writing-mode: horizontal-tb !important;
+  }
+  .guest {
+    background-color: #004aad;
+    color: #f3c613;
+    font-family: Baloo;
+    font-weight: 700;
+    letter-spacing: 2px;
+    background: #004aad;
+    color: #f3c613;
+    border: none;
+    padding: 4px 10px;
+    border-radius: 4px;
+    margin: 0 5px;
+  }

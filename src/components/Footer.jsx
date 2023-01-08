@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import AboutModal from '../components/AboutModal.js';
+import AboutModal from './AboutModal.jsx';
 
 function Footer() {
 
@@ -30,7 +30,7 @@ function Footer() {
             A Yellow Brick Road Collaboration
         </h2>
         </div>
-    </footer>       
+    </footer>
      </>
 
 )
