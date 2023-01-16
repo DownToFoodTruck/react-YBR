@@ -1,13 +1,13 @@
-import React, { useState } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
-import { Container, DropdownButton } from "react-bootstrap";
-import DropdownItem from "react-bootstrap/esm/DropdownItem";
-import { TruckDisplay } from "./TruckDisplay.jsx";
+import React, { useState } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Container, DropdownButton } from 'react-bootstrap';
+import DropdownItem from 'react-bootstrap/esm/DropdownItem';
+import { TruckDisplay } from './TruckDisplay.jsx';
 
 export default function TruckSelector() {
   const truckTags = [];
   const [value, setValue] = useState(truckTags);
-  const [error, setError] = useState("");
+  const [error, setError] = useState('');
   const [name, setName] = useState([]);
 
   //POPULATE TAG DROPDOWN
@@ -17,14 +17,14 @@ export default function TruckSelector() {
       return;
     }
     try {
-      const url = "/apiTAG";
+      const url = '/apiTAG';
       const rawRes = await fetch(url);
       const rawResJSON = await rawRes.json();
 
       setValue(rawResJSON);
     } catch (err) {
       console.log(err);
-      setError("Nothing Retrieved");
+      setError('Nothing Retrieved');
     }
   }
   fetchSelectionList();
@@ -33,14 +33,14 @@ export default function TruckSelector() {
   function tagSelected(param) {
     async function executeQuery() {
       try {
-        const url = "/api?tag=" + param;
+        const url = '/api?tag=' + param;
         const rawRes = await fetch(url);
         const rawResJSON = await rawRes.json();
         const nameReturn = await rawResJSON;
         const truckList = await nameReturn;
         console.log(truckList);
 
-        truckList.length == 0 ? console.log("ERR") : setName(nameReturn); //grabbing name info4
+        truckList.length == 0 ? console.log('ERR') : setName(nameReturn); //grabbing name info4
       } catch (err) {
         console.log(err);
       }
@@ -72,7 +72,7 @@ export default function TruckSelector() {
         {name.map((e) => (
           <TruckDisplay
             onClick={() => {
-              alert("TEST");
+              alert('TEST');
             }}
             name={e}
           />

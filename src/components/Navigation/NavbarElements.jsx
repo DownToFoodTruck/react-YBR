@@ -1,20 +1,21 @@
-import styled from "styled-components";
-import { Link as LinkRouter } from "react-router-dom";
+import styled from 'styled-components';
+import { Link as LinkRouter } from 'react-router-dom';
 
 export const Nav = styled.nav`
-	background: #f3c613;	
-	height: 100vh;
+  background: #f3c613;
+  height: 100vh;
   width: 15vw;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	font-size: 1rem;
-	position: sticky;
-	z-index: 10;
-	@media screen and (max-width: 960px) {
-		transition: 0.8s all ease;
-	}
-`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  position: sticky;
+  z-index: 10;
+  @media screen and (max-width: 960px) {
+    transition: 0.8s all ease;
+  }
+`;
+
 export const NavbarContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -36,21 +37,21 @@ export const NavLogo = styled(LinkRouter)`
 `;
 
 export const MobileIcon = styled.div`
-	display: none;
-	@media screen and (max-width: 768px) {
-		display: block;
-		position: absolute;
-		top: 0;
-		right: 0;
-		transform: translate(-100%, 50%);
-		font-size: 1.8rem;
-		cursor: pointer;
-		color: #004aad;
-		&:hover {
-			color: #fff;
-		}
-	}
-`
+  display: none;
+  @media screen and (max-width: 768px) {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(-100%, 50%);
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #004aad;
+    &:hover {
+      color: #fff;
+    }
+  }
+`;
 
 export const NavMenu = styled.ul`
   display: flex;
@@ -73,20 +74,22 @@ export const NavItem = styled.li`
   align-items: center;
   justify-content: center;
 `;
+
 export const NavLinks = styled(LinkRouter)`
-	color: #004aad;
-	display: flex;
-	align-items: center;
-	text-decoration: none;
-	height: 100%;
-	cursor: pointer;
-	&:hover {
-		color: #fff;
-	}
-	&.active {
-		border-bottom: 3px solid #01bf71;
-	}
-`
+  color: #004aad;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  height: 100%;
+  cursor: pointer;
+  &:hover {
+    color: #fff;
+  }
+  &.active {
+    border-bottom: 3px solid #01bf71;
+  }
+`;
+
 export const NavBtn = styled.nav`
   display: flex;
   justify-content: center;
@@ -94,6 +97,7 @@ export const NavBtn = styled.nav`
     display: none;
   }
 `;
+
 export const NavBtnLink = styled(LinkRouter)`
   border-radius: 4px;
   background: #004aad;
@@ -106,10 +110,11 @@ export const NavBtnLink = styled(LinkRouter)`
   cursor: pointer;
   text-decoration: none;
   &:hover {
-      color: yellow;
-      animation-name: lighten-blue;
-      animation-duration: 500ms;
-      animation-fill-mode: forwards;
+    color: yellow;
+    animation-name: lighten-blue;
+    animation-duration: 500ms;
+    animation-fill-mode: forwards;
   }
 `;
+
 export default Nav;

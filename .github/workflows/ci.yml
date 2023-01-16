@@ -1,22 +1,23 @@
-name: CI
+name: Test CI
 
 on:
   pull_request:
-  push:
-    branches:
-      - main
+    branches: ['main']
 
 jobs:
-  prettier:
+  build:
     runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-        with:
-          ref: ${{ github.head_ref }}
+    strategy:
+      matrix:
+        node-version: [16.x]
 
-      - name: Prettify code
-        uses: creyD/prettier_action@v4.2
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
         with:
-          prettier_options: --write **/*.{js,md}
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+      - run: npm i
+      - run: npm run format

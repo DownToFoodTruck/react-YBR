@@ -4,20 +4,18 @@ import Navbar from './/Navbar';
 import Sidebar from './/Sidebar';
 
 const NavToggle = () => {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => {
-	setIsOpen(!isOpen)
-  }
-
+    setIsOpen(!isOpen);
+  };
 
   return (
-	<>
-		<Sidebar isOpen={isOpen} toggle={toggle}/>
-		<Navbar toggle={toggle}/>
+    <>
+      <Sidebar isOpen={isOpen} toggle={toggle} />
+      <Navbar toggle={toggle} />
+    </>
+  );
+};
 
-	</>
-  )
-}
-
-export default NavToggle
+export default NavToggle;
