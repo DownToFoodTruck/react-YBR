@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "concurrently --kill-others --names \"NODE,REACT\" -c \"bgGreen.black,bgCyan.black\" \"nodemon ./server.js\" \"vite build --watch --mode development\"",
+    "start": "npm run build && npm run prod:api",
     "dev:api": "nodemon ./server.js",
+    "prod:api": "node ./server.js",
     "dev:ui": "vite",
     "build": "vite build",
     "preview": "vite preview"
