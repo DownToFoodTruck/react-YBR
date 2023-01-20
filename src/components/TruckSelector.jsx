@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, DropdownButton } from "react-bootstrap";
 import DropdownItem from "react-bootstrap/esm/DropdownItem";
-import { TruckDisplay } from "./TruckDisplay.js";
+import { TruckDisplay } from "./TruckDisplay.jsx";
 
 export default function TruckSelector() {
   const truckTags = [];
@@ -13,7 +13,7 @@ export default function TruckSelector() {
   //POPULATE TAG DROPDOWN
   //Make set, append i for i in truck categories, jam into tag drop
   async function fetchSelectionList() {
-    if (value != truckTags) {
+    if (value !== truckTags) {
       return;
     }
     try {
@@ -28,6 +28,8 @@ export default function TruckSelector() {
     }
   }
   fetchSelectionList();
+
+  //FETCH TAG DROPDOWN OPTION
   function tagSelected(param) {
     async function executeQuery() {
       try {
@@ -47,7 +49,7 @@ export default function TruckSelector() {
   }
 
   return (
-    <div className="truck-selector-body">
+    <div className="truck-body">
       <div className="selector">
         <Container className="selector-container">
           <DropdownButton id="truck-selector" title="Cuisine">
@@ -66,14 +68,16 @@ export default function TruckSelector() {
         </Container>
       </div>
 
-      {name.map((e) => (
-        <TruckDisplay
-          onClick={() => {
-            alert("TEST");
-          }}
-          name={e}
-        />
-      ))}
+      <div className="truck-display">
+        {name.map((e) => (
+          <TruckDisplay
+            onClick={() => {
+              alert("TEST");
+            }}
+            name={e}
+          />
+        ))}
+      </div>
     </div>
   );
 }
