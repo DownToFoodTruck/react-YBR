@@ -84,19 +84,28 @@ export default function UserRegister() {
         return;
     }
 
-    // try {
-
-    // } catch(err) {
-    //   if (!err?.response) {
-    //     setErrMsg('No Server Response')
-    //   } else if (err.response?.status === 409) {
-    //     setErrMsg('Username Taken')
-    //   } else {
-    //     setErrMsg('Registration Failed')
-    //   }
-    //   errRef.current.focus();
-    // }
-    // console.log(email, user, pwd);
+    try {
+      const sendUser = fetch('/register', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({
+            email,
+            username : "user",
+            password : "pwd"
+        })
+      })
+      sendUser()
+    } catch(err) {
+      if (!err?.response) {
+        setErrMsg('No Server Response')
+      } else if (err.response?.status === 409) {
+        setErrMsg('Username Taken')
+      } else {
+        setErrMsg('Registration Failed')
+      }
+      errRef.current.focus();
+    }
+    console.log(email, user, pwd);
     console.log(success);
     setSuccess(true);
   }
