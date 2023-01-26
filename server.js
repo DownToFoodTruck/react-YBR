@@ -19,18 +19,17 @@ import cors from 'cors';
 
 app.use(cors());
 
-app.use(express.urlencoded({ extended: true })); //allows you to access req.body
-
 {
   /* <!--  Start of sign up --> */
 }
-app.post("/users", (req, res) => {
+app.post("/register", (req, res) => {
   //establish credentials as user obj
   let user = {
     email: req.body.email,
+    username: req.body.username,
     password: req.body.password,
   };
-
+  console.log(user);
   //function to verify log-in data
   async function insertUser() {
     await client.connect();
@@ -38,7 +37,8 @@ app.post("/users", (req, res) => {
     await collection.insertOne(user);
     await client.close();
   }
-  console.log(user);
+
+  console.log("backend");
   insertUser();
   res.redirect("/");
 });
@@ -49,6 +49,7 @@ app.post("/users", (req, res) => {
 app.post("/login", (req, res) => {
   let user = {
     email: req.body.email,
+    username: req.body.username,
     password: req.body.password,
   }; //establish credentials as user obj
 

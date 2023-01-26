@@ -11,9 +11,10 @@ import {
   NavBtn,
   NavBtnLink,
 } from "./NavbarElements";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faInstagram } from "@fortawesome/free-brands-svg-icons";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import DTFT from "../../Images/Logo-Blue-2500x1500.png";
-import Email from "../../Images/email-icon.png";
-import Insta from "../../Images/instagram-icon.png";
 
 const Navbar = ({ toggle }) => {
   return (
@@ -39,17 +40,14 @@ const Navbar = ({ toggle }) => {
             </NavItem>
 
             <NavItem>
-              <a href="https://www.instagram.com/downtofoodtruck"
-                target="_blank"
-              >
-                <img className="nav-img" src={Insta} alt="Instagram" />
-              </a>
-
+            <a href="https://www.instagram.com/downtofoodtruck"
+                target="_blank">
+              <FontAwesomeIcon icon={faInstagram} className="nav-img"/>
+            </a>
             <a href="mailto:hey@downtofoodtruck.com"
-                target="_blank"
-              >
-                <img className="nav-img" src={Email} alt="Email" />
-              </a>
+                target="_blank">
+              <FontAwesomeIcon icon={faEnvelope} className="nav-img"/>
+            </a>
             </NavItem>
           </NavMenu>
           <NavBtn>
