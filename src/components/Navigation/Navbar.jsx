@@ -29,7 +29,7 @@ const Navbar = ({ toggle }) => {
 				</MobileIcon>
 				<NavMenu>
 					<NavItem>
-						<NavLinks to='/LoginSplash'>
+						<NavLinks to='/UserRegister'>
 							Sign Up
 						</NavLinks>
 
