@@ -12,6 +12,7 @@ const client = new MongoClient(url);
 
 app.use(express.static("dist")); //allows you to pass json data from front end to back end
 app.use(express.urlencoded({ extended: true })); //allows you to access req.body
+app.use(express.json());
 
 import cors from "cors";
 
