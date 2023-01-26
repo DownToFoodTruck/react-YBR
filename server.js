@@ -1,7 +1,7 @@
-import dotenv from 'dotenv';
-import path from 'path';
-dotenv.config({ path: path.resolve(path.join(process.cwd(), '.env')) });
-import express  from "express";
+import dotenv from "dotenv";
+import path from "path";
+dotenv.config({ path: path.resolve(path.join(process.cwd(), ".env")) });
+import express from "express";
 const app = express(); //create new express app
 const port = process.env.PORT; //using designated port number on front end to access back end
 // run server on specific port(5001), and the front end/index on port(3000)
@@ -12,24 +12,25 @@ const client = new MongoClient(url);
 
 app.use(express.static("dist")); //allows you to pass json data from front end to back end
 app.use(express.urlencoded({ extended: true })); //allows you to access req.body
+app.use(express.json());
 
-import cors from 'cors';
+import cors from "cors";
 
 // cors is a pkg that lets you make request across different urls/different machines -- makes port 3000 talk with server.js port 3001
 
 app.use(cors());
 
-app.use(express.urlencoded({ extended: true })); //allows you to access req.body
-
 {
   /* <!--  Start of sign up --> */
 }
-app.post("/users", (req, res) => {
+app.post("/register", (req, res) => {
   //establish credentials as user obj
   let user = {
     email: req.body.email,
+    username: req.body.username,
     password: req.body.password,
   };
+  console.log(user);
 
   //function to verify log-in data
   async function insertUser() {
@@ -38,7 +39,8 @@ app.post("/users", (req, res) => {
     await collection.insertOne(user);
     await client.close();
   }
-  console.log(user);
+
+  console.log("backend");
   insertUser();
   res.redirect("/");
 });
@@ -49,6 +51,7 @@ app.post("/users", (req, res) => {
 app.post("/login", (req, res) => {
   let user = {
     email: req.body.email,
+    username: req.body.username,
     password: req.body.password,
   }; //establish credentials as user obj
 
@@ -138,9 +141,9 @@ app.get("/api", function (req, res) {
 }
 
 app.get("*", (req, res) => {
-    res.sendFile(path.resolve(path.join('dist', 'index.html')));
+  res.sendFile(path.resolve(path.join("dist", "index.html")));
 });
 
-app.listen(port, () =>{
-    console.log(`App is listening on http://localhost:${port}`);
+app.listen(port, () => {
+  console.log(`App is listening on http://localhost:${port}`);
 });
