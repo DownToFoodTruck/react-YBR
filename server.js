@@ -31,6 +31,7 @@ app.post("/register", (req, res) => {
     password: req.body.password,
   };
   console.log(user);
+
   //function to verify log-in data
   async function insertUser() {
     await client.connect();

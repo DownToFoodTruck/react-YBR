@@ -65,11 +65,6 @@ export default function UserRegister() {
     setErrMsg('');
   }, [user, pwd, matchPwd]);
 
-  // function click(e) {
-  //   e.preventDefault();
-  //   console.log("CLICKED")
-  //   console.log(success)
-  // }
 
   const handleSubmit = async(e) => {
     e.preventDefault();
@@ -85,16 +80,21 @@ export default function UserRegister() {
     }
 
     try {
-      const sendUser = fetch('/register', {
+      const sendUser = await fetch('/register', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({
             email,
-            username : "user",
-            password : "pwd"
+            username : user,
+            password : pwd
         })
       })
-      sendUser()
+      setSuccess(true);
+      console.log(success);
+      setEmail('')
+      setUser('');
+      setPwd('');
+      setMatchPwd('');
     } catch(err) {
       if (!err?.response) {
         setErrMsg('No Server Response')
@@ -105,9 +105,6 @@ export default function UserRegister() {
       }
       errRef.current.focus();
     }
-    console.log(email, user, pwd);
-    console.log(success);
-    setSuccess(true);
   }
 
   return (
