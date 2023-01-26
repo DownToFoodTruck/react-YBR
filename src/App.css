@@ -1,9 +1,17 @@
 .app {
     display: flex;
+    background-color: #fff;
   }
   .blue {
     white-space: nowrap;
     color: #004aad;
+  }
+  .yellow {
+    white-space: nowrap;
+    color: #f3c613;
+  }
+  #absolute{
+    position: sticky;
   }
   .home-body {
     display: flex;
@@ -29,118 +37,23 @@
     max-height: 100px;
   }
   .nav-img {
-    height: 50px;
-    width: 50px;
-    /*!!!!!!!!!!!!!!!!!!!!!Not circular!!!!!!!!!!!!!!!!!!!!!!!!! */
-    border: 1px solid black;
-    border-radius: 50%;
+    height: 25px;
+    width: 25px;
+    padding: .5rem;
+    color: #004aad;
   }
   .nav-img:hover {
     color: yellow;
-    animation-name: lighten-blue;
     animation-duration: 500ms;
     animation-fill-mode: forwards;
   }
-  /* .over-img {
-    position: absolute;
-    height: 150px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  } */
-  /* .top-right {
-    position: absolute;
-    top: -60px;
-    right: 0px;
-  } */
-  /* .login-btn {
-    cursor: pointer;
-    font-family: Baloo;
-    font-weight: 700;
-    font-size: 20px;
-    background: #004aad;
-    color: #f3c613;
-    border: none;
-    padding: 4px 10px;
-    border-radius: 4px;
-    margin: 0 5px;
-  } */
-  /* .contact-button {
-    height: 40px;
-    width: 50px;
-    margin: 0px, 5px;
-    background: none;
-  } */
-  /* .header-contact-button {
-    position: absolute;
-    height: 40px;
-    width: 50px;
-    top: -70px;
-    left: -15px;
-    margin: 20px 0px 0px 5px;
-  } */
-  /* .header-follow-button {
-    position: absolute;
-    height: 40px;
-    width: 50px;
-    top: -70px;
-    left: 30px;
-    margin: 20px 0px 0px;
-  } */
-  /* .guest {
-    background-color: #004aad;
-    color: #f3c613;
-    height: 100px;
-    width: 125px;
-    font-size: 20px;
-    border-radius: 4px;
-    margin: 50px 10px 0px;
-    text-align: center;
-    cursor: pointer;
-    animation: wiggle 2s linear infinite;
-  } */
-  @keyframes wiggle {
-    0%,
-    7% {
-      transform: rotateZ(0);
-    }
-    15% {
-      transform: rotateZ(-15deg);
-    }
-    20% {
-      transform: rotateZ(10deg);
-    }
-    25% {
-      transform: rotateZ(-10deg);
-    }
-    30% {
-      transform: rotateZ(6deg);
-    }
-    35% {
-      transform: rotateZ(-4deg);
-    }
-    40%,
-    100% {
-      transform: rotateZ(0);
-    }
-  }
-  .wiggle {
-    text-align: center;
-    width: 100%;
-  }
+
   .title {
     color: #f3c613;
     font-size: clamp(30px, 2vw, 50px);
     margin: 0;
   }
-  /* #dock {
-    flex: 1;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    margin: 0px;
-  } */
+
   .home,
   .favorites,
   .contact {
@@ -225,7 +138,7 @@
     z-index: 10;
     background-color: rgba(0, 0, 0, 0.3);
   }
-  #email,
+  /* #email,
   #email2,
   #password {
     height: 60px;
@@ -235,7 +148,7 @@
     border-radius: 4px;
     background-color: lightgray;
     border: none;
-  }
+  } */
   .customer,
   .vendor {
     display: flex;
@@ -542,16 +455,13 @@
       0 17px 50px 0 rgba(0, 0, 0, 0.19);
   }
   .splash-body {
-    background: url(./Images/food-icons_2.png);
-    background-color: lightgray;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-color: #004aad;
     height: 100vh;
     padding: 180px;
     display: flex;
     align-items: center;
     justify-content: center;
+    border: 1px solid rgb(100, 100, 100);
   }
   .splash-container-box {
     background: #fff;
@@ -618,7 +528,7 @@
     height: 460px;
     padding: 3.6rem 0;
     margin: 0%;
-    opacity: 1 !important;
+    /* opacity: 1 !important; */
     justify-self: center;
     left: 50%;
     top: 50%;
@@ -660,7 +570,7 @@
     width: 100px;
     height: 2.5rem;
     cursor: pointer;
-    border: 1px solid black;
+    border: 1px solid rgb(100, 100, 100);
   }
   #close-modal-su:hover,
   #close-modal-li:hover {
@@ -682,7 +592,7 @@
     width: 100px;
     height: 2.5rem;
     cursor: pointer;
-    border: 1px solid black;
+    border: 1px solid rgb(100, 100, 100);
     box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
       0 17px 50px 0 rgba(0, 0, 0, 0.19);
   }
@@ -716,6 +626,10 @@
     justify-content: center;
     /* border: 5px solid blue; */
   }
+  #truck-selector {
+    text-align: center;
+    width: 10rem;
+  }
   .selector-container {
     display: flex;
     justify-content: center;
@@ -724,7 +638,7 @@
     background-color: #fff;
     display: flex;
     flex-wrap: wrap;
-    /* border: 5px solid red; */
+    /* border: 1px solid #778790; */
     border-radius: 10px;
     height: 80vh;
     width: 100vw;
@@ -839,3 +753,108 @@
     border-radius: 4px;
     margin: 0 5px;
   }
+
+  /* REGISTRATION */
+
+.reg-body {
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff;
+  display: flex;
+}
+
+.reg-cont {
+    width: 100%;
+    max-width: 420px;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 1rem;
+    margin: auto;
+    background-color: white;
+    border: 1px solid #778790;
+}
+
+.reg-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex-grow: 1;
+    padding-bottom: 1rem;
+}
+
+
+input[type="text"],
+input[type="password"],
+button,
+textarea {
+  font-family: 'Nunito', sans-serif;
+  font-size: 22px;
+  padding: 0.25rem;
+  border-radius: 0.5rem;
+}
+
+label,
+button {
+  margin-top: 1rem;
+}
+
+.instructions {
+    font-size: 0.75rem;
+    border-radius: 0.5rem;
+    background: #000;
+    color: #fff;
+    padding: 0.25rem;
+    position: relative;
+    bottom: -10px;
+}
+
+.instructions > svg {
+    margin-right: 0.25rem;
+}
+
+.offscreen {
+    position: absolute;
+    left: -9999px;
+}
+
+.hide {
+    display: none;
+}
+
+.valid {
+    color: limegreen;
+    margin-left: 0.25rem;
+}
+
+.invalid {
+    color: red;
+    margin-left: 0.25rem;
+}
+
+.errmsg {
+    background-color: lightpink;
+    color: firebrick;
+    font-weight: bold;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.line {
+    display: inline-block;
+}
+
+.reg-success {
+  width: 100%;
+  max-width: 420px;
+  min-height: 400px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1rem;
+  margin: auto;
+  border: 1px solid #778790;
+  background-color:#fff;
+}

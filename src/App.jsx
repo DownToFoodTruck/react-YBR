@@ -5,6 +5,7 @@ import Home from './Pages/Home';
 import LoginSplash from "./Pages/LoginSplash";
 import ForgotPassword from './Pages/ForgotPassword';
 import './App.css';
+import UserRegister from './Pages/UserRegister';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path = "/LoginSplash" element = {<LoginSplash />} />
         <Route path = "/UserLogin" element = {<UserLogin />} />
         <Route path = "/VendorLogin" element = {<VendorLogin />} />
+        <Route path = "/UserRegister" element = {<UserRegister />} />
         <Route path = "/ForgotPassword" element = {<ForgotPassword />} />
       </Routes>
     </BrowserRouter>
