@@ -45,6 +45,7 @@ app.post("/users", (req, res) => {
 
 {
   /* <!--  Start of login --> */
+// this is some rand comment for testing
 }
 app.post("/login", (req, res) => {
   let user = {
