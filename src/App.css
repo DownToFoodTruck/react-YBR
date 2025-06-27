@@ -23,7 +23,7 @@
     min-height: 100%;
   }
   img {
-    width: 100%;
+    height: auto;
     max-width: 200px;
     height: auto;
     max-height: 100px;
@@ -32,8 +32,8 @@
     height: 50px;
     width: 50px;
     /*!!!!!!!!!!!!!!!!!!!!!Not circular!!!!!!!!!!!!!!!!!!!!!!!!! */
-    border: 1px solid black;
     border-radius: 50%;
+
   }
   .nav-img:hover {
     color: yellow;
@@ -126,7 +126,7 @@
   }
   .wiggle {
     text-align: center;
-    width: 100%;
+    height: auto;
   }
   .title {
     color: #f3c613;
@@ -464,10 +464,10 @@
       width: 0;
     }
     50% {
-      width: 100%;
+      height: auto;
     }
     75% {
-      width: 100%;
+      height: auto;
     }
   }
   .mobile {
@@ -642,7 +642,7 @@
     justify-content: center;
     align-items: center;
     display: none;
-    width: 100%;
+    height: auto;
     height: 100%;
     position: absolute;
   }
@@ -693,7 +693,7 @@
     animation-fill-mode: forwards;
   }
   #home-page {
-    width: 100%;
+    height: auto;
   }
   #nav-logo {
     width: 20px;
@@ -736,6 +736,7 @@
   .truck-display-container {
     display: flex;
     background-color: #fff;
+    object-fit: contain;
     text-align: center;
     align-items: center;
     padding: 1rem;
@@ -749,12 +750,23 @@
     cursor: pointer;
   }
   .truck-article {
-    /* display: flex; */
+height: auto;
+    height: 100%;
+    object-fit: contain;
     flex-direction: column;
     justify-content: space-evenly;
     padding: 2rem;
     margin: 0 1rem;
     border-radius: 8px;
+  }
+  .truck-profile {
+height: auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
   }
   .truck-info-button {
     background: #004aad;
