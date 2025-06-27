@@ -12,27 +12,26 @@ import {
   NavBtnLink,
 } from "./NavbarElements";
 import DTFT from "../../Images/Logo-Blue-2500x1500.png";
-import Email from "../../Images/email-icon.png";
-import Insta from "../../Images/instagram-icon.png";
-
+import { FaInstagram } from "react-icons/fa";
+import { FaMailBulk } from "react-icons/fa";
 const Navbar = ({ toggle }) => {
   return (
-	<>
-		<Nav>
-			<NavbarContainer>
-				<NavLogo to="/">
-					<img src={DTFT} alt='Logo'/>
-				</NavLogo>
-				<MobileIcon onClick={toggle}>
-					<FaBars />
-				</MobileIcon>
-				<NavMenu>
-					<NavItem>
-						<NavLinks to='/LoginSplash'>
-							Sign Up
-						</NavLinks>
+    <>
+      <Nav>
+        <NavbarContainer>
+          <NavLogo to="/">
+            <img src={DTFT} alt='Logo' />
+          </NavLogo>
+          <MobileIcon onClick={toggle}>
+            <FaBars />
+          </MobileIcon>
+          <NavMenu>
+            <NavItem>
+              <NavLinks to='/LoginSplash'>
+                Sign Up
+              </NavLinks>
 
-					</NavItem>
+            </NavItem>
 
             <NavItem>
               <NavLinks to="/">Link</NavLinks>
@@ -42,13 +41,13 @@ const Navbar = ({ toggle }) => {
               <a href="https://www.instagram.com/downtofoodtruck"
                 target="_blank"
               >
-                <img className="nav-img" src={Insta} alt="Instagram" />
+                <FaInstagram className="nav-img" />
               </a>
 
-            <a href="mailto:hey@downtofoodtruck.com"
+              <a href="mailto:hey@downtofoodtruck.com"
                 target="_blank"
               >
-                <img className="nav-img" src={Email} alt="Email" />
+                <FaMailBulk className="nav-img" alt="Email" />
               </a>
             </NavItem>
           </NavMenu>

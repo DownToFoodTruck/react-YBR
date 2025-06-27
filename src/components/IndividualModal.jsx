@@ -1,11 +1,11 @@
 import React from "react";
+import { FaRegSadCry } from "react-icons/fa";
 
 const IndividualModal = (props) => {
   if (!props.show) return null;
 
   const { truckData } = props;
-  console.log(truckData);
-
+  const truckPictures = [truckData.P1, truckData.P2, truckData.P3];
   function modifySelection(tag) {
     alert(tag);
   }
@@ -77,45 +77,23 @@ const IndividualModal = (props) => {
           </div>
 
           <div className="truck-modal-pics">
+          {truckPictures.map((pic, index) => {return (
             <img
+              key={index}
               src={
-                truckData.P1 != "NULL"
-                  ? truckData.P1
+                pic != "NULL"
+                  ? pic
                   : "../Images/Truck-Avatar.png"
               }
+              loading="lazy"
               onError={(e) =>
                 (e.target.onerror = null)(
                   (e.target.src =
-                    "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Pain5.svg/640px-Pain5.svg.png")
+                    <FaRegSadCry className="truck-profile" />)
                 )
               }
             />
-            <img
-              src={
-                truckData.P2 != "NULL"
-                  ? truckData.P2
-                  : "../Images/Truck-Avatar.png"
-              }
-              onError={(e) =>
-                (e.target.onerror = null)(
-                  (e.target.src =
-                    "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Pain3.svg/640px-Pain3.svg.png")
-                )
-              }
-            />
-            <img
-              src={
-                truckData.P3 != "NULL"
-                  ? truckData.P3
-                  : "../Images/Truck-Avatar.png"
-              }
-              onError={(e) =>
-                (e.target.onerror = null)(
-                  (e.target.src =
-                    "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Pain_10_png_rendered.png/640px-Pain_10_png_rendered.png")
-                )
-              }
-            />
+          )})}
           </div>
 
           <div onClick={() => alert("MAYBE A SICK ASS PING OF THE VENDOR")}>

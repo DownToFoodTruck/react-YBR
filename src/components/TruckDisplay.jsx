@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import IndividualModal from "./IndividualModal";
+import { FaRegSadCry } from "react-icons/fa";
 
 export const TruckDisplay = (name) => {
   const truckData = name.name;
@@ -14,15 +15,15 @@ export const TruckDisplay = (name) => {
       />
 
       <article className="truck-article">
-        <section className="truck-title">{truckData.Name}</section> <br />
         <div>
           <img
             className="truck-profile"
             src={truckData.P1}
+            loading="lazy"
             onError={(e) =>
               (e.target.onerror = null)(
                 (e.target.src =
-                  "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Pain_10_png_rendered.png/640px-Pain_10_png_rendered.png")
+                <FaRegSadCry className="truck-profile" />)
               )
             }
           ></img>

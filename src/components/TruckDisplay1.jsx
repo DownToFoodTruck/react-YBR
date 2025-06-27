@@ -18,7 +18,6 @@ export const TruckDisplay = (name) => {
 
       <article className="truck-article">
         
-      <section className="truck-title">{truckData.Name}</section> <br />
 
       <div>
         <img
