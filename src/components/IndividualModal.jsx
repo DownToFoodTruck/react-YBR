@@ -85,7 +85,6 @@ const IndividualModal = (props) => {
                   ? pic
                   : "../Images/Truck-Avatar.png"
               }
-              loading="lazy"
               onError={(e) =>
                 (e.target.onerror = null)(
                   (e.target.src =

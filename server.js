@@ -38,7 +38,7 @@ app.post("/users", (req, res) => {
     await collection.insertOne(user);
     await client.close();
   }
-  console.log(user);
+  // console.log(user);
   insertUser();
   res.redirect("/");
 });
@@ -58,14 +58,14 @@ app.post("/login", (req, res) => {
     const collection = client.db("test_db").collection("users");
     let findUser = await collection.findOne(user);
     await client.close();
-    console.log(user);
+    // console.log(user);
     if (findUser !== null) {
       res.redirect("/");
     } else {
       res.redirect("/Login");
     }
   }
-  console.log(user);
+  // console.log(user);
   verifyUser();
 });
 {
@@ -83,7 +83,7 @@ app.get("/apiTAG", (req, res) => {
     let cursorArray = await collection.distinct("Tags");
     cursorArray = cursorArray.map((i) => i.split(","));
     cursorArray = Array.from(new Set(cursorArray.flat(1)));
-    console.log(cursorArray);
+    // console.log(cursorArray);
     // cursorArray = Array.from(new Set(cursorArray));
     await client.close();
 
@@ -124,7 +124,7 @@ app.get("/api", function (req, res) {
           Name: 1,
         })
         .toArray();
-      console.log(cursorArray);
+      // console.log(cursorArray);
       res.send(cursorArray);
     } catch (err) {
       res.sendStatus(400);

@@ -19,13 +19,11 @@ export const TruckDisplay = (name) => {
       <article className="truck-article">
         
 
-      <div>
         <img
           className="truck-profile"
           src={truckData.P1}
           onClick={() => setShow(true)}
         ></img>
-      </div>
 
       </article>
     </div>
