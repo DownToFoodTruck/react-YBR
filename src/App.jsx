@@ -4,6 +4,7 @@ import VendorLogin from './Pages/VendorLogin';
 import Home from './Pages/Home';
 import LoginSplash from "./Pages/LoginSplash";
 import ForgotPassword from './Pages/ForgotPassword';
+import Map from './Pages/Map';
 import './App.css';
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <Route path = "/UserLogin" element = {<UserLogin />} />
         <Route path = "/VendorLogin" element = {<VendorLogin />} />
         <Route path = "/ForgotPassword" element = {<ForgotPassword />} />
+        <Route path = "/Map" element = {<Map />} />
       </Routes>
     </BrowserRouter>
   );
