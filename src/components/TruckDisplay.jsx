@@ -7,14 +7,14 @@ export const TruckDisplay = (name) => {
   const [show, setShow] = useState(false);
 
   return (
+    <div>
     <div className="truck-display-container" onClick={() => setShow(true)}>
       <IndividualModal
         onClose={() => setShow(false)}
         show={show}
         truckData={truckData}
       />
-
-      <article className="truck-article">
+        <article className="truck-article">
           <img
             className="truck-profile"
             src={truckData.P1}
@@ -22,11 +22,16 @@ export const TruckDisplay = (name) => {
             onError={(e) =>
               (e.target.onerror = null)(
                 (e.target.src =
-                <FaRegSadCry className="truck-profile" />)
+                  <FaRegSadCry className="truck-profile" />)
               )
             }
           ></img>
-      </article>
+        </article>
     </div>
+    <div>
+      <h3 className="truck-name">{truckData.Name}</h3>
+    </div>
+    </div>
+
   );
 };
