@@ -25,8 +25,15 @@
   img {
     height: auto;
     max-width: 200px;
-    height: auto;
     max-height: 100px;
+  }
+  
+  .truck-article img {
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    max-height: none;
+    object-fit: cover;
   }
   .nav-img {
     height: 50px;
@@ -720,6 +727,12 @@
     display: flex;
     justify-content: center;
   }
+  .truck-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0.5rem;
+  }
   .truck-display {
     background-color: #fff;
     display: flex;
@@ -736,47 +749,58 @@
   .truck-display-container {
     display: flex;
     background-color: #fff;
-    object-fit: contain;
-    text-align: center;
-    align-items: center;
     margin: 1rem;
-    border: 1px solid #f3c613;
-    border-radius: 0.5rem;
-    width: 250px;
-    height: 250px;
+    border: 4px solid #004aad;
+    border-radius: 1rem;
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    padding: 0;
   }
   .truck-display-container:hover {
     cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   }
   .truck-article {
-    border-radius: 0.5rem;
-    width: 250px;
-    height: 250px;
-    object-fit: contain;
-    flex-direction: column;
-    justify-content: space-evenly;
-    margin: 0 1rem;
-    border-radius: 8px;
-  }
-  .truck-profile {
-    border-radius: 0.5rem;
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-
+    justify-content: space-between;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
   }
-  .truck-info-button {
-    background: #004aad;
-    padding: 5px 10px;
-    color: yellow;
-    font-size: 16px;
-    outline: none;
-    border: none;
+  .truck-profile {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: white;
+  }
+  .truck-status, .truck-status-closed {
+    background: #ffc107;
+    padding: 8px 24px;
+    border-radius: 4px;
+    margin-top: 0.5rem;
     cursor: pointer;
-    text-decoration: none;
+  }
+
+  .truck-status h3, .truck-status-closed h3 {
+    color: #004aad;
+    font-weight: bold;
+    font-size: 1rem;
+    margin: 0;
+    text-transform: uppercase;
+  }
+
+  .truck-status-closed {
+    background: #004aad;
+  }
+
+  .truck-status-closed h3 {
+    color: #ffffff;
   }
   .truck-hub {
     display: flex;
@@ -799,29 +823,132 @@
     background-color: rgb(145, 142, 142, 0.37);
   }
   .truck-modal-container {
+    max-width: 800px;
+    width: 90%;
+    height: 90vh;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .truck-modal-carousel {
+    flex: 1;
+    width: 100%;
+    min-height: 400px;
+    background: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .truck-modal-carousel .carousel {
+    width: 100%;
+    height: 100%;
+  }
+
+  .truck-modal-carousel .carousel-control-prev-icon,
+  .truck-modal-carousel .carousel-control-next-icon {
+    background-color: #004aad;
+    border-radius: 50%;
+    padding: 10px;
+  }
+
+  .truck-modal-carousel .carousel-inner {
+    height: 100%;
+  }
+
+  .truck-modal-carousel .carousel-item {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+  }
+
+  .truck-modal-carousel .carousel-item.active {
+    opacity: 1;
+  }
+
+  .modal-carousel-img {
+    max-width: 100%;
+    max-height: 400px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    margin: auto;
+    display: block;
+  }
+
+  .truck-modal-content {
+    padding: 2rem;
+  }
+
+  .truck-modal-content h2 {
+    color: #004aad;
+    margin: 0 0 1rem 0;
+    font-size: 1.8rem;
+  }
+
+  .truck-description {
+    color: #666;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+  }
+
+  .truck-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .info-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #004aad;
+    text-decoration: none;
+    padding: 0.5rem;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+  }
+
+  .info-item:hover {
+    background-color: #f5f5f5;
+    color: #004aad;
+  }
+
+  .info-item svg {
+    font-size: 1.2rem;
+    color: #ffc107;
+  }
+
+  .truck-tags {
     display: flex;
     flex-wrap: wrap;
-    width: 500px;
-    padding: 0px 5px 5px;
-    background-repeat: round;
-    background-image: url("./Images/food-icons_2.png");
-    border: solid 5px #f3c613;
-    border-radius: 5px;
+    gap: 0.5rem;
   }
-  .truck-data {
-    text-align: center;
-    padding: 20px;
-    background: #f3c613;
-    border: 4px solid white;
-    border-radius: 4px;
-    justify-content: space-evenly;
-    align-items: center;
+
+  .tag {
+    background: #f5f5f5;
+    color: #004aad;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
   }
-  .truck-modal-pics {
+
+  .loading-placeholder {
+    width: 100%;
+    height: 400px;
+    background: #f5f5f5;
     display: flex;
-    justify-content: space-evenly;
     align-items: center;
-    padding: 0.5rem;
+    justify-content: center;
+    color: #004aad;
   }
   .select-btn,
   .about-btn {

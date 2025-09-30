@@ -6,15 +6,32 @@ export const TruckDisplay = (name) => {
   const truckData = name.name;
   const [show, setShow] = useState(false);
 
-  return (
-    <div className="truck-display-container" onClick={() => setShow(true)}>
-      <IndividualModal
-        onClose={() => setShow(false)}
-        show={show}
-        truckData={truckData}
-      />
+  const truckStatus = (truckDataStatus) => {
+    if (truckDataStatus == "Open") {
+      return (
+        <div className="truck-status">
+          <h3 >OPEN NOW</h3>
+        </div>
+      )
+    }
+    else {
+      return (
+        <div className="truck-status-closed">
+          <h3 >Details</h3>
+        </div>
+      )
+    }
+  }
 
-      <article className="truck-article">
+  return (
+    <div className="truck-container">
+      <div className="truck-display-container" >
+        <IndividualModal
+          onClose={() => setShow(false)}
+          show={show}
+          truckData={truckData}
+        />
+        <article className="truck-article">
           <img
             className="truck-profile"
             src={truckData.P1}
@@ -22,11 +39,23 @@ export const TruckDisplay = (name) => {
             onError={(e) =>
               (e.target.onerror = null)(
                 (e.target.src =
-                <FaRegSadCry className="truck-profile" />)
+                  <FaRegSadCry className="truck-profile" />)
               )
             }
-          ></img>
-      </article>
+            alt={truckData.Name}
+          />
+
+        </article>
+      </div>
+      <div className="truck-profile-content">
+        <h3>{truckData.Name}</h3>
+      </div>
+      <div onClick={() => setShow(true)}>
+        {
+          truckStatus("Open")
+        }
+      </div>
     </div>
+
   );
 };
