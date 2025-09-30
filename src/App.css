@@ -25,8 +25,15 @@
   img {
     height: auto;
     max-width: 200px;
-    height: auto;
     max-height: 100px;
+  }
+  
+  .truck-article img {
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    max-height: none;
+    object-fit: cover;
   }
   .nav-img {
     height: 50px;
@@ -736,37 +743,35 @@
   .truck-display-container {
     display: flex;
     background-color: #fff;
-    object-fit: contain;
-    text-align: center;
-    align-items: center;
     margin: 1rem;
-    border: 1px solid #f3c613;
-    border-radius: 0.5rem;
-    width: 250px;
-    height: 250px;
+    border: 2px solid #004aad;
+    border-radius: 1rem;
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    padding: 0;
   }
   .truck-display-container:hover {
     cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   }
   .truck-article {
-    border-radius: 0.5rem;
-    width: 250px;
-    height: 250px;
-    object-fit: contain;
-    flex-direction: column;
-    justify-content: space-evenly;
-    margin: 0 1rem;
-    border-radius: 8px;
-  }
-  .truck-profile {
-    border-radius: 0.5rem;
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+  }
+  .truck-profile {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-
+    background: white;
   }
   .truck-info-button {
     background: #004aad;
