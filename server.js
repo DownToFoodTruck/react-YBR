@@ -112,7 +112,7 @@ app.get("/api", function (req, res) {
   async function getSupplies() {
     try {
       await client.connect();
-      const collection = client.db("YBR").collection("PROD4");
+      const collection = client.db("YBR").collection("PROD5");
       const cursorArray = await collection
         .find({
           Tags: {
