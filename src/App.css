@@ -1,5 +1,5 @@
 .app {
-    display: flex;
+    display: block;
   }
   .blue {
     white-space: nowrap;
@@ -9,10 +9,10 @@
     display: flex;
     flex-direction: column;
     height: 100vh;
-    width: 85vw;
-    padding: 10px;
+    width: 100vw;
+    /* padding: 10px; */
     background-color: #004aad;
-    /* background: url("./Images/food-icons_2.png"); */
+    background: url(".\Images\DTFT_Icon_Background_Full_Color.webp"); 
   }
   #page-container {
     display: flex;
@@ -717,11 +717,15 @@
     /* border: 5px solid black; */
   }
   .selector {
+    width: 100%;
+    height: 70px;
+    background: #f3c613;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
     display: flex;
-    width: 100vw;
-    padding: 1rem 0 1rem;
+    align-items: center;
     justify-content: center;
-    /* border: 5px solid blue; */
+    padding: 0 1rem;
   }
   .selector-container {
     display: flex;
@@ -734,7 +738,7 @@
     margin: 0.5rem;
   }
   .truck-display {
-    background-color: #fff;
+    background-color: #ffffff00;
     display: flex;
     flex-wrap: wrap;
     /* border: 5px solid red; */
@@ -977,4 +981,8 @@
     padding: 4px 10px;
     border-radius: 4px;
     margin: 0 5px;
+  }
+  #dropdown.basic{
+    background-color: #fff;
+    font-size: x-large;
   }
