@@ -6,6 +6,31 @@ export const TruckDisplay = (name) => {
   const truckData = name.name;
   const [show, setShow] = useState(false);
 
+ const [lat, setLat] = useState(null);
+  const [long, setLong] = useState(null);
+
+  const geolocationAPI = navigator.geolocation;
+  const getUserCoordinates = () => {
+    if (!geolocationAPI) {
+      console.log("Geolocation API is not available in your browser!");
+    } else {
+      geolocationAPI.getCurrentPosition(
+        (position) => {
+          const { coords } = position;
+          setLat(coords.latitude);
+          setLong(coords.longitude);
+          codeLatLng(coords.latitude, coords.longitude)
+        },
+        (error) => {
+          console.log("Something went wrong getting your position!");
+        }
+      );
+    }
+  };
+
+  getUserCoordinates()
+
+
   const truckStatus = (truckDataStatus) => {
     if (truckDataStatus == "Open") {
       return (
@@ -43,6 +68,7 @@ export const TruckDisplay = (name) => {
               )
             }
             alt={truckData.Name}
+            onClick={()=>alert(`${truckData.Name} is located at Latitude: ${lat}, Longitude: ${long}`)}
           />
 
         </article>
