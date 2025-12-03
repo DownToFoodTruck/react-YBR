@@ -760,6 +760,7 @@
     height: 300px;
     overflow: hidden;
     padding: 0;
+    position: relative;
   }
   .truck-display-container:hover {
     cursor: pointer;
@@ -774,7 +775,89 @@
     overflow: hidden;
     margin: 0;
     padding: 0;
+    position: relative;
   }
+
+  .geolocation-eye-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 2px solid #333;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #000;
+    z-index: 20;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    padding: 0;
+    font-size: 20px;
+  }
+
+  .geolocation-eye-btn:hover:not(:disabled) {
+    background-color: rgba(255, 255, 255, 1);
+    transform: scale(1.15);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+    border-color: #000;
+  }
+
+  .geolocation-eye-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+
+  .geolocation-eye-btn:active:not(:disabled) {
+    transform: scale(0.95);
+  }
+
+  .geolocation-eye-btn.posting {
+    background-color: rgba(255, 165, 0, 0.95);
+    color: white;
+    border-color: #FF8C00;
+    animation: pulse 1.5s infinite;
+  }
+
+  .geolocation-eye-btn.posted {
+    background-color: rgba(34, 139, 34, 0.95);
+    color: white;
+    border-color: #228B22;
+  }
+
+  .geolocation-eye-btn.posted:hover {
+    background-color: rgba(34, 139, 34, 1);
+    border-color: #228B22;
+  }
+
+  .geolocation-eye-btn .spinner {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: white;
+    animation: spin 1s linear infinite;
+  }
+
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes pulse {
+    0%, 100% {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+    50% {
+      box-shadow: 0 6px 20px rgba(255, 165, 0, 0.6);
+    }
+  }
+
   .truck-profile {
     width: 100%;
     display: flex;
