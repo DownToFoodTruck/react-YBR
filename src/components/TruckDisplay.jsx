@@ -10,6 +10,19 @@ export const TruckDisplay = (name) => {
   const [isPosting, setIsPosting] = useState(false);
   const [isPosted, setIsPosted] = useState(false);
 
+  // Check if truck was seen recently (within 30 minutes)
+  const isSeenRecently = () => {
+    if (!truckData.lastSeenTms) {
+      return false;
+    }
+
+    const lastSeenTime = new Date(truckData.lastSeenTms);
+    const currentTime = new Date();
+    const timeDifferenceInMinutes = (currentTime - lastSeenTime) / (1000 * 60);
+
+    return timeDifferenceInMinutes <= 30;
+  };
+
   const geolocationAPI = navigator.geolocation;
   const getUserCoordinates = () => {
     if (!geolocationAPI) {
@@ -108,6 +121,12 @@ export const TruckDisplay = (name) => {
           truckData={truckData}
         />
         <article className="truck-article">
+          {isSeenRecently() && (
+            <div className="seen-recently-badge">
+              <FaEye size={14} />
+              <span>Seen Recently</span>
+            </div>
+          )}
           <button 
             className={`geolocation-eye-btn ${isPosted ? 'posted' : ''} ${isPosting ? 'posting' : ''}`}
             onClick={postGeolocation}
