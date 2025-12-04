@@ -124,7 +124,7 @@ export const TruckDisplay = (name) => {
           {isSeenRecently() && (
             <div className="seen-recently-badge">
               <FaEye size={14} />
-              <span>Seen Recently</span>
+              <span><a href={`https://maps.google.com/?q=${truckData.lastLat},${truckData.lastLong}`}>Seen Recently</a></span>
             </div>
           )}
           <button 
