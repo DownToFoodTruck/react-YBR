@@ -11,44 +11,27 @@ import {
   NavBtn,
   NavBtnLink,
 } from "./NavbarElements";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faInstagram } from "@fortawesome/free-brands-svg-icons";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import DTFT from "../../Images/Logo-Blue-2500x1500.png";
-
+import DTFT from "../../Images/DTFT-Logo-Stacked.png";
+// import { FaInstagram } from "react-icons/fa";
+// import { FaMailBulk } from "react-icons/fa";
 const Navbar = ({ toggle }) => {
   return (
-	<>
-		<Nav>
-			<NavbarContainer>
-				<NavLogo to="/">
-					<img src={DTFT} alt='Logo'/>
-				</NavLogo>
-				<MobileIcon onClick={toggle}>
-					<FaBars />
-				</MobileIcon>
-				<NavMenu>
-					<NavItem>
-						<NavLinks to='/UserRegister'>
-							Sign Up
-						</NavLinks>
+    <>
+      <Nav>
+        <NavbarContainer>
+          <NavLogo to="/">
+            <img src={DTFT} alt='Logo' />
+          </NavLogo>
+          <MobileIcon onClick={toggle}>
+            <FaBars />
+          </MobileIcon>
+          <NavMenu>
+            {/* <NavItem>
+              <NavLinks to='/LoginSplash'>
+                Sign Up
+              </NavLinks>
 
-					</NavItem>
-
-            <NavItem>
-              <NavLinks to="/">Link</NavLinks>
-            </NavItem>
-
-            <NavItem>
-            <a href="https://www.instagram.com/downtofoodtruck"
-                target="_blank">
-              <FontAwesomeIcon icon={faInstagram} className="nav-img"/>
-            </a>
-            <a href="mailto:hey@downtofoodtruck.com"
-                target="_blank">
-              <FontAwesomeIcon icon={faEnvelope} className="nav-img"/>
-            </a>
-            </NavItem>
+            </NavItem> */}
           </NavMenu>
           <NavBtn>
             {/* <NavBtnLink to="/LoginSplash">Sign In</NavBtnLink> */}

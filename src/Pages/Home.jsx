@@ -12,7 +12,9 @@ export default function Home() {
       <div className="home-body">
         <TruckSelector />
 
-        <div className="about-section"></div>
+        <div className="about-section">
+
+        </div>
       </div>
 
       </div>

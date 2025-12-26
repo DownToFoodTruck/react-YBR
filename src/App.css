@@ -1,26 +1,18 @@
 .app {
-    display: flex;
-    background-color: #fff;
+    display: block;
   }
   .blue {
     white-space: nowrap;
     color: #004aad;
   }
-  .yellow {
-    white-space: nowrap;
-    color: #f3c613;
-  }
-  #absolute{
-    position: sticky;
-  }
   .home-body {
     display: flex;
     flex-direction: column;
     height: 100vh;
-    width: 85vw;
-    padding: 10px;
+    width: 100vw;
+    /* padding: 10px; */
     background-color: #004aad;
-    /* background: url("./Images/food-icons_2.png"); */
+    background: url(".\Images\DTFT_Icon_Background_Full_Color.webp"); 
   }
   #page-container {
     display: flex;
@@ -31,29 +23,131 @@
     min-height: 100%;
   }
   img {
-    width: 100%;
-    max-width: 200px;
     height: auto;
+    max-width: 200px;
     max-height: 100px;
   }
+  
+  .truck-article img {
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    max-height: none;
+    object-fit: cover;
+  }
   .nav-img {
-    height: 25px;
-    width: 25px;
-    padding: .5rem;
-    color: #004aad;
+    height: 50px;
+    width: 50px;
+    /*!!!!!!!!!!!!!!!!!!!!!Not circular!!!!!!!!!!!!!!!!!!!!!!!!! */
+    border-radius: 50%;
+
   }
   .nav-img:hover {
     color: yellow;
+    animation-name: lighten-blue;
     animation-duration: 500ms;
     animation-fill-mode: forwards;
   }
-
+  /* .over-img {
+    position: absolute;
+    height: 150px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  } */
+  /* .top-right {
+    position: absolute;
+    top: -60px;
+    right: 0px;
+  } */
+  /* .login-btn {
+    cursor: pointer;
+    font-family: Baloo;
+    font-weight: 700;
+    font-size: 20px;
+    background: #004aad;
+    color: #f3c613;
+    border: none;
+    padding: 4px 10px;
+    border-radius: 4px;
+    margin: 0 5px;
+  } */
+  /* .contact-button {
+    height: 40px;
+    width: 50px;
+    margin: 0px, 5px;
+    background: none;
+  } */
+  /* .header-contact-button {
+    position: absolute;
+    height: 40px;
+    width: 50px;
+    top: -70px;
+    left: -15px;
+    margin: 20px 0px 0px 5px;
+  } */
+  /* .header-follow-button {
+    position: absolute;
+    height: 40px;
+    width: 50px;
+    top: -70px;
+    left: 30px;
+    margin: 20px 0px 0px;
+  } */
+  /* .guest {
+    background-color: #004aad;
+    color: #f3c613;
+    height: 100px;
+    width: 125px;
+    font-size: 20px;
+    border-radius: 4px;
+    margin: 50px 10px 0px;
+    text-align: center;
+    cursor: pointer;
+    animation: wiggle 2s linear infinite;
+  } */
+  @keyframes wiggle {
+    0%,
+    7% {
+      transform: rotateZ(0);
+    }
+    15% {
+      transform: rotateZ(-15deg);
+    }
+    20% {
+      transform: rotateZ(10deg);
+    }
+    25% {
+      transform: rotateZ(-10deg);
+    }
+    30% {
+      transform: rotateZ(6deg);
+    }
+    35% {
+      transform: rotateZ(-4deg);
+    }
+    40%,
+    100% {
+      transform: rotateZ(0);
+    }
+  }
+  .wiggle {
+    text-align: center;
+    height: auto;
+  }
   .title {
     color: #f3c613;
     font-size: clamp(30px, 2vw, 50px);
     margin: 0;
   }
-
+  /* #dock {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin: 0px;
+  } */
   .home,
   .favorites,
   .contact {
@@ -109,7 +203,7 @@
     }
   }
   #modal {
-    background: url("./Images/food-icons_2.png");
+    background: url("./Images/food-icons.png");
     padding: 20px;
     height: 80%;
     max-width: 600px;
@@ -138,7 +232,7 @@
     z-index: 10;
     background-color: rgba(0, 0, 0, 0.3);
   }
-  /* #email,
+  #email,
   #email2,
   #password {
     height: 60px;
@@ -148,7 +242,7 @@
     border-radius: 4px;
     background-color: lightgray;
     border: none;
-  } */
+  }
   .customer,
   .vendor {
     display: flex;
@@ -290,7 +384,7 @@
     width: 500px;
     padding: 0px 5px 5px;
     background-repeat: round;
-    background-image: url("./Images/food-icons_2.png");
+    background-image: url("./Images/food-icons.png");
     border: solid 5px #f3c613;
     border-radius: 5px;
   }
@@ -377,10 +471,10 @@
       width: 0;
     }
     50% {
-      width: 100%;
+      height: auto;
     }
     75% {
-      width: 100%;
+      height: auto;
     }
   }
   .mobile {
@@ -411,7 +505,7 @@
     }
   }
   .login-body {
-    background: url(./Images/food-icons_2.png);
+    background: url(./Images/food-icons.png);
     background-color: lightgray;
     background-position: center;
     background-repeat: no-repeat;
@@ -455,13 +549,16 @@
       0 17px 50px 0 rgba(0, 0, 0, 0.19);
   }
   .splash-body {
-    background-color: #004aad;
+    background: url(./Images/food-icons.png);
+    background-color: lightgray;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     height: 100vh;
     padding: 180px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid rgb(100, 100, 100);
   }
   .splash-container-box {
     background: #fff;
@@ -528,7 +625,7 @@
     height: 460px;
     padding: 3.6rem 0;
     margin: 0%;
-    /* opacity: 1 !important; */
+    opacity: 1 !important;
     justify-self: center;
     left: 50%;
     top: 50%;
@@ -552,7 +649,7 @@
     justify-content: center;
     align-items: center;
     display: none;
-    width: 100%;
+    height: auto;
     height: 100%;
     position: absolute;
   }
@@ -570,7 +667,7 @@
     width: 100px;
     height: 2.5rem;
     cursor: pointer;
-    border: 1px solid rgb(100, 100, 100);
+    border: 1px solid black;
   }
   #close-modal-su:hover,
   #close-modal-li:hover {
@@ -592,7 +689,7 @@
     width: 100px;
     height: 2.5rem;
     cursor: pointer;
-    border: 1px solid rgb(100, 100, 100);
+    border: 1px solid black;
     box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
       0 17px 50px 0 rgba(0, 0, 0, 0.19);
   }
@@ -603,7 +700,7 @@
     animation-fill-mode: forwards;
   }
   #home-page {
-    width: 100%;
+    height: auto;
   }
   #nav-logo {
     width: 20px;
@@ -620,25 +717,31 @@
     /* border: 5px solid black; */
   }
   .selector {
+    width: 100%;
+    height: 70px;
+    background: #f3c613;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
     display: flex;
-    width: 100vw;
-    padding: 1rem 0 1rem;
+    align-items: center;
     justify-content: center;
-    /* border: 5px solid blue; */
-  }
-  #truck-selector {
-    text-align: center;
-    width: 10rem;
+    padding: 0 1rem;
   }
   .selector-container {
     display: flex;
     justify-content: center;
   }
+  .truck-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0.5rem;
+  }
   .truck-display {
-    background-color: #fff;
+    background-color: #ffffff00;
     display: flex;
     flex-wrap: wrap;
-    /* border: 1px solid #778790; */
+    /* border: 5px solid red; */
     border-radius: 10px;
     height: 80vh;
     width: 100vw;
@@ -650,35 +753,171 @@
   .truck-display-container {
     display: flex;
     background-color: #fff;
-    text-align: center;
-    align-items: center;
-    padding: 1rem;
     margin: 1rem;
-    border: 1px solid #f3c613;
-    border-radius: 0.5rem;
-    width: 250px;
-    height: 250px;
+    border: 4px solid #004aad;
+    border-radius: 1rem;
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
   }
   .truck-display-container:hover {
     cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   }
   .truck-article {
-    /* display: flex; */
+    width: 100%;
+    height: 100%;
+    display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    padding: 2rem;
-    margin: 0 1rem;
-    border-radius: 8px;
+    justify-content: space-between;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    position: relative;
   }
-  .truck-info-button {
-    background: #004aad;
-    padding: 5px 10px;
-    color: yellow;
-    font-size: 16px;
-    outline: none;
-    border: none;
+
+  .geolocation-eye-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 2px solid #333;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
-    text-decoration: none;
+    color: #000;
+    z-index: 20;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    padding: 0;
+    font-size: 20px;
+  }
+
+  .geolocation-eye-btn:hover:not(:disabled) {
+    background-color: rgba(255, 255, 255, 1);
+    transform: scale(1.15);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+    border-color: #000;
+  }
+
+  .geolocation-eye-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+
+  .geolocation-eye-btn:active:not(:disabled) {
+    transform: scale(0.95);
+  }
+
+  .geolocation-eye-btn.posting {
+    background-color: rgba(255, 165, 0, 0.95);
+    color: white;
+    border-color: #FF8C00;
+    animation: pulse 1.5s infinite;
+  }
+
+  .geolocation-eye-btn.posted {
+    background-color: rgba(34, 139, 34, 0.95);
+    color: white;
+    border-color: #228B22;
+  }
+
+  .geolocation-eye-btn.posted:hover {
+    background-color: rgba(34, 139, 34, 1);
+    border-color: #228B22;
+  }
+
+  .geolocation-eye-btn .spinner {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: white;
+    animation: spin 1s linear infinite;
+  }
+
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes pulse {
+    0%, 100% {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+    50% {
+      box-shadow: 0 6px 20px rgba(255, 165, 0, 0.6);
+    }
+  }
+
+  .seen-recently-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background-color: rgba(34, 139, 34, 0.95);
+    border: 2px solid white;
+    border-radius: 6px;
+    padding: 6px 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: white;
+    z-index: 15;
+    font-size: 12px;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(34, 139, 34, 0.4);
+    animation: slideInLeft 0.4s ease-out;
+  }
+
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .truck-profile {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: white;
+  }
+  .truck-status, .truck-status-closed {
+    background: #ffc107;
+    padding: 8px 24px;
+    border-radius: 4px;
+    margin-top: 0.5rem;
+    cursor: pointer;
+  }
+
+  .truck-status h3, .truck-status-closed h3 {
+    color: #004aad;
+    font-weight: bold;
+    font-size: 1rem;
+    margin: 0;
+    text-transform: uppercase;
+  }
+
+  .truck-status-closed {
+    background: #004aad;
+  }
+
+  .truck-status-closed h3 {
+    color: #ffffff;
   }
   .truck-hub {
     display: flex;
@@ -701,29 +940,134 @@
     background-color: rgb(145, 142, 142, 0.37);
   }
   .truck-modal-container {
+    max-width: 800px;
+    width: 90%;
+    height: 90vh;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+     position: relative;
+     z-index: 2;
+  }
+
+  .truck-modal-carousel {
+    flex: 1;
+    width: 100%;
+    min-height: 400px;
+    background: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .truck-modal-carousel .carousel {
+    width: 100%;
+    height: 100%;
+  }
+
+  .truck-modal-carousel .carousel-control-prev-icon,
+  .truck-modal-carousel .carousel-control-next-icon {
+    background-color: #004aad;
+    border-radius: 50%;
+    padding: 10px;
+  }
+
+  .truck-modal-carousel .carousel-inner {
+    height: 100%;
+  }
+
+  .truck-modal-carousel .carousel-item {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+  }
+
+  .truck-modal-carousel .carousel-item.active {
+    opacity: 1;
+  }
+
+  .modal-carousel-img {
+    max-width: 100%;
+    max-height: 400px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    margin: auto;
+    display: block;
+  }
+
+  .truck-modal-content {
+    padding: 2rem;
+  }
+
+  .truck-modal-content h2 {
+    color: #004aad;
+    margin: 0 0 1rem 0;
+    font-size: 1.8rem;
+  }
+
+  .truck-description {
+    color: #666;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+  }
+
+  .truck-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .info-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #004aad;
+    text-decoration: none;
+    padding: 0.5rem;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+  }
+
+  .info-item:hover {
+    background-color: #f5f5f5;
+    color: #004aad;
+  }
+
+  .info-item svg {
+    font-size: 1.2rem;
+    color: #ffc107;
+  }
+
+  .truck-tags {
     display: flex;
     flex-wrap: wrap;
-    width: 500px;
-    padding: 0px 5px 5px;
-    background-repeat: round;
-    background-image: url("./Images/food-icons_2.png");
-    border: solid 5px #f3c613;
-    border-radius: 5px;
+    gap: 0.5rem;
   }
-  .truck-data {
-    text-align: center;
-    padding: 20px;
-    background: #f3c613;
-    border: 4px solid white;
-    border-radius: 4px;
-    justify-content: space-evenly;
-    align-items: center;
+
+  .tag {
+    background: #f5f5f5;
+    color: #004aad;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
   }
-  .truck-modal-pics {
+
+  .loading-placeholder {
+    width: 100%;
+    height: 400px;
+    background: #f5f5f5;
     display: flex;
-    justify-content: space-evenly;
     align-items: center;
-    padding: 0.5rem;
+    justify-content: center;
+    color: #004aad;
   }
   .select-btn,
   .about-btn {
@@ -753,108 +1097,7 @@
     border-radius: 4px;
     margin: 0 5px;
   }
-
-  /* REGISTRATION */
-
-.reg-body {
-  width: 100vw;
-  height: 100vh;
-  background-color: #fff;
-  display: flex;
-}
-
-.reg-cont {
-    width: 100%;
-    max-width: 420px;
-    min-height: 400px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    padding: 1rem;
-    margin: auto;
-    background-color: white;
-    border: 1px solid #778790;
-}
-
-.reg-form {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    flex-grow: 1;
-    padding-bottom: 1rem;
-}
-
-
-input[type="text"],
-input[type="password"],
-button,
-textarea {
-  font-family: 'Nunito', sans-serif;
-  font-size: 22px;
-  padding: 0.25rem;
-  border-radius: 0.5rem;
-}
-
-label,
-button {
-  margin-top: 1rem;
-}
-
-.instructions {
-    font-size: 0.75rem;
-    border-radius: 0.5rem;
-    background: #000;
-    color: #fff;
-    padding: 0.25rem;
-    position: relative;
-    bottom: -10px;
-}
-
-.instructions > svg {
-    margin-right: 0.25rem;
-}
-
-.offscreen {
-    position: absolute;
-    left: -9999px;
-}
-
-.hide {
-    display: none;
-}
-
-.valid {
-    color: limegreen;
-    margin-left: 0.25rem;
-}
-
-.invalid {
-    color: red;
-    margin-left: 0.25rem;
-}
-
-.errmsg {
-    background-color: lightpink;
-    color: firebrick;
-    font-weight: bold;
-    padding: 0.5rem;
-    margin-bottom: 0.5rem;
-}
-
-.line {
-    display: inline-block;
-}
-
-.reg-success {
-  width: 100%;
-  max-width: 420px;
-  min-height: 400px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 1rem;
-  margin: auto;
-  border: 1px solid #778790;
-  background-color:#fff;
-}
+  #dropdown.basic{
+    background-color: #fff;
+    font-size: x-large;
+  }

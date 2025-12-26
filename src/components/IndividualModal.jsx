@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useState, lazy, Suspense } from "react";
+import { FaRegSadCry, FaMapMarkerAlt, FaGlobe, FaPhone, FaClock } from "react-icons/fa";
+import { Carousel } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const IndividualModal = (props) => {
+  const [activeIndex, setActiveIndex] = useState(0);
   if (!props.show) return null;
 
   const { truckData } = props;
-  console.log(truckData);
-
+  const truckPictures = [truckData.P1, truckData.P2, truckData.P3];
   function modifySelection(tag) {
     alert(tag);
   }
@@ -17,110 +20,94 @@ const IndividualModal = (props) => {
         onClick={(event) => event.stopPropagation()}
       >
         <button className="about-modal-close-btn" onClick={props.onClose}>
-          X
+          ×
         </button>
 
-        <div className="truck-data">
+        <div className="truck-modal-carousel">
+          <Suspense fallback={<div className="loading-placeholder">Loading images...</div>}>
+            <Carousel 
+              activeIndex={activeIndex} 
+              onSelect={(index) => setActiveIndex(index)}
+              interval={null}
+              className="carousel"
+              fade={true}
+            >
+              {truckPictures.filter(pic => pic !== "NULL").map((pic, index) => (
+                <Carousel.Item key={index}>
+                  <div className="carousel-image-wrapper">
+                    <img
+                      className="modal-carousel-img"
+                      src={pic}
+                      alt={`${truckData.Name} - Image ${index + 1}`}
+                      loading="eager"
+                      onError={(e) => {
+                        e.target.onerror = null;
+                        e.target.src = "../Images/Truck-Avatar.png";
+                      }}
+                    />
+                  </div>
+                </Carousel.Item>
+              ))}
+            </Carousel>
+          </Suspense>
+        </div>
+
+        <div className="truck-modal-content">
           <h2>{truckData.Name}</h2>
-          <p>
-            <h3>
+          
+          {truckData.Description !== "NULL" && (
+            <p className="truck-description">{truckData.Description}</p>
+          )}
+
+          <div className="truck-info-grid">
+            {truckData.Address !== "NULL" && (
               <a
-                href={
-                  truckData.Address != "NULL"
-                    ? `https://www.google.com/maps/place/${truckData.Address.replace(
-                        " ",
-                        "+"
-                      )}`
-                    : "#"
-                }
+                className="info-item"
+                href={`https://www.google.com/maps/place/${truckData.Address.replace(" ", "+")}`}
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                {truckData.Address != "NULL" ? truckData.Address : ""}
+                <FaMapMarkerAlt />
+                <span>{truckData.Address}</span>
               </a>
-            </h3>
-          </p>
+            )}
 
-          <p>{truckData.Phone != "NULL" ? truckData.Phone : ""}</p>
-
-          <a
-            style={{ textDecoration: "none" }}
-            href={truckData.Site != "NULL" ? truckData.Site : ""}
-            target="_blank"
-          >
-            {truckData.Site != "NULL" ? truckData.Site : ""}
-          </a>
-
-          <p>{truckData.Email != "NULL" ? truckData.Email : ""}</p>
-          <p>
-            {truckData.Description != "NULL"
-              ? truckData.Description.toUpperCase()
-              : ""}
-          </p>
-
-          <p>
-            {truckData.Hours_of_Operation != "NULL"
-              ? truckData.Hours_of_Operation
-              : ""}
-          </p>
-          <div>
-            Cuisine tags:{" "}
-            {truckData.Tags.split(",").map((e) => (
-              <div>
-                <a
-                  onClick={() => {
-                    modifySelection(e);
-                  }}
-                >
-                  {e}
-                </a>
+            {truckData.Hours_of_Operation !== "NULL" && (
+              <div className="info-item">
+                <FaClock />
+                <span>{truckData.Hours_of_Operation}</span>
               </div>
-            ))}
+            )}
+
+            {truckData.Phone !== "NULL" && (
+              <a className="info-item" href={`tel:${truckData.Phone}`}>
+                <FaPhone />
+                <span>{truckData.Phone}</span>
+              </a>
+            )}
+
+            {truckData.Site !== "NULL" && (
+              <a 
+                className="info-item" 
+                href={truckData.Site} 
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaGlobe />
+                <span>Website</span>
+              </a>
+            )}
           </div>
 
-          <div className="truck-modal-pics">
-            <img
-              src={
-                truckData.P1 != "NULL"
-                  ? truckData.P1
-                  : "../Images/Truck-Avatar.png"
-              }
-              onError={(e) =>
-                (e.target.onerror = null)(
-                  (e.target.src =
-                    "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Pain5.svg/640px-Pain5.svg.png")
-                )
-              }
-            />
-            <img
-              src={
-                truckData.P2 != "NULL"
-                  ? truckData.P2
-                  : "../Images/Truck-Avatar.png"
-              }
-              onError={(e) =>
-                (e.target.onerror = null)(
-                  (e.target.src =
-                    "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Pain3.svg/640px-Pain3.svg.png")
-                )
-              }
-            />
-            <img
-              src={
-                truckData.P3 != "NULL"
-                  ? truckData.P3
-                  : "../Images/Truck-Avatar.png"
-              }
-              onError={(e) =>
-                (e.target.onerror = null)(
-                  (e.target.src =
-                    "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Pain_10_png_rendered.png/640px-Pain_10_png_rendered.png")
-                )
-              }
-            />
-          </div>
-
-          <div onClick={() => alert("MAYBE A SICK ASS PING OF THE VENDOR")}>
-            WHERE AM I???
-          </div>
+          {truckData.Tags && (
+            <div className="truck-tags">
+              {truckData.Tags.split(",").map((tag, index) => (
+                <span key={index} className="tag">
+                  {tag.trim()}
+                </span>
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </div>
