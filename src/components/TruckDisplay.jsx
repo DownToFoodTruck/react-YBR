@@ -1,9 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import IndividualModal from "./IndividualModal";
 import { FaRegSadCry, FaEye, FaCheck } from "react-icons/fa";
+import { useDispatch } from 'react-redux';
+import { upsertTruck, postGeolocation as postGeolocationThunk } from '../redux/slices/truckSliceNew';
 
 export const TruckDisplay = (name) => {
   const truckData = name.name;
+  const dispatch = useDispatch();
   const [show, setShow] = useState(false);
   const [lat, setLat] = useState(null);
   const [long, setLong] = useState(null);
@@ -42,11 +45,17 @@ export const TruckDisplay = (name) => {
     }
   };
 
-  getUserCoordinates();
+  useEffect(() => {
+    // upsert the truck entity into the store so entities are saved
+    if (truckData) dispatch(upsertTruck(truckData));
+    // get user coordinates once on mount
+    getUserCoordinates();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const postGeolocation = async (e) => {
     e.stopPropagation(); // Prevent triggering modal
-    
+
     if (!lat || !long) {
       alert("Geolocation not available yet. Please try again.");
       return;
@@ -61,34 +70,15 @@ export const TruckDisplay = (name) => {
         longitude: long,
         seenTms: new Date().toISOString(),
       };
-      
-      console.log("Posting geolocation:", payload);
-      
-      const response = await fetch("/api/geolocation", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(payload),
-      });
 
-      if (response.ok) {
-        const result = await response.json();
-        setIsPosted(true);
-        console.log("Geolocation posted successfully:", result);
-        
-        // Reset after 3 seconds
-        setTimeout(() => {
-          setIsPosted(false);
-        }, 3000);
-      } else {
-        const errorData = await response.json();
-        alert(`Failed to post location: ${errorData.error}`);
-        console.error("Error response:", errorData);
-      }
-    } catch (error) {
-      console.error("Error posting geolocation:", error);
-      alert("Error posting location: " + error.message);
+      // dispatch the post geolocation thunk so backend update and entity update happen via Redux
+      const res = await dispatch(postGeolocationThunk(payload)).unwrap();
+      setIsPosted(true);
+      console.log('Geolocation posted (thunk):', res);
+      setTimeout(() => setIsPosted(false), 3000);
+    } catch (err) {
+      console.error('Error posting geolocation (thunk):', err);
+      alert('Error posting location: ' + (err?.message || err));
     } finally {
       setIsPosting(false);
     }

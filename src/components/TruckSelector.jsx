@@ -1,67 +1,47 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, DropdownButton } from "react-bootstrap";
 import DropdownItem from "react-bootstrap/esm/DropdownItem";
 import { TruckDisplay } from "./TruckDisplay.jsx";
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchTags } from '../redux/slices/tagsSlice';
+import { fetchTrucksByTag } from '../redux/slices/truckSliceNew';
 
 export default function TruckSelector() {
-  const truckTags = [];
-  const [value, setValue] = useState(truckTags);
-  const [error, setError] = useState("");
-  const [name, setName] = useState([]);
+  const dispatch = useDispatch();
+  const tags = useSelector((s) => s.tags?.list || []);
+  const loading = useSelector((s) => s.tags?.loading);
+  const currentTag = useSelector((s) => s.trucks?.currentTag);
+  const byTag = useSelector((s) => s.trucks?.byTag || {});
+  const entities = useSelector((s) => s.trucks?.entities || {});
 
-  //POPULATE TAG DROPDOWN
-  //Make set, append i for i in truck categories, jam into tag drop
-  async function fetchSelectionList() {
-    if (value !== truckTags) {
-      return;
-    }
-    try {
-      const url = "/apiTAG";
-      const rawRes = await fetch(url);
-      const rawResJSON = await rawRes.json();
+  useEffect(() => {
+    // load tags once
+    dispatch(fetchTags());
+  }, [dispatch]);
 
-      setValue(rawResJSON);
-    } catch (err) {
-      console.log(err);
-      setError("Nothing Retrieved");
-    }
-  }
-  fetchSelectionList();
+  const tagSelected = (tag) => {
+    dispatch(fetchTrucksByTag(tag));
+  };
 
-  //FETCH TAG DROPDOWN OPTION
-  function tagSelected(param) {
-    async function executeQuery() {
-      try {
-        const url = "/api?tag=" + param;
-        const rawRes = await fetch(url);
-        const rawResJSON = await rawRes.json();
-        const nameReturn = await rawResJSON;
-        const truckList = await nameReturn;
-        console.log(truckList);
-
-        truckList.length == 0 ? console.log("ERR") : setName(nameReturn); //grabbing name info4
-      } catch (err) {
-        console.log(err);
-      }
-    }
-    executeQuery();
-  }
+  const trucksForCurrentTag = (tag) => {
+    const ids = byTag[tag] || [];
+    return ids.map((id) => entities[id]).filter(Boolean);
+  };
 
   return (
     <div className="truck-body">
       <div className="selector">
         <Container className="selector-container">
-          <DropdownButton id="truck-selector" title="Cuisine">
-            {value.map((e) => (
+          <DropdownButton id="truck-selector" title={loading ? 'Loading...' : 'Cuisine'}>
+            {tags.map((e) => (
               <DropdownItem
+                key={e}
                 name="selector-value"
                 value={e}
-                onClick={() => {
-                  tagSelected(e);
-                }}
+                onClick={() => tagSelected(e)}
               >
-                {e} {error}
+                {e}
               </DropdownItem>
             ))}
           </DropdownButton>
@@ -69,11 +49,9 @@ export default function TruckSelector() {
       </div>
 
       <div className="truck-display">
-        {name.map((e) => (
+        {trucksForCurrentTag(currentTag || '').map((e) => (
           <TruckDisplay
-            onClick={() => {
-              alert("TEST");
-            }}
+            key={e._id || e.id}
             name={e}
           />
         ))}
