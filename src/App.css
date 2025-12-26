@@ -203,7 +203,7 @@
     }
   }
   #modal {
-    background: url("./Images/food-icons_2.png");
+    background: url("./Images/food-icons.png");
     padding: 20px;
     height: 80%;
     max-width: 600px;
@@ -384,7 +384,7 @@
     width: 500px;
     padding: 0px 5px 5px;
     background-repeat: round;
-    background-image: url("./Images/food-icons_2.png");
+    background-image: url("./Images/food-icons.png");
     border: solid 5px #f3c613;
     border-radius: 5px;
   }
@@ -505,7 +505,7 @@
     }
   }
   .login-body {
-    background: url(./Images/food-icons_2.png);
+    background: url(./Images/food-icons.png);
     background-color: lightgray;
     background-position: center;
     background-repeat: no-repeat;
@@ -549,7 +549,7 @@
       0 17px 50px 0 rgba(0, 0, 0, 0.19);
   }
   .splash-body {
-    background: url(./Images/food-icons_2.png);
+    background: url(./Images/food-icons.png);
     background-color: lightgray;
     background-position: center;
     background-repeat: no-repeat;
@@ -949,6 +949,8 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
+     position: relative;
+     z-index: 2;
   }
 
   .truck-modal-carousel {
