@@ -1,32 +1,5 @@
-import { MongoClient, ObjectId } from "mongodb";
-
-const url = process.env.MONGO_URI;
-
-if (!url) {
-  throw new Error("MONGO_URI not found in environment variables");
-}
-
-let client;
-let clientPromise;
-
-if (process.env.NODE_ENV === "development") {
-  if (!global._mongoClientPromise) {
-    client = new MongoClient(url, {
-      serverSelectionTimeoutMS: 10000,
-      connectTimeoutMS: 10000,
-      retryWrites: true,
-    });
-    global._mongoClientPromise = client.connect();
-  }
-  clientPromise = global._mongoClientPromise;
-} else {
-  client = new MongoClient(url, {
-    serverSelectionTimeoutMS: 10000,
-    connectTimeoutMS: 10000,
-    retryWrites: true,
-  });
-  clientPromise = client.connect();
-}
+import { ObjectId } from "mongodb";
+import { mongo } from "./lib/mongodb.js";
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
@@ -44,7 +17,7 @@ export default async function handler(req, res) {
       });
     }
 
-    const client = await clientPromise;
+    const client = await mongo;
     const db = client.db("YBR");
     const collection = db.collection("PROD5");
 
