@@ -1,4 +1,4 @@
-import {BrowserRouter, Routes, Route} from "react-router-dom";
+import {BrowserRouter, Routes, Route, Navigate} from "react-router-dom";
 import UserLogin from './Pages/UserLogin';
 import VendorLogin from './Pages/VendorLogin';
 import Home from './Pages/Home';
@@ -17,6 +17,7 @@ function App() {
         <Route path = "/VendorLogin" element = {<VendorLogin />} />
         <Route path = "/UserRegister" element = {<UserRegister />} />
         <Route path = "/ForgotPassword" element = {<ForgotPassword />} />
+        <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </BrowserRouter>
   );
