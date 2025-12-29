@@ -4,8 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "start": "export $(grep VERCEL_TOKEN .env | xargs) && vercel dev --token=$VERCEL_TOKEN --listen 80",
-    "dev": "vite",
+    "dev": "vercel dev",
+    "dev:api": "vercel dev",
+    "dev:ui": "vite",
     "build": "vite build",
     "preview": "vite preview"
   },

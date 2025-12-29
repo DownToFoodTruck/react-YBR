@@ -2,27 +2,32 @@
 
 ## Setup
 
-1. Copy `.env.example` to `.env` and add your credentials:
-   ```
-   MONGO_URI=your_mongodb_connection_string
-   VERCEL_TOKEN=your_vercel_token
-   ```
-
-2. Install dependencies:
+1. Install dependencies:
    ```
    npm install
+   ```
+
+2. Login to Vercel (one time):
+   ```
+   vercel login
+   ```
+
+3. Copy `.env.example` to `.env` and add your MongoDB URI:
+   ```
+   MONGO_URI=your_mongodb_connection_string
    ```
 
 ## Development
 
 ```
-sudo npm start
+npm run dev
 ```
 
-Runs at http://localhost (port 80)
+Runs full stack (Vite + API routes) at http://localhost:3000
 
 ## Scripts
 
-- `npm start` - Run full stack (Vite + Vercel API routes)
-- `npm run dev` - Run Vite only (frontend)
+- `npm run dev` - Full stack (UI + API)
+- `npm run dev:api` - Full stack (UI + API)
+- `npm run dev:ui` - Frontend only (Vite)
 - `npm run build` - Build for production
