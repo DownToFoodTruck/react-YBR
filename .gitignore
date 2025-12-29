@@ -24,3 +24,6 @@ yarn-error.log*
 .env
 dist/*
 .env
+
+.vercel
+.env*.local
