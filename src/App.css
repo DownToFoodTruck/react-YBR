@@ -12,7 +12,7 @@
     width: 100vw;
     /* padding: 10px; */
     background-color: #004aad;
-    background: url(".\Images\DTFT_Icon_Background_Full_Color.webp"); 
+    background: url("./Images/DTFT_Icon_Background_Full_Color.webp"); 
   }
   #page-container {
     display: flex;
